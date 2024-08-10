@@ -1,0 +1,440 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CommonSwiftUI
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Combine
+@_exported import CommonSwiftUI
+import Foundation
+import Swift
+import SwiftUI
+import UIKit
+import VisionKit
+import _AVKit_SwiftUI
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol CommonAlert {
+  var title: Swift.String { get }
+  var subTitle: Swift.String? { get }
+  var buttons: SwiftUI.AnyView { get }
+}
+extension SwiftUI.View {
+  public func showCustomAlert<T>(alert: SwiftUI.Binding<T?>) -> some SwiftUI.View where T : CommonSwiftUI.CommonAlert
+  
+}
+public struct NoAnimationButtonStyle : SwiftUI.ButtonStyle {
+  public func makeBody(configuration: CommonSwiftUI.NoAnimationButtonStyle.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI22NoAnimationButtonStyleV8makeBody13configurationQr0bC00fG13ConfigurationV_tF", 0) __
+}
+public struct IndicatorConfig {
+  public init(tint: SwiftUI.Color = .blue, cornerRadius: CoreFoundation.CGFloat, style: CommonSwiftUI.IndicatorStyle)
+}
+extension UIKit.UIApplication {
+  @_Concurrency.MainActor(unsafe) public static var topMostViewController: UIKit.UIViewController? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public static var rootViewController: UIKit.UIViewController {
+    get
+  }
+}
+public enum Speed {
+  case fast
+  case medium
+  case slow
+  case custom(Foundation.TimeInterval)
+}
+public struct HackerText : SwiftUI.View {
+  public enum Style {
+    case hyper, numeric
+    public static func == (a: CommonSwiftUI.HackerText.Style, b: CommonSwiftUI.HackerText.Style) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(text: Swift.String, trigger: Swift.Bool, transition: CommonSwiftUI.HackerText.Style = .hyper, duration: CoreFoundation.CGFloat = 1.0, speed: CoreFoundation.CGFloat = 0.1)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI10HackerTextV4bodyQrvp", 0) __
+}
+public struct ArcFloatingButton<CustomShape, Label> : SwiftUI.View where CustomShape : SwiftUI.Shape, Label : SwiftUI.View {
+  public enum Alignment {
+    case topLeading, topTrailing, bottomLeading, bottomTrailing, halfmoonTop, halfmoonBottom, halfmoonLeading, halfmoonTrailing, fullmoon
+    public static func == (a: CommonSwiftUI.ArcFloatingButton<CustomShape, Label>.Alignment, b: CommonSwiftUI.ArcFloatingButton<CustomShape, Label>.Alignment) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(buttonSize: CoreFoundation.CGFloat = 50, alignment: CommonSwiftUI.ArcFloatingButton<CustomShape, Label>.Alignment = .bottomTrailing, @CommonSwiftUI.FloatingActionBuilder actions: @escaping () -> [CommonSwiftUI.FloatingAction], shape: CustomShape = Circle(), @SwiftUI.ViewBuilder label: @escaping (Swift.Bool) -> Label)
+  public init(buttonSize: CoreFoundation.CGFloat = 50, alignment: CommonSwiftUI.ArcFloatingButton<CustomShape, Label>.Alignment = .bottomTrailing, actions: [CommonSwiftUI.FloatingAction], shape: CustomShape = Circle(), @SwiftUI.ViewBuilder label: @escaping (Swift.Bool) -> Label)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI17ArcFloatingButtonV4bodyQrvp", 0) __<CustomShape, Label>
+}
+public struct TypeWriterText : SwiftUI.View {
+  public enum Speed {
+    case slow
+    case medium
+    case fast
+    case veryFast
+    case custom(Swift.Double)
+  }
+  public init(text: Swift.String, font: SwiftUI.Font = .caption, fontWeight: SwiftUI.Font.Weight = .medium, color: SwiftUI.Color = .primary, alignment: SwiftUI.TextAlignment = .center, speed: CommonSwiftUI.TypeWriterText.Speed = .medium)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI14TypeWriterTextV4bodyQrvp", 0) __
+}
+@available(iOS 16.0, *)
+public struct CameraScannerVisionKit : SwiftUI.UIViewControllerRepresentable {
+  public var completion: (Swift.Result<Swift.String, any Swift.Error>) -> Swift.Void
+  public init(stopScanning: SwiftUI.Binding<Swift.Bool>, completion: @escaping (Swift.Result<Swift.String, any Swift.Error>) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func makeCoordinator() -> CommonSwiftUI.CameraScannerVisionKit.Coordinator
+  @_Concurrency.MainActor(unsafe) public func makeUIViewController(context: CommonSwiftUI.CameraScannerVisionKit.Context) -> VisionKit.DataScannerViewController
+  @_Concurrency.MainActor(unsafe) public func updateUIViewController(_ viewController: VisionKit.DataScannerViewController, context: CommonSwiftUI.CameraScannerVisionKit.Context)
+  @_Concurrency.MainActor(unsafe) public static func dismantleUIViewController(_ viewController: VisionKit.DataScannerViewController, coordinator: CommonSwiftUI.CameraScannerVisionKit.Coordinator)
+  @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor public class Coordinator : ObjectiveC.NSObject, VisionKit.DataScannerViewControllerDelegate {
+    @_Concurrency.MainActor public func dataScanner(_ dataScanner: VisionKit.DataScannerViewController, didUpdate updatedItems: [VisionKit.RecognizedItem], allItems: [VisionKit.RecognizedItem])
+    @objc deinit
+  }
+  public typealias Body = Swift.Never
+  public typealias UIViewControllerType = VisionKit.DataScannerViewController
+}
+@_hasMissingDesignatedInitializers final public class Toast : Combine.ObservableObject {
+  public static let shared: CommonSwiftUI.Toast
+  final public func present(title: Swift.String, symbol: Swift.String?, tint: SwiftUI.Color = .primary, isUserInteractionEnabled: Swift.Bool = false, timing: CommonSwiftUI.Speed = .medium)
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public struct SimpleLoadingIndicator : SwiftUI.View {
+  public init(color: SwiftUI.Color = .blue, backgroudColor: SwiftUI.Color = .gray, lineWidth: CoreFoundation.CGFloat = 5, loadingSpeed: CommonSwiftUI.Speed = .medium)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI22SimpleLoadingIndicatorV4bodyQrvp", 0) __
+}
+@_Concurrency.MainActor(unsafe) public struct QRScannerView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var completion: (Swift.Result<Swift.String, any Swift.Error>) -> Swift.Void
+  @_Concurrency.MainActor(unsafe) public init(isScanning: SwiftUI.Binding<Swift.Bool>, showScanningAnimation: Swift.Bool = true, showErrorAlert: Swift.Bool = true, completion: @escaping (Swift.Result<Swift.String, any Swift.Error>) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI13QRScannerViewV4bodyQrvp", 0) __
+}
+public struct AlertTextField {
+  public init(placeholder: Swift.String, keyboardType: UIKit.UIKeyboardType = .default, isSecureTextEntry: Swift.Bool = false, autocapitalizationType: UIKit.UITextAutocapitalizationType = .none)
+}
+extension SwiftUI.View {
+  public func AlertWithTextFields(title: Swift.String, message: Swift.String, textFields: [CommonSwiftUI.AlertTextField], actions: [CommonSwiftUI.AlertAction])
+}
+public struct GlassMorphismView : SwiftUI.View {
+  public init(cornerRadius: CoreFoundation.CGFloat = 0, blurRadius: CoreFoundation.CGFloat = 0, saturationAmount: CoreFoundation.CGFloat = 0, border: CoreFoundation.CGFloat = 0)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI17GlassMorphismViewV4bodyQrvp", 0) __
+}
+public struct RingProgress : SwiftUI.View {
+  public init(progress: SwiftUI.Binding<CoreFoundation.CGFloat>, lineWidth: CoreFoundation.CGFloat, startAngle: SwiftUI.Angle = .zero, color: SwiftUI.Color, backgroundColor: SwiftUI.Color = .secondary.opacity(0.3))
+  public init(progress: SwiftUI.Binding<CoreFoundation.CGFloat>, lineWidth: CoreFoundation.CGFloat, startAngle: SwiftUI.Angle = .zero, colors: [SwiftUI.Color], backgroundColor: SwiftUI.Color = .secondary.opacity(0.3))
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI12RingProgressV4bodyQrvp", 0) __
+}
+public struct DropDown<Content, PlaceHolder, Item> : SwiftUI.View where Content : SwiftUI.View, PlaceHolder : SwiftUI.View, Item : Swift.Hashable {
+  public init(options: [Item], selection: SwiftUI.Binding<Item>, rowHeight: CoreFoundation.CGFloat = 55, @SwiftUI.ViewBuilder displayItem: @escaping (Item, Swift.Bool, Swift.Bool) -> Content, @SwiftUI.ViewBuilder placeHolder: @escaping () -> PlaceHolder = { EmptyView() })
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI8DropDownV4bodyQrvp", 0) __<Content, PlaceHolder, Item>
+}
+public struct RingSlider : SwiftUI.View {
+  public init(startAngle: SwiftUI.Binding<SwiftUI.Angle>, toAngle: SwiftUI.Binding<SwiftUI.Angle>, lineWidth: CoreFoundation.CGFloat, tint: SwiftUI.Color = .blue, backgroundColor: SwiftUI.Color = .secondary.opacity(0.3), controlConfig: CommonSwiftUI.RingSlider.ControlConfig)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public struct ControlConfig {
+    public init(tint: SwiftUI.Color = .white, width: CoreFoundation.CGFloat, startSliderImage: SwiftUI.Image? = nil, endSliderImage: SwiftUI.Image? = nil, enableShadow: Swift.Bool = true)
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI10RingSliderV4bodyQrvp", 0) __
+}
+public struct FancyLoading : SwiftUI.View {
+  public init(color: SwiftUI.Color = .primary)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI12FancyLoadingV4bodyQrvp", 0) __
+}
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var topMostViewController: UIKit.UIViewController {
+    get
+  }
+}
+public struct ValidationTextField : SwiftUI.View {
+  public init(title: Swift.String, text: SwiftUI.Binding<Swift.String>, isValid isValidBinding: SwiftUI.Binding<Swift.Bool>? = nil, isSecured: Swift.Bool = false, config: CommonSwiftUI.ValidationTextField.Config = .init())
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public struct Config {
+    public init(messageConfig: CommonSwiftUI.ValidationTextField.MessageConfig = .init(), borderConfig: CommonSwiftUI.ValidationTextField.BorderConfig = .init())
+  }
+  public struct MessageConfig {
+    public init(correctValidationColor: SwiftUI.Color = .green, errorValidationColor: SwiftUI.Color = .red)
+  }
+  public struct BorderConfig {
+    public init(show: Swift.Bool = true, validColor: SwiftUI.Color = .primary, invalidColor: SwiftUI.Color = .red, radius: CoreFoundation.CGFloat = 8, width: CoreFoundation.CGFloat = 1.0)
+  }
+  public struct FormValidationElement : Swift.Identifiable {
+    public var id: Foundation.UUID {
+      get
+    }
+    public init(message: Swift.String, isValid: Swift.Bool)
+    public typealias ID = Foundation.UUID
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI19ValidationTextFieldV4bodyQrvp", 0) __
+}
+public struct AlertAction {
+  public init(title: Swift.String, style: UIKit.UIAlertAction.Style, completion: @escaping ([Swift.String]) -> ())
+}
+extension SwiftUI.View {
+  public func apply<Content>(@SwiftUI.ViewBuilder _ transform: (Self) -> Content) -> Content
+  public func customChange<T>(value: T, result: @escaping (T) -> ()) -> some SwiftUI.View where T : Swift.Equatable
+  
+  public func clearButtonHidden(_ hidesClearButton: Swift.Bool = true) -> some SwiftUI.View
+  
+  public func secureTextButtonHidden(_ hidesSecureButton: Swift.Bool = true) -> some SwiftUI.View
+  
+  public func isMandatory(_ value: Swift.Bool = true, message: Swift.String = "This is a mandatory field") -> some SwiftUI.View
+  
+  public func onValidate(validationHandler: @escaping (Swift.String) -> Swift.Result<Swift.String, any Swift.Error>) -> some SwiftUI.View
+  
+  public func onFormValidate(formValidationHandler: @escaping (Swift.String) -> [CommonSwiftUI.ValidationTextField.FormValidationElement]) -> some SwiftUI.View
+  
+}
+public struct CapsuleButtonStyle<TextShapeStyle, BackgroundShapeStyle> : SwiftUI.ButtonStyle where TextShapeStyle : SwiftUI.ShapeStyle, BackgroundShapeStyle : SwiftUI.ShapeStyle {
+  public init(textColor: TextShapeStyle = .white, backgroundColor: BackgroundShapeStyle = .blue, verticalPadding: CoreFoundation.CGFloat = 10, horizontalPadding: CoreFoundation.CGFloat = 20)
+  public func makeBody(configuration: CommonSwiftUI.CapsuleButtonStyle<TextShapeStyle, BackgroundShapeStyle>.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI18CapsuleButtonStyleV8makeBody13configurationQr0bC00eF13ConfigurationV_tF", 0) __<TextShapeStyle, BackgroundShapeStyle>
+}
+public struct LoadingButtonStyle<CustomShape, TextShapeStyle, BackgroundShapeStyle> : SwiftUI.ButtonStyle where CustomShape : SwiftUI.Shape, TextShapeStyle : SwiftUI.ShapeStyle, BackgroundShapeStyle : SwiftUI.ShapeStyle {
+  public enum LoadingButtonAppearance {
+    case resize
+    case leading
+    case trailing
+    case top
+    case bottom
+    case center
+    case none
+    public static func == (a: CommonSwiftUI.LoadingButtonStyle<CustomShape, TextShapeStyle, BackgroundShapeStyle>.LoadingButtonAppearance, b: CommonSwiftUI.LoadingButtonStyle<CustomShape, TextShapeStyle, BackgroundShapeStyle>.LoadingButtonAppearance) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(isLoading: SwiftUI.Binding<Swift.Bool>, loadingState: CommonSwiftUI.LoadingButtonStyle<CustomShape, TextShapeStyle, BackgroundShapeStyle>.LoadingButtonAppearance = .center, textColor: TextShapeStyle = .white, backgroundColor: BackgroundShapeStyle = .blue, disabledLoadingColor: BackgroundShapeStyle = .gray, shape: CustomShape = Capsule(), verticalPadding: CoreFoundation.CGFloat = 10, horizontalPadding: CoreFoundation.CGFloat = 20)
+  public func makeBody(configuration: CommonSwiftUI.LoadingButtonStyle<CustomShape, TextShapeStyle, BackgroundShapeStyle>.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI18LoadingButtonStyleV8makeBody13configurationQr0bC00eF13ConfigurationV_tF", 0) __<CustomShape, TextShapeStyle, BackgroundShapeStyle>
+}
+public struct GrowingButtonStyle<CustomShape, TextShapeStyle, BackgroundShapeStyle> : SwiftUI.ButtonStyle where CustomShape : SwiftUI.Shape, TextShapeStyle : SwiftUI.ShapeStyle, BackgroundShapeStyle : SwiftUI.ShapeStyle {
+  public init(textColor: TextShapeStyle = .white, backgroundColor: BackgroundShapeStyle = .blue, shape: CustomShape = Capsule(), verticalPadding: CoreFoundation.CGFloat = 10, horizontalPadding: CoreFoundation.CGFloat = 20)
+  public func makeBody(configuration: CommonSwiftUI.GrowingButtonStyle<CustomShape, TextShapeStyle, BackgroundShapeStyle>.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI18GrowingButtonStyleV8makeBody13configurationQr0bC00eF13ConfigurationV_tF", 0) __<CustomShape, TextShapeStyle, BackgroundShapeStyle>
+}
+extension SwiftUI.View {
+  public func neumorphism(color: SwiftUI.Color) -> some SwiftUI.View
+  
+}
+public enum IndicatorStyle {
+  case bottom
+  case background
+  public static func == (a: CommonSwiftUI.IndicatorStyle, b: CommonSwiftUI.IndicatorStyle) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct ArcProgress : SwiftUI.View {
+  public init(progress: SwiftUI.Binding<CoreFoundation.CGFloat>, lineWidth: CoreFoundation.CGFloat, color: SwiftUI.Color, backgroundColor: SwiftUI.Color = .secondary.opacity(0.3))
+  public init(progress: SwiftUI.Binding<CoreFoundation.CGFloat>, lineWidth: CoreFoundation.CGFloat, colors: [SwiftUI.Color], backgroundColor: SwiftUI.Color = .secondary.opacity(0.3))
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI11ArcProgressV4bodyQrvp", 0) __
+}
+public struct UniversalAlertConfig {
+  public init(enableBackgroundBlur: Swift.Bool = false, disableOutsideTap: Swift.Bool = false, transitionType: CommonSwiftUI.UniversalAlertConfig.TransitionType = .slide, slideEdge: SwiftUI.Edge = .bottom)
+  public enum TransitionType {
+    case slide
+    case opacity
+    public static func == (a: CommonSwiftUI.UniversalAlertConfig.TransitionType, b: CommonSwiftUI.UniversalAlertConfig.TransitionType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public mutating func present()
+  public mutating func dismiss()
+}
+@_Concurrency.MainActor(unsafe) public struct RootView<Content> : SwiftUI.View where Content : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public init(@SwiftUI.ViewBuilder content: @escaping () -> Content)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI8RootViewV4bodyQrvp", 0) __<Content>
+}
+public struct CircularText<Content> : SwiftUI.View where Content : SwiftUI.View {
+  public enum Position {
+    case inside, center, outside
+    public static func == (a: CommonSwiftUI.CircularText<Content>.Position, b: CommonSwiftUI.CircularText<Content>.Position) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(text: Swift.String, radius: CoreFoundation.CGFloat, spacing: CoreFoundation.CGFloat = 4, alignment: CommonSwiftUI.CircularText<Content>.Position = .center, reverseStyle: Swift.Bool = false, textModifier: @escaping (SwiftUI.Text) -> Content = { $0 })
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI12CircularTextV4bodyQrvp", 0) __<Content>
+}
+public struct RangeSlider : SwiftUI.View {
+  public init(selection: SwiftUI.Binding<Swift.ClosedRange<CoreFoundation.CGFloat>>, range: Swift.ClosedRange<CoreFoundation.CGFloat>, minimumDistance: CoreFoundation.CGFloat = 0, lineWidth: CoreFoundation.CGFloat = 5, tint: SwiftUI.Color = .primary, backgroudColor: SwiftUI.Color = .secondary.opacity(0.3), controlConfig: CommonSwiftUI.RangeSlider.ControlConfig = .init())
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public struct ControlConfig {
+    public init(tint: SwiftUI.Color = .white, width: CoreFoundation.CGFloat = 15, enableShadow: Swift.Bool = true)
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI11RangeSliderV4bodyQrvp", 0) __
+}
+extension SwiftUI.View {
+  public func onLoad(perform action: (() -> Swift.Void)? = nil) -> some SwiftUI.View
+  
+}
+public struct ShimmerView : SwiftUI.View {
+  public init()
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI11ShimmerViewV4bodyQrvp", 0) __
+}
+public struct LimitedTextField : SwiftUI.View {
+  public init(config: CommonSwiftUI.LimitedTextField.Config, hint: Swift.String, value: SwiftUI.Binding<Swift.String>)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public struct Config {
+    public init(limit: Swift.Int, tint: SwiftUI.Color, autoResizes: Swift.Bool, allowExcessTyping: Swift.Bool, progressConfig: CommonSwiftUI.LimitedTextField.ProgressConfig = .init(), borderConfig: CommonSwiftUI.LimitedTextField.BorderConfig = .init())
+  }
+  public struct ProgressConfig {
+    public init(showsRing: Swift.Bool = true, showsText: Swift.Bool = true, alignment: SwiftUI.HorizontalAlignment = .trailing)
+  }
+  public struct BorderConfig {
+    public init(show: Swift.Bool = true, radius: CoreFoundation.CGFloat = 8, width: CoreFoundation.CGFloat = 1.0)
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI16LimitedTextFieldV4bodyQrvp", 0) __
+}
+extension SwiftUI.View {
+  public func shimmer(tint: SwiftUI.Color, highlight: SwiftUI.Color, blur: CoreFoundation.CGFloat = 0, highlightOpacity: CoreFoundation.CGFloat = 1, speed: CoreFoundation.CGFloat = 2) -> some SwiftUI.View
+  
+}
+public struct ProgressBar : SwiftUI.View {
+  public init(progress: SwiftUI.Binding<CoreFoundation.CGFloat>, color: SwiftUI.Color, backgroundColor: SwiftUI.Color = .secondary.opacity(0.3))
+  public init(progress: SwiftUI.Binding<CoreFoundation.CGFloat>, colors: [SwiftUI.Color], backgroundColor: SwiftUI.Color = .secondary.opacity(0.3))
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI11ProgressBarV4bodyQrvp", 0) __
+}
+public struct FloatingAction : Swift.Identifiable {
+  public var id: Foundation.UUID {
+    get
+  }
+  public var image: SwiftUI.Image {
+    get
+  }
+  public var font: SwiftUI.Font {
+    get
+  }
+  public var tint: SwiftUI.Color {
+    get
+  }
+  public var background: SwiftUI.Color {
+    get
+  }
+  public var action: () -> () {
+    get
+  }
+  public init(id: Foundation.UUID = .init(), image: SwiftUI.Image, font: SwiftUI.Font = .title3, tint: SwiftUI.Color = .white, background: SwiftUI.Color = .black, action: @escaping () -> Swift.Void)
+  public typealias ID = Foundation.UUID
+}
+@_functionBuilder public struct FloatingActionBuilder {
+  public static func buildBlock(_ components: CommonSwiftUI.FloatingAction...) -> [CommonSwiftUI.FloatingAction]
+}
+public struct ExpandFloatButton<CustomShape, Label> : SwiftUI.View where CustomShape : SwiftUI.Shape, Label : SwiftUI.View {
+  public enum Direction {
+    case leading, trailing, top, bottom
+    public static func == (a: CommonSwiftUI.ExpandFloatButton<CustomShape, Label>.Direction, b: CommonSwiftUI.ExpandFloatButton<CustomShape, Label>.Direction) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(buttonSize: CoreFoundation.CGFloat = 50, alignment: CommonSwiftUI.ExpandFloatButton<CustomShape, Label>.Direction = .leading, spacing: CoreFoundation.CGFloat = 8, @CommonSwiftUI.FloatingActionBuilder actions: @escaping () -> [CommonSwiftUI.FloatingAction], shape: CustomShape = Circle(), @SwiftUI.ViewBuilder label: @escaping (Swift.Bool) -> Label)
+  public init(buttonSize: CoreFoundation.CGFloat = 50, alignment: CommonSwiftUI.ExpandFloatButton<CustomShape, Label>.Direction = .leading, spacing: CoreFoundation.CGFloat = 8, actions: [CommonSwiftUI.FloatingAction], shape: CustomShape = Circle(), @SwiftUI.ViewBuilder label: @escaping (Swift.Bool) -> Label)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI17ExpandFloatButtonV4bodyQrvp", 0) __<CustomShape, Label>
+}
+public struct ShapeButtonStyle<CustomShape, TextShapeStyle, BackgroundShapeStyle> : SwiftUI.ButtonStyle where CustomShape : SwiftUI.Shape, TextShapeStyle : SwiftUI.ShapeStyle, BackgroundShapeStyle : SwiftUI.ShapeStyle {
+  public init(textColor: TextShapeStyle = .primary, backgroundColor: BackgroundShapeStyle = .secondary, shape: CustomShape = Capsule(), verticalPadding: CoreFoundation.CGFloat = 10, horizontalPadding: CoreFoundation.CGFloat = 20)
+  public func makeBody(configuration: CommonSwiftUI.ShapeButtonStyle<CustomShape, TextShapeStyle, BackgroundShapeStyle>.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI16ShapeButtonStyleV8makeBody13configurationQr0bC00eF13ConfigurationV_tF", 0) __<CustomShape, TextShapeStyle, BackgroundShapeStyle>
+}
+public struct HoldDownButton<MyShape> : SwiftUI.View where MyShape : SwiftUI.Shape {
+  public init(text: Swift.String, paddingHorizontal: CoreFoundation.CGFloat = 24, paddingVertical: CoreFoundation.CGFloat = 12, duration: CoreFoundation.CGFloat = 1, scale: CoreFoundation.CGFloat = 0.95, color: SwiftUI.Color = .primary, background: SwiftUI.Color = .secondary, loadingTint: SwiftUI.Color = .secondary.opacity(0.3), clipShape: MyShape = .rect, action: @escaping () -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI14HoldDownButtonV4bodyQrvp", 0) __<MyShape>
+}
+public struct PressableButtonStyle : SwiftUI.ButtonStyle {
+  public func makeBody(configuration: CommonSwiftUI.PressableButtonStyle.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI20PressableButtonStyleV8makeBody13configurationQr0bC00eF13ConfigurationV_tF", 0) __
+}
+public struct SegmentControl<Content, Item> : SwiftUI.View where Content : SwiftUI.View, Item : Swift.Hashable {
+  public init(tabs: [Item], activeTab: SwiftUI.Binding<Item>, height: CoreFoundation.CGFloat = 45, activeTint: SwiftUI.Color = .primary, inActiveTint: SwiftUI.Color = .gray.opacity(0.5), indicatorConfiguration: CommonSwiftUI.IndicatorConfig, displayItem: @escaping (Item) -> Content)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI14SegmentControlV4bodyQrvp", 0) __<Content, Item>
+}
+extension SwiftUI.View {
+  public func alert<Content>(alertConfig: SwiftUI.Binding<CommonSwiftUI.UniversalAlertConfig>, @SwiftUI.ViewBuilder content: @escaping () -> Content) -> some SwiftUI.View where Content : SwiftUI.View
+  
+}
+extension CommonSwiftUI.HackerText.Style : Swift.Equatable {}
+extension CommonSwiftUI.HackerText.Style : Swift.Hashable {}
+extension CommonSwiftUI.ArcFloatingButton.Alignment : Swift.Equatable {}
+extension CommonSwiftUI.ArcFloatingButton.Alignment : Swift.Hashable {}
+extension CommonSwiftUI.LoadingButtonStyle.LoadingButtonAppearance : Swift.Equatable {}
+extension CommonSwiftUI.LoadingButtonStyle.LoadingButtonAppearance : Swift.Hashable {}
+extension CommonSwiftUI.IndicatorStyle : Swift.Equatable {}
+extension CommonSwiftUI.IndicatorStyle : Swift.Hashable {}
+extension CommonSwiftUI.UniversalAlertConfig.TransitionType : Swift.Equatable {}
+extension CommonSwiftUI.UniversalAlertConfig.TransitionType : Swift.Hashable {}
+extension CommonSwiftUI.CircularText.Position : Swift.Equatable {}
+extension CommonSwiftUI.CircularText.Position : Swift.Hashable {}
+extension CommonSwiftUI.ExpandFloatButton.Direction : Swift.Equatable {}
+extension CommonSwiftUI.ExpandFloatButton.Direction : Swift.Hashable {}
