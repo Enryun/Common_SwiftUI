@@ -37,8 +37,17 @@ For more details on using Swift Package Manager, visit [Apple's Swift Package Ma
 
 1. [Alert](#alert)
 2. [Button](#button)
-3. [Dropdown](#dropdown)
-
+3. [ButtonStyle](#buttonstyle)
+4. [Dropdown](#dropdown)
+5. [LoadingIndicator](#loadingIndicator)
+6. [ProgressView](#progressview)
+7. [QRScanner](#qrscanner)
+8. [SegmentControl](#segmentcontrol)
+9. [Slider](#slider)
+10. [Text](#text)
+11. [TextField](#textfield)
+12. [Toast](#toast)
+13. [ViewModifier](#viewmodifier)
 
 ## Usage
 
@@ -47,6 +56,24 @@ For more details on using Swift Package Manager, visit [Apple's Swift Package Ma
 ### Button
 
 ### Dropdown
+
+### LoadingIndicator
+
+### ProgressView
+
+### QRScanner
+
+### SegmentControl
+
+### Slider
+
+### Text
+
+### TextField
+
+### Toast
+
+### ViewModifier
 
 ## Author
 James Thang, find me on [LinkedIn](https://www.linkedin.com/in/jamesthang/)
