@@ -33,5 +33,20 @@ This project can be installed using `Swift Package Manager` and `CocoaPod`.
 
 For more details on using Swift Package Manager, visit [Apple's Swift Package Manager documentation](https://swift.org/package-manager/).
 
+## Features
+
+1. [Alert](#alert)
+2. [Button](#button)
+3. [Dropdown](#dropdown)
+
+
+## Usage
+
+### Alert
+
+### Button
+
+### Dropdown
+
 ## Author
 James Thang, find me on [LinkedIn](https://www.linkedin.com/in/jamesthang/)
