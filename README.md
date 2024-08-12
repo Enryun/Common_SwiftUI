@@ -39,7 +39,7 @@ For more details on using Swift Package Manager, visit [Apple's Swift Package Ma
 2. [Button](#button)
 3. [Button Style](#buttonstyle)
 4. [Dropdown](#dropdown)
-5. [Loading Indicator](#loadingIndicator)
+5. [Loading Indicator](#loading%20indicator)
 6. [Progress View](#progressview)
 7. [QRScanner](#qrscanner)
 8. [Segment Control](#segmentcontrol)
