@@ -49,6 +49,14 @@ For more details on using Swift Package Manager, visit [Apple's Swift Package Ma
 12. [Toast](#toast)
 13. [ViewModifier](#viewmodifier)
 
+## Importing the Library
+
+To use any of the components provided by `CommonSwiftUI`, such as `RangeSlider` or `QRScannerView`, you need to import the library at the beginning of your SwiftUI view file. This ensures that all the features and components from the library are accessible in that file. Simply add the following line at the top of your `.swift` file where you plan to use these components:
+
+```swift
+import CommonSwiftUI
+```
+
 ## Usage
 
 ### Alert
@@ -73,9 +81,27 @@ Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lob
 
 ### LoadingIndicator
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet velit dolor, sed porta est ullamcorper in. Nulla at condimentum dolor. Etiam mattis nibh nec sollicitudin facilisis. Nam pretium justo neque, ut tempus arcu tristique ut. Mauris in tortor volutpat, euismod orci id, iaculis quam. Sed vel lacus ex. Integer nibh ex, interdum eu velit vel, fringilla placerat quam. Duis viverra porta nibh, in condimentum purus. Ut in dolor suscipit, maximus purus a, mattis elit. Suspendisse hendrerit feugiat velit a ultricies. Aenean fringilla aliquam odio, non pellentesque odio eleifend in. Suspendisse potenti.
+#### 5.1. SimpleLoadingIndicator:
 
-Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lobortis laoreet nunc tempor. Duis at consectetur enim, nec ultrices velit. Suspendisse ac risus enim. Nullam feugiat nisi nulla, a vulputate augue mattis ac. Nunc molestie ligula dui, vitae faucibus nibh iaculis at. Etiam blandit nulla sit amet vestibulum dapibus. Ut feugiat tristique leo a luctus. Sed pharetra est vitae magna suscipit, eu interdum metus elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum faucibus arcu. Quisque feugiat et sapien eget lobortis. Maecenas egestas enim lacinia gravida suscipit. Mauris nunc sem, dictum vel diam ut, rhoncus feugiat magna.
+A simple, customizable loading indicator view. This view displays a circular loading indicator that rotates according to the specified loading speed. The appearance of the indicator, including its color, background color, line width, and speed, can be customized.
+
+```swift
+let configuration = TutorialConfiguration(
+            title: .init(font: .systemFont(ofSize: 24, weight: .semibold), textColor: .label),
+            description: .init(font: .systemFont(ofSize: 16, weight: .regular), textColor: .label),
+            backgroundColor: BackgroundColor(ligtModeColor: .init(color: .systemYellow, opacity: 0.7), darkModeColor: .init(color: .systemGreen, opacity: 0.3)),
+            sound: .tap,
+            alignment: .bottom
+        )
+```
+
+The loading indicator will rotate continuously to signify an ongoing loading process.
+
+Parameters:
+- `color`: The color of the loading indicator. Default is `.blue`.
+- `backgroundColor`: The background color of the loading indicator. Default is `.gray`.
+- `lineWidth`: The thickness of the loading indicator's line. Default is 5.
+- `loadingSpeed`: The speed at which the loading indicator rotates. Default is `.medium`.
 
 ### ProgressView
 
