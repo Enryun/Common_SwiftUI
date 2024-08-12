@@ -100,9 +100,27 @@ Parameters:
 - `lineWidth`: The thickness of the loading indicator's line. Default is 5.
 - `loadingSpeed`: The speed at which the loading indicator rotates. Default is `.medium`.
 
-Control Visibility and Size:
+Visibility and Size:
 - Frame Size: Adjust the indicator's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 - Dynamic Visibility: Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
+
+#### 5.2. Fancy Loading View
+
+A SwiftUI view that displays a series of animated concentric circles, creating a dynamic loading indicator.
+
+```swift
+FancyLoading()
+```
+
+Each circle in the animation is individually timed to create a smooth, rhythmic effect that visually indicates an ongoing process.
+
+https://github.com/user-attachments/assets/ceefa337-ac2d-4001-ae81-c5ee111a033c
+
+Parameters:
+- `color`: The color of the circle strokes. The default is `.primary`.
+
+Visibility: 
+- Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
 
 ### ProgressView
 
