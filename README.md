@@ -37,17 +37,17 @@ For more details on using Swift Package Manager, visit [Apple's Swift Package Ma
 
 1. [Alert](#alert)
 2. [Button](#button)
-3. [ButtonStyle](#buttonstyle)
+3. [Button Style](#buttonstyle)
 4. [Dropdown](#dropdown)
-5. [LoadingIndicator](#loadingIndicator)
-6. [ProgressView](#progressview)
+5. [Loading Indicator](#loadingIndicator)
+6. [Progress View](#progressview)
 7. [QRScanner](#qrscanner)
-8. [SegmentControl](#segmentcontrol)
+8. [Segment Control](#segmentcontrol)
 9. [Slider](#slider)
 10. [Text](#text)
 11. [TextField](#textfield)
 12. [Toast](#toast)
-13. [ViewModifier](#viewmodifier)
+13. [View Modifier](#viewmodifier)
 
 ## Importing the Library
 
