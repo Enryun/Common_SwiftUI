@@ -66,11 +66,13 @@ Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lob
 
 ## Button
 
-### CapsuleButtonStyle
+### 2.1 CapsuleButtonStyle:
 
-A ButtonStyle for SwiftUI that applies a Capsule Shape with customizable color styles.
+A `ButtonStyle` for SwiftUI that applies a Capsule Shape with customizable color styles.
 
 ```swift
+let gradient = LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing)
+
 VStack(spacing: 25) {
     Button("Capsule 1") { }
         .buttonStyle(CapsuleButtonStyle())
@@ -98,6 +100,46 @@ This style gives buttons a modern, rounded look suitable for various UI contexts
 Parameters:
 - `textColor`: The color or style applied to the text inside the button. Defaults to `.white`.
 - `backgroundColor`: The background color or style of the button, conforming to `ShapeStyle`. Defaults to `.blue`.
+- `verticalPadding`: The vertical padding inside the button. Defaults to `10`.
+- `horizontalPadding`: The horizontal padding inside the button. Defaults to `20`.
+
+### 2.2 ShapeButtonStyle:
+
+A `ButtonStyle` for SwiftUI that allows customization of the button's shape and color.
+
+```swift
+let gradient = LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing)
+
+VStack(spacing: 25) {
+    Button("ShapeButton 1") { }
+        .buttonStyle(ShapeButtonStyle(textColor: .white, backgroundColor: .blue, shape: .rect))
+
+    Button("ShapeButton 2") { }
+        .buttonStyle(ShapeButtonStyle(textColor: .primary, backgroundColor: .green, shape: .rect(cornerRadius: 8)))
+
+    Button("ShapeButton 3") { }
+        .buttonStyle(ShapeButtonStyle(textColor: .white, backgroundColor: .red, shape: .capsule))
+            
+    Button("ShapeButton 4") { }
+        .buttonStyle(ShapeButtonStyle(textColor: .white, backgroundColor: .orange, shape: .ellipse))
+
+    Button(action: {}, label: {
+        Image(systemName: "heart.fill")
+            .font(.title)
+            .padding(5)
+        })
+        .buttonStyle(ShapeButtonStyle(textColor: .white, backgroundColor: gradient, shape: .circle))
+}
+```
+
+This style modifies the appearance of buttons to fit within a specified shape, with customizable foreground, background colors and padding. It is highly flexible, accommodating various shapes and color styles.
+
+<img src="https://github.com/user-attachments/assets/bd90bcd0-3510-4796-903e-4f78ac4b12c3" width="220">
+
+Parameters:
+- `textColor`: The color or style applied to the text inside the button. Default is `.primary`.
+- `backgroundColor`: The background color or style of the button, conforming to `ShapeStyle`. Default is `.secondary`.
+- `shape`: The custom shape for the button, conforming to `Shape`. The default shape is `Capsule()`.
 - `verticalPadding`: The vertical padding inside the button. Defaults to `10`.
 - `horizontalPadding`: The horizontal padding inside the button. Defaults to `20`.
 
