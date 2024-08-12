@@ -39,15 +39,15 @@ For more details on using Swift Package Manager, visit [Apple's Swift Package Ma
 2. [Button](#button)
 3. [Button Style](#buttonstyle)
 4. [Dropdown](#dropdown)
-5. [Loading Indicator](#loading%20indicator)
-6. [Progress View](#progressview)
+5. [LoadingIndicator](#loadingindicator)
+6. [ProgressView](#progressview)
 7. [QRScanner](#qrscanner)
-8. [Segment Control](#segmentcontrol)
+8. [SegmentControl](#segmentcontrol)
 9. [Slider](#slider)
 10. [Text](#text)
 11. [TextField](#textfield)
 12. [Toast](#toast)
-13. [View Modifier](#viewmodifier)
+13. [ViewModifier](#viewmodifier)
 
 ## Importing the Library
 
@@ -79,7 +79,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet velit do
 
 Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lobortis laoreet nunc tempor. Duis at consectetur enim, nec ultrices velit. Suspendisse ac risus enim. Nullam feugiat nisi nulla, a vulputate augue mattis ac. Nunc molestie ligula dui, vitae faucibus nibh iaculis at. Etiam blandit nulla sit amet vestibulum dapibus. Ut feugiat tristique leo a luctus. Sed pharetra est vitae magna suscipit, eu interdum metus elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum faucibus arcu. Quisque feugiat et sapien eget lobortis. Maecenas egestas enim lacinia gravida suscipit. Mauris nunc sem, dictum vel diam ut, rhoncus feugiat magna.
 
-### Loading Indicator
+### LoadingIndicator
 
 #### 5.1. Simple Loading Indicator:
 
