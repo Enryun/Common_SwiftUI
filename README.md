@@ -86,16 +86,13 @@ Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lob
 A simple, customizable loading indicator view. This view displays a circular loading indicator that rotates according to the specified loading speed. The appearance of the indicator, including its color, background color, line width, and speed, can be customized.
 
 ```swift
-let configuration = TutorialConfiguration(
-            title: .init(font: .systemFont(ofSize: 24, weight: .semibold), textColor: .label),
-            description: .init(font: .systemFont(ofSize: 16, weight: .regular), textColor: .label),
-            backgroundColor: BackgroundColor(ligtModeColor: .init(color: .systemYellow, opacity: 0.7), darkModeColor: .init(color: .systemGreen, opacity: 0.3)),
-            sound: .tap,
-            alignment: .bottom
-        )
+SimpleLoadingIndicator(color: .green, backgroundColor: .clear, lineWidth: 12, loadingSpeed: .custom(2))
+    .frame(width: 200, height: 200)
 ```
 
 The loading indicator will rotate continuously to signify an ongoing loading process.
+
+https://github.com/user-attachments/assets/d3031c2d-6f4c-4f94-bfa7-ae2c3dd3e0ac
 
 Parameters:
 - `color`: The color of the loading indicator. Default is `.blue`.
