@@ -3999,7 +3999,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(color:backgroudColor:lineWidth:loadingSpeed:)",
+            "printedName": "init(color:backgroundColor:lineWidth:loadingSpeed:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -4037,8 +4037,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:13CommonSwiftUI22SimpleLoadingIndicatorV5color14backgroudColor9lineWidth12loadingSpeedAC0bC00I0V_AJ14CoreFoundation7CGFloatVAA0M0Otcfc",
-            "mangledName": "$s13CommonSwiftUI22SimpleLoadingIndicatorV5color14backgroudColor9lineWidth12loadingSpeedAC0bC00I0V_AJ12CoreGraphics7CGFloatVAA0M0Otcfc",
+            "usr": "s:13CommonSwiftUI22SimpleLoadingIndicatorV5color15backgroundColor9lineWidth12loadingSpeedAC0bC00I0V_AJ14CoreFoundation7CGFloatVAA0M0Otcfc",
+            "mangledName": "$s13CommonSwiftUI22SimpleLoadingIndicatorV5color15backgroundColor9lineWidth12loadingSpeedAC0bC00I0V_AJ12CoreGraphics7CGFloatVAA0M0Otcfc",
             "moduleName": "CommonSwiftUI",
             "declAttributes": [
               "AccessControl"
@@ -27190,70 +27190,70 @@
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/LoadingIndicator\/SimpleLoadingIndicator.swift",
       "kind": "BooleanLiteral",
-      "offset": 1075,
+      "offset": 1077,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/LoadingIndicator\/SimpleLoadingIndicator.swift",
       "kind": "IntegerLiteral",
-      "offset": 1321,
+      "offset": 1325,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/LoadingIndicator\/SimpleLoadingIndicator.swift",
       "kind": "IntegerLiteral",
-      "offset": 1777,
+      "offset": 1784,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/LoadingIndicator\/SimpleLoadingIndicator.swift",
       "kind": "FloatLiteral",
-      "offset": 1784,
+      "offset": 1791,
       "length": 3,
       "value": "0.7"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/LoadingIndicator\/SimpleLoadingIndicator.swift",
       "kind": "FloatLiteral",
-      "offset": 1954,
+      "offset": 1961,
       "length": 4,
       "value": "0.85"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/LoadingIndicator\/SimpleLoadingIndicator.swift",
       "kind": "FloatLiteral",
-      "offset": 1982,
+      "offset": 1989,
       "length": 3,
       "value": "0.7"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/LoadingIndicator\/SimpleLoadingIndicator.swift",
       "kind": "IntegerLiteral",
-      "offset": 2092,
+      "offset": 2099,
       "length": 3,
       "value": "360"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/LoadingIndicator\/SimpleLoadingIndicator.swift",
       "kind": "IntegerLiteral",
-      "offset": 2098,
+      "offset": 2105,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/LoadingIndicator\/SimpleLoadingIndicator.swift",
       "kind": "BooleanLiteral",
-      "offset": 2211,
+      "offset": 2218,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/LoadingIndicator\/SimpleLoadingIndicator.swift",
       "kind": "BooleanLiteral",
-      "offset": 2297,
+      "offset": 2304,
       "length": 4,
       "value": "true"
     },

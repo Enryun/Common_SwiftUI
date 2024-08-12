@@ -111,7 +111,7 @@ public struct CameraScannerVisionKit : SwiftUI.UIViewControllerRepresentable {
   @objc deinit
 }
 public struct SimpleLoadingIndicator : SwiftUI.View {
-  public init(color: SwiftUI.Color = .blue, backgroudColor: SwiftUI.Color = .gray, lineWidth: CoreFoundation.CGFloat = 5, loadingSpeed: CommonSwiftUI.Speed = .medium)
+  public init(color: SwiftUI.Color = .blue, backgroundColor: SwiftUI.Color = .gray, lineWidth: CoreFoundation.CGFloat = 5, loadingSpeed: CommonSwiftUI.Speed = .medium)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
