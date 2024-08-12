@@ -68,7 +68,7 @@ Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lob
 
 ### CapsuleButtonStyle
 
-A ButtonStyle for SwiftUI that applies a capsule shape with customizable color styles.
+A ButtonStyle for SwiftUI that applies a Capsule Shape with customizable color styles.
 
 ```swift
 VStack(spacing: 25) {
@@ -93,7 +93,7 @@ VStack(spacing: 25) {
 
 This style gives buttons a modern, rounded look suitable for various UI contexts.
 
-![CommonSwiftUI_CapsuleButtonStyle](https://github.com/user-attachments/assets/89fcae09-da1b-4470-96b1-b01bd75a692f)
+<img src="https://github.com/user-attachments/assets/89fcae09-da1b-4470-96b1-b01bd75a692f" width="220">
 
 Parameters:
 - `textColor`: The color or style applied to the text inside the button. Defaults to `.white`.
