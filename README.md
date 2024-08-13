@@ -534,9 +534,64 @@ Parameters:
 
 ## Slider
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet velit dolor, sed porta est ullamcorper in. Nulla at condimentum dolor. Etiam mattis nibh nec sollicitudin facilisis. Nam pretium justo neque, ut tempus arcu tristique ut. Mauris in tortor volutpat, euismod orci id, iaculis quam. Sed vel lacus ex. Integer nibh ex, interdum eu velit vel, fringilla placerat quam. Duis viverra porta nibh, in condimentum purus. Ut in dolor suscipit, maximus purus a, mattis elit. Suspendisse hendrerit feugiat velit a ultricies. Aenean fringilla aliquam odio, non pellentesque odio eleifend in. Suspendisse potenti.
+### 8.1. RangeSlider:
 
-Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lobortis laoreet nunc tempor. Duis at consectetur enim, nec ultrices velit. Suspendisse ac risus enim. Nullam feugiat nisi nulla, a vulputate augue mattis ac. Nunc molestie ligula dui, vitae faucibus nibh iaculis at. Etiam blandit nulla sit amet vestibulum dapibus. Ut feugiat tristique leo a luctus. Sed pharetra est vitae magna suscipit, eu interdum metus elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum faucibus arcu. Quisque feugiat et sapien eget lobortis. Maecenas egestas enim lacinia gravida suscipit. Mauris nunc sem, dictum vel diam ut, rhoncus feugiat magna.
+A customizable range slider view in SwiftUI.
+
+Allows users to select a closed range of values using two draggable thumbs. This component is highly customizable with options for defining the range limits, thumb spacing, and appearance.
+
+Example:
+
+```swift
+@State private var selection: ClosedRange<CGFloat> = 60...90
+@State private var selection2: ClosedRange<CGFloat> = 10...50
+
+VStack(spacing: 50) {
+    RangeSlider(
+        selection: $selection,
+        range: 10...100,
+        minimumDistance: 10,
+        lineWidth: 15,
+        tint: .red,
+        controlConfig: .init(width: 20, enableShadow: true)
+    )
+    .frame(height: 100)
+    
+    Text("\(Int(selection.lowerBound)):\(Int(selection.upperBound))")
+        .font(.largeTitle.bold())
+        .padding(.top, 10)
+    
+    RangeSlider(
+        selection: $selection2,
+        range: 0...100,
+        minimumDistance: 1,
+        lineWidth: 8,
+        tint: .green,
+        controlConfig: .init(width: 12, enableShadow: true)
+    )
+    .frame(height: 100)
+    
+    Text("\(Int(selection2.lowerBound)):\(Int(selection2.upperBound))")
+        .font(.largeTitle.bold())
+        .padding(.top, 10)
+}
+```
+
+This setup demonstrates configuring a `RangeSlider`, displaying the selected value range with customized control appearance.
+
+https://github.com/user-attachments/assets/1da84ea4-53cc-4565-a63e-8fb03e7b1836
+
+Parameters:
+- `selection`: A binding to the selected range of values.
+- `range`: The total range from which values can be selected.
+- `minimumDistance`: The minimum allowable distance between the two thumbs.
+- `lineWidth`: The thickness of the slider's active range.
+- `tint`: The color of the slider's active range and thumbs.
+- `backgroundColor`: The color of the slider's track.
+- `controlConfig`: Configuration for the control's appearance including thumb tint, width, and shadow.
+
+### 8.2. RingSlider:
+
 
 ## Text
 
@@ -649,6 +704,8 @@ Parameters:
 A SwiftUI view that simulates a typewriter effect for displaying text.
 
 This view gradually displays characters of a string, mimicking the typing effect seen in a typewriter. Customization options include font, weight, color, alignment, and the speed of typing. The speed of typing can be one of the predefined speeds or a custom duration specified in seconds.
+
+Example:
 
 ```swift
 VStack(spacing: 16){
