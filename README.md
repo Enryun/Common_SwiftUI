@@ -386,6 +386,51 @@ Size:
 
 ### 5.3 ArcProgress:
 
+A customizable circular progress bar for SwiftUI, unique for its adjustable trim and rotation.
+
+Example:
+
+```swift
+@State private var progress: CGFloat = 0.75
+
+VStack(spacing: 50) {
+    HStack(spacing: 50) {
+        ArcProgress(progress: $progress, lineWidth: 16, color: .red)
+            .frame(width: 150, height: 150)
+        
+        
+        ArcProgress(progress: $progress, lineWidth: 10, color: .pink)
+            .frame(width: 50, height: 50)
+    }
+
+    HStack(spacing: 50) {
+        ArcProgress(progress: $progress, lineWidth: 16, colors: [.orange, .yellow, .purple])
+            .frame(width: 150, height: 150)
+        
+        ArcProgress(progress: $progress, lineWidth: 10, colors: [.yellow, .blue])
+            .frame(width: 100, height: 100)
+    }
+}
+```
+
+This view displays a circular progress indicator that fills up based on the current `progress`, but unlike traditional full-circle progress bars, this one fills up to 75% of the circle. The progress circle can be customized with different `lineWidth`, `colors`, and a `backgroundColor`.
+
+The progress bar uniquely fills up to 75% of the circle and starts at a 135-degree angle.
+
+<img src="https://github.com/user-attachments/assets/aa098c14-1738-4c18-b706-50d8754b920c" width="220">
+
+Parameters:
+- `progress`: A binding to a `CGFloat` that represents the current progress (from 0.0 to 1.0).
+- `lineWidth`: The thickness of the progress bar's line.
+- `color`: The color of the bar's tint.
+- `colors`: An array of `Color` to create a gradient for the progress bar (used when more than one color is desired).
+- `backgroundColor`: The color of the bar's background.
+
+You can use either a single color or a gradient of colors for the progress bar.
+
+Size:
+- Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
+
 
 ## QRScanner
 
