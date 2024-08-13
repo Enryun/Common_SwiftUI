@@ -585,6 +585,93 @@ Parameters:
 - `reverseStyle`: If `true`, reverses the direction and orientation of the text.
 - `textModifier`: A closure that allows for custom styling of the text, applied per character.
 
+### 9.2. HackerText:
+
+Provides an animated text effect that mimics hacking by changing characters randomly before revealing the final text.
+
+Example:
+
+```swift
+@State private var trigger: Bool = false
+@State private var text = "Common SwiftUI"
+
+VStack(alignment: .leading, spacing: 30) {
+    HackerText(
+        text: text,
+        trigger: trigger,
+        transition: .hyper,
+        speed: 0.06
+    )
+    .font(.largeTitle.bold())
+    .lineLimit(2)
+    
+    HackerText(
+        text: text,
+        trigger: trigger,
+        transition: .numeric,
+        speed: 0.06
+    )
+    .font(.largeTitle.bold())
+    .lineLimit(2)
+    
+    Button(action: {
+        if text == "Common SwiftUI" {
+            text = "Made with SwiftUI\nBy James Thang"
+        } else {
+            text = "Common SwiftUI"
+        }
+        trigger.toggle()
+    }, label: {
+        Text("Trigger")
+            .fontWeight(.semibold)
+        
+    })
+    .buttonStyle(.borderedProminent)
+    .frame(maxWidth: .infinity)
+}
+.padding(15)
+.frame(maxWidth: .infinity, alignment: .leading)
+```
+
+This view is particularly effective for creating engaging and eye-catching textual displays in apps that require a dramatic presentation.
+
+https://github.com/user-attachments/assets/5c0f3ebb-e8e5-41f4-8a30-20ad7bceab9c
+
+Parameters:
+- `text`: The final text to display after animation.
+- `trigger`: A Boolean that starts the animation when toggled.
+- `transition`:  The style of animation — either `hyper` for all hacker style or `numeric` for wheeling style only.
+- `duration`: Total animation duration.
+- `speed`: Time interval for character changes.
+
+### 9.3. TypeWriterText:
+
+A SwiftUI view that simulates a typewriter effect for displaying text.
+
+This view gradually displays characters of a string, mimicking the typing effect seen in a typewriter. Customization options include font, weight, color, alignment, and the speed of typing. The speed of typing can be one of the predefined speeds or a custom duration specified in seconds.
+
+```swift
+VStack(spacing: 16){
+    TypeWriterText(text: "James Thang", font: .title, fontWeight: .regular)
+
+    TypeWriterText(text: "iOS Developer | Author | Builder | Writer | Dreamer", font: .title2)
+
+    TypeWriterText(text: "My journey through the tech world is a testament to the idea that anyone can follow their passion and acquire new skills. While my educational background lies in Finance and Economics, I felt a compelling drive to explore the dynamic realm of Apps development. The potentials of it that anyone in this modern world now have a smartphone with them and spend most of their daily time on it. With dedication and self-education, I transitioned into a seasoned iOS developer and then a professional one, accumulating over 3 years of valuable industry experience.", speed: .veryFast)
+}
+```
+
+This view is ideal for scenarios where text needs to be presented in a dramatic, engaging manner.
+
+https://github.com/user-attachments/assets/824d41a8-1e3d-4c07-9607-c669073a7ab1
+
+Parameters:
+- `text`: The text to display using the typewriter effect.
+- `font`: The font style of the text. Default is `.caption`.
+- `fontWeight`: The weight of the font. Default is `.medium`.
+- `color`: The color of the text. Default is `.primary`.
+- `alignment`: The alignment of the text within its container. Default is `.center`.
+- `speed`: The speed at which characters are displayed. Can be `.slow`, `.medium`, `.fast`, `.veryFast`, or `.custom(Double)`. Default is `.medium`.
+
 ## TextField
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet velit dolor, sed porta est ullamcorper in. Nulla at condimentum dolor. Etiam mattis nibh nec sollicitudin facilisis. Nam pretium justo neque, ut tempus arcu tristique ut. Mauris in tortor volutpat, euismod orci id, iaculis quam. Sed vel lacus ex. Integer nibh ex, interdum eu velit vel, fringilla placerat quam. Duis viverra porta nibh, in condimentum purus. Ut in dolor suscipit, maximus purus a, mattis elit. Suspendisse hendrerit feugiat velit a ultricies. Aenean fringilla aliquam odio, non pellentesque odio eleifend in. Suspendisse potenti.
