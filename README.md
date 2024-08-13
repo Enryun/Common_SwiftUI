@@ -339,6 +339,54 @@ You can use either a single color or a gradient of colors for the progress bar. 
 Size:
 - Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 
+### 5.2 RingProgress:
+
+A circular progress bar view for SwiftUI.
+
+Example:
+
+```swift
+@State private var progress: CGFloat = 0.75
+
+VStack(spacing: 50) {
+    HStack(spacing: 50) {
+        RingProgress(progress: $progress, lineWidth: 16, startAngle: .degrees(90), color: .blue)
+            .frame(width: 150, height: 150)
+        
+        RingProgress(progress: $progress, lineWidth: 12, startAngle: .degrees(90), color: .red)
+            .frame(width: 80, height: 80)
+    }
+
+    HStack(spacing: 50) {
+        RingProgress(progress: $progress, lineWidth: 16, startAngle: .degrees(90), colors: [.blue, .green])
+            .frame(width: 150, height: 150)
+        
+        RingProgress(progress: $progress, lineWidth: 8, startAngle: .degrees(90), colors: [.red, .green])
+            .frame(width: 50, height: 50)
+    }
+}
+```
+
+This view displays a circular progress indicator that fills up based on the current `progress`. The progress circle can be customized with different `lineWidth`, `startAngle`, `colors`, and a `backgroundColor`.
+
+<img src="https://github.com/user-attachments/assets/34af9314-f8e4-4695-ab76-a433d116b9f7" width="220">
+
+Parameters:
+- `progress`: A binding to a `CGFloat` that represents the current progress (from 0.0 to 1.0).
+- `lineWidth`: The thickness of the progress bar's line.
+- `startAngle`: The angle at which the progress starts, with `.zero` being the default.
+- `color`: The color of the bar's tint.
+- `colors`: An array of `Color` to create a gradient for the progress bar (used when more than one color is desired).
+- `backgroundColor`: The color of the bar's background.
+
+You can use either a single color or a gradient of colors for the progress bar.
+
+Size:
+- Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
+
+### 5.3 ArcProgress:
+
+
 ## QRScanner
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet velit dolor, sed porta est ullamcorper in. Nulla at condimentum dolor. Etiam mattis nibh nec sollicitudin facilisis. Nam pretium justo neque, ut tempus arcu tristique ut. Mauris in tortor volutpat, euismod orci id, iaculis quam. Sed vel lacus ex. Integer nibh ex, interdum eu velit vel, fringilla placerat quam. Duis viverra porta nibh, in condimentum purus. Ut in dolor suscipit, maximus purus a, mattis elit. Suspendisse hendrerit feugiat velit a ultricies. Aenean fringilla aliquam odio, non pellentesque odio eleifend in. Suspendisse potenti.
