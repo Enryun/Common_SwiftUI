@@ -470,7 +470,6 @@ enum SegmentedTab: String, CaseIterable {
 
 var body: some View {
     VStack(spacing: 25) {
-        
         SegmentControl(tabs: SegmentedTab.allCases, activeTab: $activeTab, height: 40, activeTint: .primary, inActiveTint: .gray.opacity(0.5), indicatorConfiguration: .init(tint: .blue, cornerRadius: 0, style: .bottom)) { item in
             HStack {
                 Image(systemName: item.imageName)
