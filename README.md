@@ -440,9 +440,79 @@ Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lob
 
 ## SegmentControl
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet velit dolor, sed porta est ullamcorper in. Nulla at condimentum dolor. Etiam mattis nibh nec sollicitudin facilisis. Nam pretium justo neque, ut tempus arcu tristique ut. Mauris in tortor volutpat, euismod orci id, iaculis quam. Sed vel lacus ex. Integer nibh ex, interdum eu velit vel, fringilla placerat quam. Duis viverra porta nibh, in condimentum purus. Ut in dolor suscipit, maximus purus a, mattis elit. Suspendisse hendrerit feugiat velit a ultricies. Aenean fringilla aliquam odio, non pellentesque odio eleifend in. Suspendisse potenti.
+A customizable segment control view in SwiftUI.
 
-Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lobortis laoreet nunc tempor. Duis at consectetur enim, nec ultrices velit. Suspendisse ac risus enim. Nullam feugiat nisi nulla, a vulputate augue mattis ac. Nunc molestie ligula dui, vitae faucibus nibh iaculis at. Etiam blandit nulla sit amet vestibulum dapibus. Ut feugiat tristique leo a luctus. Sed pharetra est vitae magna suscipit, eu interdum metus elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum faucibus arcu. Quisque feugiat et sapien eget lobortis. Maecenas egestas enim lacinia gravida suscipit. Mauris nunc sem, dictum vel diam ut, rhoncus feugiat magna.
+`SegmentControl` provides a customizable segmented control interface, allowing for the selection among multiple options. It features customizable active/inactive tint colors, an adjustable height, and a dynamic or static indicator for the active tab. Additionally, it offers a configuration for the indicator's appearance and position based on the selected segment.
+
+Example:
+
+```swift
+enum SegmentedTab: String, CaseIterable {
+   case home = "Home"
+   case favorite = "Love"
+   case profile = "Profile"
+
+   var imageName: String {
+       switch self {
+       case .home:
+           return "house.fill"
+      case .favorite:
+           return "heart.fill"
+       case .profile:
+           return "person.crop.circle"
+       }
+   }
+}
+
+@State private var activeTab: SegmentedTab = .home
+@State private var activeTab2: SegmentedTab = .home
+@State private var activeTab3: SegmentedTab = .home
+
+var body: some View {
+    VStack(spacing: 25) {
+        
+        SegmentControl(tabs: SegmentedTab.allCases, activeTab: $activeTab, height: 40, activeTint: .primary, inActiveTint: .gray.opacity(0.5), indicatorConfiguration: .init(tint: .blue, cornerRadius: 0, style: .bottom)) { item in
+            HStack {
+                Image(systemName: item.imageName)
+                Text(item.rawValue)
+            }
+            .font(.title3)
+        }
+        
+        SegmentControl(tabs: SegmentedTab.allCases, activeTab: $activeTab2, height: 40, activeTint: .primary, inActiveTint: .gray.opacity(0.5), indicatorConfiguration: .init(tint: .orange, cornerRadius: 4, style: .background)) { item in
+            HStack {
+                Image(systemName: item.imageName)
+                
+                Text(item.rawValue)
+            }
+            .font(.title3)
+        }
+        
+        SegmentControl(tabs: SegmentedTab.allCases, activeTab: $activeTab3, height: 40, activeTint: .primary, inActiveTint: .gray.opacity(0.5), indicatorConfiguration: .init(tint: .yellow, cornerRadius: 20, style: .background)) { item in
+            HStack {
+                Image(systemName: item.imageName)
+                
+                Text(item.rawValue)
+            }
+            .font(.title3)
+        }
+    }
+    .padding()
+}
+```
+
+This example demonstrates a `SegmentControl` with custom tab items, including icons and text, showcasing how to integrate it into a SwiftUI view.
+
+https://github.com/user-attachments/assets/6ac4766d-f27f-4885-9b95-927cf67d30cf
+
+Parameters:
+- `tabs`: An array of `Item`, representing each segment option. Required to conform to `Hashable`.
+- `activeTab`: A binding to the currently active segment.
+- `height`: The height of the segment control.
+- `activeTint`: Color for the active segment.
+- `inActiveTint`: Color for inactive segments.
+- `indicatorConfiguration`: Configuration for the segment indicator, including color and corner radius.
+- `displayItem`: A closure that provides a view for displaying each segment option.
 
 ## Slider
 
