@@ -70,6 +70,8 @@ Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lob
 
 A `ButtonStyle` for SwiftUI that applies a Capsule Shape with customizable color styles.
 
+Example:
+
 ```swift
 let gradient = LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing)
 
@@ -106,6 +108,8 @@ Parameters:
 ### 2.2 ShapeButtonStyle:
 
 A `ButtonStyle` for SwiftUI that allows customization of the button's shape and color.
+
+Example:
 
 ```swift
 let gradient = LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing)
@@ -147,6 +151,8 @@ Parameters:
 
 A `ButtonStyle` for SwiftUI that scales the button on press, with customizable shape and color styles.
 
+Example:
+
 ```swift
 let gradient = LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing)
 
@@ -176,6 +182,8 @@ Parameters:
 ### 2.4 LoadingButtonStyle:
 
 A `ButtonStyle` for SwiftUI that provides a customizable button with a loading indicator.
+
+Example:
 
 ```swift
 @State private var isLoading: Bool = false
