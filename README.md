@@ -249,9 +249,11 @@ Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lob
 
 ## LoadingIndicator
 
-### 5.1. Simple Loading Indicator:
+### 4.1. Simple Loading Indicator:
 
 A simple, customizable loading indicator view. This view displays a circular loading indicator that rotates according to the specified loading speed. The appearance of the indicator, including its color, background color, line width, and speed, can be customized.
+
+Example:
 
 ```swift
 SimpleLoadingIndicator(color: .green, backgroundColor: .clear, lineWidth: 12, loadingSpeed: .custom(2))
@@ -272,9 +274,11 @@ Visibility and Size:
 - Frame Size: Adjust the indicator's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 - Dynamic Visibility: Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
 
-### 5.2. Fancy Loading View
+### 4.2. Fancy Loading View
 
 A SwiftUI view that displays a series of animated concentric circles, creating a dynamic loading indicator.
+
+Example:
 
 ```swift
 FancyLoading()
@@ -292,9 +296,48 @@ Visibility:
 
 ## ProgressView
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet velit dolor, sed porta est ullamcorper in. Nulla at condimentum dolor. Etiam mattis nibh nec sollicitudin facilisis. Nam pretium justo neque, ut tempus arcu tristique ut. Mauris in tortor volutpat, euismod orci id, iaculis quam. Sed vel lacus ex. Integer nibh ex, interdum eu velit vel, fringilla placerat quam. Duis viverra porta nibh, in condimentum purus. Ut in dolor suscipit, maximus purus a, mattis elit. Suspendisse hendrerit feugiat velit a ultricies. Aenean fringilla aliquam odio, non pellentesque odio eleifend in. Suspendisse potenti.
+### 5.1 ProgressBar:
 
-Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lobortis laoreet nunc tempor. Duis at consectetur enim, nec ultrices velit. Suspendisse ac risus enim. Nullam feugiat nisi nulla, a vulputate augue mattis ac. Nunc molestie ligula dui, vitae faucibus nibh iaculis at. Etiam blandit nulla sit amet vestibulum dapibus. Ut feugiat tristique leo a luctus. Sed pharetra est vitae magna suscipit, eu interdum metus elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum faucibus arcu. Quisque feugiat et sapien eget lobortis. Maecenas egestas enim lacinia gravida suscipit. Mauris nunc sem, dictum vel diam ut, rhoncus feugiat magna.
+A rectangular progress bar view for SwiftUI.
+
+Example:
+
+```swift
+@State private var progress: CGFloat = 0.75
+
+VStack(spacing: 30) {
+    ProgressBar(progress: $progress, color: .green, backgroundColor: .clear)
+        .frame(width: 300, height: 20)
+    
+    ProgressBar(progress: $progress, color: .orange, backgroundColor: .orange.opacity(0.2))
+        .frame(width: 300, height: 20)
+    
+    ProgressBar(progress: $progress, colors: [.red, .blue])
+        .frame(width: 300, height: 16)
+    
+    ProgressBar(progress: $progress, color: .blue)
+        .frame(width: 300, height: 8)
+    
+    ProgressBar(progress: $progress, colors: [.indigo, .teal])
+        .frame(width: 300, height: 8)
+}
+.padding()
+```
+
+This view displays a rectangular progress indicator that fills up based on the current `progress`. The rectangle can be customized with different `colors` and a `backgroundColor`. If a gradient is desired, provide multiple colors.
+
+<img src="https://github.com/user-attachments/assets/60cfef78-3aaa-4567-ae3e-b01a099d6aeb" width="220">
+
+Parameters:
+- `progress`: A binding to a `CGFloat` that represents the current progress (from 0.0 to 1.0).
+- `color`: The color of the bar's tint.
+- `colors`: An array of `Color` to create a gradient for the progress bar (used when more than one color is desired).
+- `backgroundColor`: The color of the bar's background.
+
+You can use either a single color or a gradient of colors for the progress bar. The background of the bar can also be customized.
+
+Size:
+- Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 
 ## QRScanner
 
