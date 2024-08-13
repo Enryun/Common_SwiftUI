@@ -249,7 +249,7 @@ Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lob
 
 ## LoadingIndicator
 
-### 4.1. Simple Loading Indicator:
+### 4.1. SimpleLoadingIndicator:
 
 A simple, customizable loading indicator view. This view displays a circular loading indicator that rotates according to the specified loading speed. The appearance of the indicator, including its color, background color, line width, and speed, can be customized.
 
@@ -274,7 +274,7 @@ Visibility and Size:
 - Frame Size: Adjust the indicator's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 - Dynamic Visibility: Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
 
-### 4.2. Fancy Loading View
+### 4.2. FancyLoadingView
 
 A SwiftUI view that displays a series of animated concentric circles, creating a dynamic loading indicator.
 
@@ -290,6 +290,25 @@ https://github.com/user-attachments/assets/ceefa337-ac2d-4001-ae81-c5ee111a033c
 
 Parameters:
 - `color`: The color of the circle strokes. The default is `.primary`.
+
+Visibility: 
+- Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
+
+### 4.3. ShimmerView
+
+A view displaying a shimmering loading placeholder.
+
+This view simulates a 'shimmer' effect commonly used as a placeholder during content loading. It consists of multiple shimmering elements: a pair of small circular views at the top and bottom, and larger rectangular views in between, all showcasing the shimmer effect.
+
+Example:
+
+```swift
+ShimmerView()
+```
+
+No additional configuration is needed. The shimmer effect starts automatically, simulating content loading in your UI.
+
+https://github.com/user-attachments/assets/8f921028-2d13-4ed6-9281-998a883fe53e
 
 Visibility: 
 - Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
