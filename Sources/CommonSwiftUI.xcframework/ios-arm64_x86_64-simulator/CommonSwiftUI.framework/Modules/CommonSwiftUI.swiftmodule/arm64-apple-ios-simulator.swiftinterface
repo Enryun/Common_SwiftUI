@@ -147,7 +147,7 @@ public struct RingProgress : SwiftUI.View {
   public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI12RingProgressV4bodyQrvp", 0) __
 }
 public struct DropDown<Content, PlaceHolder, Item> : SwiftUI.View where Content : SwiftUI.View, PlaceHolder : SwiftUI.View, Item : Swift.Hashable {
-  public init(options: [Item], selection: SwiftUI.Binding<Item>, rowHeight: CoreFoundation.CGFloat = 55, @SwiftUI.ViewBuilder displayItem: @escaping (Item, Swift.Bool, Swift.Bool) -> Content, @SwiftUI.ViewBuilder placeHolder: @escaping () -> PlaceHolder = { EmptyView() })
+  public init(options: [Item], selection: SwiftUI.Binding<Item>, rowHeight: CoreFoundation.CGFloat = 55, @SwiftUI.ViewBuilder displayItem: @escaping (Item, Swift.Bool, Swift.Bool) -> Content, @SwiftUI.ViewBuilder placeHolder: @escaping (Swift.Bool) -> PlaceHolder = { _ in EmptyView() })
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }

@@ -6513,7 +6513,7 @@
               {
                 "kind": "TypeFunc",
                 "name": "Function",
-                "printedName": "() -> τ_0_1",
+                "printedName": "(Swift.Bool) -> τ_0_1",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -6522,16 +6522,17 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
                   }
                 ],
                 "hasDefaultArg": true
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:13CommonSwiftUI8DropDownV7options9selection9rowHeight11displayItem11placeHolderACyxq_q0_GSayq0_G_0bC07BindingVyq0_G14CoreFoundation7CGFloatVxq0__S2btcq_yctcfc",
-            "mangledName": "$s13CommonSwiftUI8DropDownV7options9selection9rowHeight11displayItem11placeHolderACyxq_q0_GSayq0_G_0bC07BindingVyq0_G12CoreGraphics7CGFloatVxq0__S2btcq_yctcfc",
+            "usr": "s:13CommonSwiftUI8DropDownV7options9selection9rowHeight11displayItem11placeHolderACyxq_q0_GSayq0_G_0bC07BindingVyq0_G14CoreFoundation7CGFloatVxq0__S2btcq_Sbctcfc",
+            "mangledName": "$s13CommonSwiftUI8DropDownV7options9selection9rowHeight11displayItem11placeHolderACyxq_q0_GSayq0_G_0bC07BindingVyq0_G12CoreGraphics7CGFloatVxq0__S2btcq_Sbctcfc",
             "moduleName": "CommonSwiftUI",
             "genericSig": "<τ_0_0, τ_0_1, τ_0_2 where τ_0_0 : SwiftUI.View, τ_0_1 : SwiftUI.View, τ_0_2 : Swift.Hashable>",
             "sugared_genericSig": "<Content, PlaceHolder, Item where Content : SwiftUI.View, PlaceHolder : SwiftUI.View, Item : Swift.Hashable>",
@@ -27743,443 +27744,450 @@
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "BooleanLiteral",
-      "offset": 2113,
+      "offset": 2493,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "BooleanLiteral",
-      "offset": 2166,
+      "offset": 2546,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "BooleanLiteral",
-      "offset": 2214,
+      "offset": 2594,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "IntegerLiteral",
-      "offset": 2434,
+      "offset": 2818,
       "length": 2,
       "value": "55"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3201,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "IntegerLiteral",
-      "offset": 2990,
+      "offset": 3388,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "IntegerLiteral",
-      "offset": 3636,
+      "offset": 4034,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "IntegerLiteral",
-      "offset": 3891,
+      "offset": 4289,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "FloatLiteral",
-      "offset": 4161,
+      "offset": 4559,
       "length": 3,
       "value": "0.6"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "FloatLiteral",
-      "offset": 4183,
+      "offset": 4581,
       "length": 3,
       "value": "0.7"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "FloatLiteral",
-      "offset": 4203,
+      "offset": 4601,
       "length": 3,
       "value": "0.7"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "BooleanLiteral",
-      "offset": 4276,
+      "offset": 4674,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "FloatLiteral",
-      "offset": 4419,
+      "offset": 4817,
       "length": 4,
       "value": "0.25"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "BooleanLiteral",
-      "offset": 4510,
+      "offset": 4908,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "BooleanLiteral",
-      "offset": 4643,
+      "offset": 5041,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "FloatLiteral",
-      "offset": 5137,
+      "offset": 5535,
       "length": 3,
       "value": "0.6"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "FloatLiteral",
-      "offset": 5159,
+      "offset": 5557,
       "length": 3,
       "value": "0.7"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "FloatLiteral",
-      "offset": 5179,
+      "offset": 5577,
       "length": 3,
       "value": "0.7"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1960,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2034,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2081,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "FloatLiteral",
-      "offset": 2242,
+      "offset": 2104,
       "length": 3,
       "value": "0.3"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 2521,
+      "offset": 2776,
       "length": 3,
       "value": "360"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 2582,
+      "offset": 2845,
       "length": 3,
       "value": "360"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 3049,
+      "offset": 2927,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 3070,
+      "offset": 2948,
       "length": 3,
       "value": "360"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 3077,
+      "offset": 2955,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 3182,
+      "offset": 3060,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 3236,
+      "offset": 3114,
       "length": 3,
       "value": "360"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 3405,
+      "offset": 3283,
       "length": 3,
       "value": "-90"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 3774,
+      "offset": 3652,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 3968,
+      "offset": 3846,
       "length": 2,
       "value": "90"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "FloatLiteral",
-      "offset": 4249,
+      "offset": 4127,
       "length": 3,
       "value": "0.3"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 4272,
+      "offset": 4150,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 4278,
+      "offset": 4156,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 4284,
+      "offset": 4162,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 4354,
+      "offset": 4232,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "BooleanLiteral",
+      "offset": 4486,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
+      "kind": "IntegerLiteral",
       "offset": 4608,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4730,
       "length": 3,
       "value": "-90"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "FloatLiteral",
-      "offset": 4961,
+      "offset": 4839,
       "length": 3,
       "value": "0.3"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 4984,
+      "offset": 4862,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 4990,
+      "offset": 4868,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 4996,
+      "offset": 4874,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 5115,
+      "offset": 4993,
       "length": 2,
       "value": "90"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 5214,
+      "offset": 5092,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "BooleanLiteral",
-      "offset": 5468,
+      "offset": 5346,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 5590,
+      "offset": 5468,
       "length": 3,
       "value": "-90"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 5896,
+      "offset": 5774,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 6090,
+      "offset": 5968,
       "length": 2,
       "value": "90"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "FloatLiteral",
-      "offset": 6368,
+      "offset": 6246,
       "length": 3,
       "value": "0.3"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 6391,
+      "offset": 6269,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 6397,
+      "offset": 6275,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 6403,
+      "offset": 6281,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 6472,
+      "offset": 6350,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 6827,
+      "offset": 6705,
       "length": 3,
       "value": "-90"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "FloatLiteral",
-      "offset": 7058,
+      "offset": 6936,
       "length": 3,
       "value": "0.3"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 7081,
+      "offset": 6959,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 7087,
+      "offset": 6965,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 7093,
+      "offset": 6971,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 7212,
+      "offset": 7090,
       "length": 2,
       "value": "90"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 7308,
+      "offset": 7186,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 7663,
+      "offset": 7541,
       "length": 3,
       "value": "-90"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 7830,
+      "offset": 7708,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 7834,
+      "offset": 7712,
       "length": 2,
       "value": "60"
+    },
+    {
+      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7801,
+      "length": 1,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7806,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7904,
+      "length": 1,
+      "value": "2"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
@@ -28198,161 +28206,133 @@
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 8026,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8045,
-      "length": 1,
-      "value": "5"
-    },
-    {
-      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8050,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
-      "kind": "IntegerLiteral",
-      "offset": 8054,
+      "offset": 7932,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 8059,
+      "offset": 7937,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 8102,
+      "offset": 7980,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 8108,
+      "offset": 7986,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 8178,
+      "offset": 8056,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "Array",
-      "offset": 8259,
+      "offset": 8137,
       "length": 13,
       "value": "[6, 9, 12, 3]"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "StringLiteral",
-      "offset": 8352,
+      "offset": 8230,
       "length": 17,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "StringLiteral",
-      "offset": 8368,
+      "offset": 8246,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 8526,
+      "offset": 8404,
       "length": 3,
       "value": "-90"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 8572,
+      "offset": 8450,
       "length": 2,
       "value": "90"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 8576,
+      "offset": 8454,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 8645,
+      "offset": 8523,
       "length": 2,
       "value": "90"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "BooleanLiteral",
-      "offset": 8754,
+      "offset": 8632,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 8994,
+      "offset": 8863,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 9029,
+      "offset": 8898,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 9099,
+      "offset": 8968,
       "length": 3,
       "value": "180"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 9128,
+      "offset": 8997,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 9152,
-      "length": 3,
-      "value": "360"
-    },
-    {
-      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
-      "kind": "IntegerLiteral",
-      "offset": 9214,
+      "offset": 9021,
       "length": 3,
       "value": "360"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "BooleanLiteral",
-      "offset": 9963,
+      "offset": 9706,
       "length": 4,
       "value": "true"
     },
