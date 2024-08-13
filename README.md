@@ -143,6 +143,38 @@ Parameters:
 - `verticalPadding`: The vertical padding inside the button. Defaults to `10`.
 - `horizontalPadding`: The horizontal padding inside the button. Defaults to `20`.
 
+### 2.3 GrowingButtonStyle:
+
+A `ButtonStyle` for SwiftUI that scales the button on press, with customizable shape and color styles.
+
+```swift
+let gradient = LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing)
+
+VStack(spacing: 25) {
+    Button("Growing 1") { }
+        .buttonStyle(GrowingButtonStyle())
+    
+    Button("Growing 2") { }
+        .buttonStyle(GrowingButtonStyle(textColor: .primary, backgroundColor: .green, shape: .rect(cornerRadius: 4)))
+    
+    Button("Growing 3") { }
+        .buttonStyle(GrowingButtonStyle(textColor: .primary, backgroundColor: gradient, shape: .rect(cornerRadius: 4)))
+}
+```
+
+This button style provides an interactive feedback effect by increasing the button's scale when pressed. It allows for customization of the button's foreground and background colors, shape, and padding.
+
+https://github.com/user-attachments/assets/9520da94-8b87-4a84-83e9-da7b79dbaeab
+
+Parameters:
+- `textColor`: The color or style for the text inside the button, defaulting to `.white`.
+- `backgroundColor`: The background color or style of the button, conforming to `ShapeStyle`, with a default of `.blue`.
+- `shape`: The custom shape for the button, conforming to `Shape`. The default shape is `Capsule()`.
+- `verticalPadding`: The vertical padding inside the button. Defaults to `10`.
+- `horizontalPadding`: The horizontal padding inside the button. Defaults to `20`.
+
+
+
 ## Dropdown
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet velit dolor, sed porta est ullamcorper in. Nulla at condimentum dolor. Etiam mattis nibh nec sollicitudin facilisis. Nam pretium justo neque, ut tempus arcu tristique ut. Mauris in tortor volutpat, euismod orci id, iaculis quam. Sed vel lacus ex. Integer nibh ex, interdum eu velit vel, fringilla placerat quam. Duis viverra porta nibh, in condimentum purus. Ut in dolor suscipit, maximus purus a, mattis elit. Suspendisse hendrerit feugiat velit a ultricies. Aenean fringilla aliquam odio, non pellentesque odio eleifend in. Suspendisse potenti.
