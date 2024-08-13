@@ -173,7 +173,65 @@ Parameters:
 - `verticalPadding`: The vertical padding inside the button. Defaults to `10`.
 - `horizontalPadding`: The horizontal padding inside the button. Defaults to `20`.
 
+### 2.4 LoadingButtonStyle:
 
+A `ButtonStyle` for SwiftUI that provides a customizable button with a loading indicator.
+
+```swift
+@State private var isLoading: Bool = false
+
+VStack(spacing: 25) {
+    Button("Loading Button 1") {
+        isLoading = true
+        // Simulate a network request or some action
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            isLoading = false
+        }
+    }.buttonStyle(LoadingButtonStyle(isLoading: $isLoading))
+    
+    Button("Loading Button 2") {}
+        .buttonStyle(LoadingButtonStyle(isLoading: $isLoading, loadingState: .leading, backgroundColor: .cyan, horizontalPadding: 40))
+    
+    Button(action: {}, label: {
+        Text("Loading Button 3")
+            .frame(width: 250, height: 40)
+    })
+    .buttonStyle(LoadingButtonStyle(isLoading: $isLoading, loadingState: .resize, backgroundColor: .indigo))
+    
+    Button(action: {}, label: {
+        HStack(spacing: 12) {
+            Image(systemName: "person.crop.circle")
+                .font(.title2)
+            
+            Text("Loading Button 4")
+                .font(.title)
+        }
+        .frame(width: 250, height: 40)
+    })
+    .buttonStyle(LoadingButtonStyle(isLoading: $isLoading, loadingState: .leading, backgroundColor: .red, disabledLoadingColor: .red.opacity(0.5)))
+    
+    Button(action: {}, label: {
+        Image(systemName: "heart.fill")
+            .font(.title)
+            .padding(5)
+    })
+    .buttonStyle(LoadingButtonStyle(isLoading: $isLoading, loadingState: .top, backgroundColor: .green, shape: .circle))
+}
+```
+
+This button style offers interactive feedback by displaying a `ProgressView` when in a loading state. It allows for extensive customization of the button's appearance, including text color, background color, shape, padding, and the position of the loading indicator. When loading, the button can optionally gray out the background and disable user interactions.
+
+https://github.com/user-attachments/assets/b6fa0b46-53dc-4f81-bc84-fd467c74e407
+
+Parameters:
+- `isLoading`: A binding to a boolean indicating whether the button is in a loading state.
+- `loadingState`: An enum that determines the button's behavior when loading. Defaults to `.center`.
+- `textColor`: The color or style for the text inside the button, defaulting to `.white`.
+- `backgroundColor`: The background color or style of the button, conforming to `ShapeStyle`, with a default of `.blue`.
+- `disabledLoadingColor`: The background color or style of the button when it is loading, conforming to `ShapeStyle`, with a default of `.gray`.
+- `shape`: The custom shape for the button, conforming to `Shape`. The default shape is `Capsule()`.
+- `verticalPadding`: The vertical padding inside the button. Defaults to `10`.
+- `horizontalPadding`: The horizontal padding inside the button. Defaults to `20`.
 
 ## Dropdown
 
