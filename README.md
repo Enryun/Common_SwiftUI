@@ -540,9 +540,50 @@ Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lob
 
 ## Text
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet velit dolor, sed porta est ullamcorper in. Nulla at condimentum dolor. Etiam mattis nibh nec sollicitudin facilisis. Nam pretium justo neque, ut tempus arcu tristique ut. Mauris in tortor volutpat, euismod orci id, iaculis quam. Sed vel lacus ex. Integer nibh ex, interdum eu velit vel, fringilla placerat quam. Duis viverra porta nibh, in condimentum purus. Ut in dolor suscipit, maximus purus a, mattis elit. Suspendisse hendrerit feugiat velit a ultricies. Aenean fringilla aliquam odio, non pellentesque odio eleifend in. Suspendisse potenti.
+### 9.1. CircularText:
 
-Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lobortis laoreet nunc tempor. Duis at consectetur enim, nec ultrices velit. Suspendisse ac risus enim. Nullam feugiat nisi nulla, a vulputate augue mattis ac. Nunc molestie ligula dui, vitae faucibus nibh iaculis at. Etiam blandit nulla sit amet vestibulum dapibus. Ut feugiat tristique leo a luctus. Sed pharetra est vitae magna suscipit, eu interdum metus elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum faucibus arcu. Quisque feugiat et sapien eget lobortis. Maecenas egestas enim lacinia gravida suscipit. Mauris nunc sem, dictum vel diam ut, rhoncus feugiat magna.
+A SwiftUI view that arranges text in a circular path with enhanced customization.
+
+`CircularText` displays text along a specified radius, offering settings for alignment, character spacing, and style reversal. It utilizes a generic view modifier to apply custom styling to each character, making it versatile for various design needs.
+
+Example:
+
+```swift
+VStack(spacing: 40) {
+    ZStack {
+        Circle()
+            .fill(.gray.opacity(0.3))
+        
+        CircularText(text: "#OPENTOWORK", radius: 150, spacing: 8, alignment: .outside, reverseStyle: false)
+            .font(.largeTitle.bold())
+            .lineSpacing(5)
+    }
+    .frame(width: 300, height: 300)
+    
+    ZStack {
+        Circle()
+            .fill(.gray.opacity(0.3))
+        
+        CircularText(text: "#OPENTOWORK", radius: 150, spacing: 8, alignment: .inside, reverseStyle: true, textModifier: { text in
+            text.font(.largeTitle.bold())
+                .lineSpacing(5)
+        })
+        .rotationEffect(.degrees(-140))
+    }
+    .frame(width: 300, height: 300)
+}
+```
+This view is perfect for creating visually compelling text effects such as circular labels or decorative text in a SwiftUI application.
+
+<img src="https://github.com/user-attachments/assets/556ebe60-acb5-440a-a69a-7d6b5ebe987e" width="220">
+
+Parameters:
+- `text`: The string of text to be displayed circularly.
+- `radius`: The radius of the circle along which the text is arranged.
+- `spacing`: The spacing between characters, defaulting to 4.
+- `alignment`: The position of the text relative to the circle's radius (`inside`, `center`, `outside`).
+- `reverseStyle`: If `true`, reverses the direction and orientation of the text.
+- `textModifier`: A closure that allows for custom styling of the text, applied per character.
 
 ## TextField
 
