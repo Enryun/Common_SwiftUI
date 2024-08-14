@@ -251,7 +251,7 @@ Parameters:
 - `options`: An array of `Item`, representing the content of the dropdown. Conform to `Hashable`.
 - `selection`: A binding to the currently selected item of type `Item`.
 - `rowHeight`: Height of each dropdown row.
-- `displayItem`: A closure that provides a view for each item. It receives three parameters: `item`: The current item to display, `isSelected`: A Boolean that indicates if the item is currently selected, and `isPlaceHolderShow`: A Boolean that indicates if the placeholder is currently shown.
+- `displayItem`: A closure that provides a view for each item. It receives four parameters: `item`: The current item to display, `isSelected`: A Boolean that indicates if the item is currently selected, `isPlaceHolderShow`: A Boolean that indicates if the placeholder is currently shown, and `isExpand`: A Boolean that indicates if the dropdown is expanded.
 - `placeHolder`: An optional closure that returns a view used as the dropdown's placeholder. It receives a Boolean parameter indicating if the dropdown is expanded.
 
 Example 1:
@@ -285,7 +285,47 @@ https://github.com/user-attachments/assets/7c85934a-fc12-4ab2-8049-68783b2a14ef
 Example 2:
 
 ```swift
+enum DropDownOptions: String, CaseIterable {
+        case north = "North"
+        case south = "South"
+        case east = "East"
+        case west = "West"
+}
+@State private var selectedOption: DropDownOptions = .east
+
+VStack {
+    DropDown(options: DropDownOptions.allCases, selection: $selectedOption) { item, isSelected, isPlaceHolderShow, isExpand in
+        Text(item.rawValue)
+            .foregroundStyle(.black)
+            .font(.title3)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .padding(.horizontal)
+            .background {
+                Rectangle()
+                    .fill(isSelected && !isPlaceHolderShow ? .clear : .gray.opacity(0.5))
+            }
+    } placeHolder: { isExpand in
+        HStack {
+            Text("Select the Direction")
+                .foregroundStyle(.primary)
+                .font(.title3)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            
+            Spacer()
+            
+            Image(systemName: "chevron.down")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 20, height: 20)
+                .rotationEffect(isExpand ? .degrees(90) : .zero)
+        }
+    }
+
+    Spacer()
+}
 ```
+
+https://github.com/user-attachments/assets/bba43eb8-1d4f-4d22-98d3-2c950dd0000c
 
 ## LoadingIndicator
 
