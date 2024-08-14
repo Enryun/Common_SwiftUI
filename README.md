@@ -257,6 +257,58 @@ Parameters:
 Example 1:
 
 ```swift
+private var options: [String] = ["Option 1", "Option 2", "Option 3", "Option 4"]
+@State private var selectedOption: String = "Option 1"
+
+VStack {
+    DropDown(options: options, selection: $selectedOption) { item, isSelected, isPlaceHolderShow, isExpand in
+        Text(item)
+            .foregroundStyle(isSelected ? .black : .white)
+            .font(.title3)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .padding(.horizontal)
+            .background {
+                Rectangle()
+                    .fill(isSelected ? .green : .gray)
+            }
+    }
+
+    Spacer()
+}
+```
+
+https://github.com/user-attachments/assets/286a2aee-e194-405e-abd7-963fe12dbaf6
+
+Example 2:
+
+```swift
+private var options: [String] = ["Option 1", "Option 2", "Option 3", "Option 4"]
+@State private var selectedOption: String = "Option 1"
+
+VStack {
+    DropDown(options: options, selection: $selectedOption4, rowHeight: 68) { item, isSelected, isPlaceHolderShow, isExpand in
+        Text(item)
+            .foregroundStyle(.black)
+            .font(.title3)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .padding(.horizontal)
+            .background {
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(isSelected ? .green : .gray, lineWidth: 2)
+                    .padding(2)
+            }
+            .padding(.top, 8)
+    }
+
+    Spacer()
+}
+```
+
+https://github.com/user-attachments/assets/1c3b267c-5fea-45e6-b611-0ab26a763fbc
+
+Example 3:
+
+```swift
 enum DropDownOptions: String, CaseIterable {
         case north = "North"
         case south = "South"
@@ -282,7 +334,7 @@ VStack {
 
 https://github.com/user-attachments/assets/7c85934a-fc12-4ab2-8049-68783b2a14ef
 
-Example 2:
+Example 4:
 
 ```swift
 enum DropDownOptions: String, CaseIterable {
@@ -327,32 +379,9 @@ VStack {
 
 https://github.com/user-attachments/assets/bba43eb8-1d4f-4d22-98d3-2c950dd0000c
 
-Example 3:
+Use multiple DropDowns in 1 Scene for complicated form:
 
-```swift
-private var options: [String] = ["Option 1", "Option 2", "Option 3", "Option 4"]
-@State private var selectedOption: String = "Option 1"
-
-VStack {
-    DropDown(options: options, selection: $selectedOption) { item, isSelected, isPlaceHolderShow, isExpand in
-        Text(item)
-            .foregroundStyle(isSelected ? .black : .white)
-            .font(.title3)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .padding(.horizontal)
-            .background {
-                Rectangle()
-                    .fill(isSelected ? .green : .gray)
-            }
-    }
-
-    Spacer()
-}
-```
-
-https://github.com/user-attachments/assets/286a2aee-e194-405e-abd7-963fe12dbaf6
-
-
+https://github.com/user-attachments/assets/7f7b988e-8cc7-41f1-84e1-fe08f9f8ce22
 
 ## LoadingIndicator
 
