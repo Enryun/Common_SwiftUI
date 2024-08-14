@@ -945,9 +945,41 @@ This view is ideal for scenarios where text needs to be presented in a dramatic,
 
 ## TextField
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet velit dolor, sed porta est ullamcorper in. Nulla at condimentum dolor. Etiam mattis nibh nec sollicitudin facilisis. Nam pretium justo neque, ut tempus arcu tristique ut. Mauris in tortor volutpat, euismod orci id, iaculis quam. Sed vel lacus ex. Integer nibh ex, interdum eu velit vel, fringilla placerat quam. Duis viverra porta nibh, in condimentum purus. Ut in dolor suscipit, maximus purus a, mattis elit. Suspendisse hendrerit feugiat velit a ultricies. Aenean fringilla aliquam odio, non pellentesque odio eleifend in. Suspendisse potenti.
+### 10.1. LimitedTextField:
 
-Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lobortis laoreet nunc tempor. Duis at consectetur enim, nec ultrices velit. Suspendisse ac risus enim. Nullam feugiat nisi nulla, a vulputate augue mattis ac. Nunc molestie ligula dui, vitae faucibus nibh iaculis at. Etiam blandit nulla sit amet vestibulum dapibus. Ut feugiat tristique leo a luctus. Sed pharetra est vitae magna suscipit, eu interdum metus elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum faucibus arcu. Quisque feugiat et sapien eget lobortis. Maecenas egestas enim lacinia gravida suscipit. Mauris nunc sem, dictum vel diam ut, rhoncus feugiat magna.
+A SwiftUI view that provides a text field with a character limit and visual feedback on input progress.
+
+`LimitedTextField` offers a customizable text input field that restricts the number of characters based on a specified limit. It features visual indicators such as a progress ring or text counter and can be styled with custom colors and borders.
+
+Parameters:
+- `config`: Configuration settings including character limit, tint, resizing behavior, and typing overflow control. Details below.
+- `hint`: Placeholder text displayed when the text field is empty.
+- `value`: A binding to the text inputted by the user.
+
+Configurations:
+
+`Config`: Manages the main settings for the text field:
+- `limit`: The maximum number of characters.
+- `tint`: The color of the text and progress indicators.
+- `autoResizes`: Whether the text field should automatically resize to fit content.
+- `allowExcessTyping`: Allows input beyond the limit without saving excess characters.
+- `progressConfig`: Settings for the progress indicators.
+- `borderConfig`: Styling options for the border.
+
+`ProgressConfig`: Configures visual feedback on typing progress:
+- `showsRing`: Displays a circular progress ring.
+- `showsText`: Shows current and maximum character counts.
+- `alignment`: Aligns the progress text indicator.
+
+`BorderConfig`: Customizes the border appearance:
+- `show`: Enables or disables the border.
+- `radius`: Sets the border radius.
+- `width`: Defines the border thickness.
+
+This component is ideal for forms, comments, or any user input that requires length constraints.
+
+### 10.2. ValidationTextField:
+
 
 ## Toast
 
