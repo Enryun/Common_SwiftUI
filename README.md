@@ -588,9 +588,51 @@ Size:
 
 ## QRScanner
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet velit dolor, sed porta est ullamcorper in. Nulla at condimentum dolor. Etiam mattis nibh nec sollicitudin facilisis. Nam pretium justo neque, ut tempus arcu tristique ut. Mauris in tortor volutpat, euismod orci id, iaculis quam. Sed vel lacus ex. Integer nibh ex, interdum eu velit vel, fringilla placerat quam. Duis viverra porta nibh, in condimentum purus. Ut in dolor suscipit, maximus purus a, mattis elit. Suspendisse hendrerit feugiat velit a ultricies. Aenean fringilla aliquam odio, non pellentesque odio eleifend in. Suspendisse potenti.
+A robust QR code scanner view for SwiftUI, providing interactive scanning capabilities.
 
-Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lobortis laoreet nunc tempor. Duis at consectetur enim, nec ultrices velit. Suspendisse ac risus enim. Nullam feugiat nisi nulla, a vulputate augue mattis ac. Nunc molestie ligula dui, vitae faucibus nibh iaculis at. Etiam blandit nulla sit amet vestibulum dapibus. Ut feugiat tristique leo a luctus. Sed pharetra est vitae magna suscipit, eu interdum metus elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum faucibus arcu. Quisque feugiat et sapien eget lobortis. Maecenas egestas enim lacinia gravida suscipit. Mauris nunc sem, dictum vel diam ut, rhoncus feugiat magna.
+`QRScannerView` integrates camera functionality to scan QR codes and handle the results dynamically through a completion handler. It supports customization of scanning animation and error handling.
+
+Parameters:
+- `isScanning`: A binding to control the scanning process.
+- `showScanningAnimation`: A Boolean value that determines whether to show a scanning animation.
+- `showErrorAlert`: A Boolean value that determines whether to show an alert on scanning errors.
+- `completion`: A closure executed with the scanning result, returning a `String` on success or an `Error` on failure.
+
+```swift
+@State var isScanning: Bool = false
+@State var successResult: String = ""
+
+VStack(spacing: 20) {
+    Text(successResult)
+        .font(.title)
+        .fontWeight(.semibold)
+    
+    QRScannerView(isScanning: $isScanning, showScanningAnimation: true, showErrorAlert: false) { result in
+        switch result {
+        case .success(let result):
+            successResult = result
+        case .failure(let error):
+            print("This is Error Cases")
+            print(error)
+            print(error.localizedDescription)
+        }
+    }
+    
+    Button("Start Scanning") {
+        successResult = ""
+        isScanning = true
+    }
+    
+    Button("Stop Scanning") {
+        successResult = ""
+        isScanning = false
+    }
+}
+```
+
+https://github.com/user-attachments/assets/5d320f81-59a1-4581-99dd-b3efb1566532
+
+This component is designed to provide a seamless integration of QR scanning functionality within your SwiftUI applications, enhancing user interaction and data capture capabilities.
 
 ## SegmentControl
 
