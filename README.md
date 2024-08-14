@@ -243,9 +243,49 @@ Parameters:
 
 ## Dropdown
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet velit dolor, sed porta est ullamcorper in. Nulla at condimentum dolor. Etiam mattis nibh nec sollicitudin facilisis. Nam pretium justo neque, ut tempus arcu tristique ut. Mauris in tortor volutpat, euismod orci id, iaculis quam. Sed vel lacus ex. Integer nibh ex, interdum eu velit vel, fringilla placerat quam. Duis viverra porta nibh, in condimentum purus. Ut in dolor suscipit, maximus purus a, mattis elit. Suspendisse hendrerit feugiat velit a ultricies. Aenean fringilla aliquam odio, non pellentesque odio eleifend in. Suspendisse potenti.
+A flexible and customizable dropdown component for SwiftUI. This view allows for displaying a list of selectable items with customizable appearance and interactivity.
 
-Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lobortis laoreet nunc tempor. Duis at consectetur enim, nec ultrices velit. Suspendisse ac risus enim. Nullam feugiat nisi nulla, a vulputate augue mattis ac. Nunc molestie ligula dui, vitae faucibus nibh iaculis at. Etiam blandit nulla sit amet vestibulum dapibus. Ut feugiat tristique leo a luctus. Sed pharetra est vitae magna suscipit, eu interdum metus elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum faucibus arcu. Quisque feugiat et sapien eget lobortis. Maecenas egestas enim lacinia gravida suscipit. Mauris nunc sem, dictum vel diam ut, rhoncus feugiat magna.
+This component offers flexibility in appearance and behavior, supporting dynamic content adjustments based on user selections. It provides customization options for row height, and allows for an optional placeholder view.
+
+Parameters:
+- `options`: An array of `Item`, representing the content of the dropdown. Conform to `Hashable`.
+- `selection`: A binding to the currently selected item of type `Item`.
+- `rowHeight`: Height of each dropdown row.
+- `displayItem`: A closure that provides a view for each item. It receives three parameters: `item`: The current item to display, `isSelected`: A Boolean that indicates if the item is currently selected, and `isPlaceHolderShow`: A Boolean that indicates if the placeholder is currently shown.
+- `placeHolder`: An optional closure that returns a view used as the dropdown's placeholder. It receives a Boolean parameter indicating if the dropdown is expanded.
+
+Example 1:
+
+```swift
+enum DropDownOptions: String, CaseIterable {
+        case north = "North"
+        case south = "South"
+        case east = "East"
+        case west = "West"
+}
+@State private var selectedOption: DropDownOptions = .east
+
+VStack {
+    DropDown(options: DropDownOptions.allCases, selection: $selectedOption, rowHeight: 60) { item, isSelected, isPlaceHolderShow in
+        Text(item.rawValue)
+            .foregroundStyle(isSelected && !isPlaceHolderShow ? .blue : .gray)
+            .font(.title3)
+    } placeHolder: {_ in
+        Text("Select an option")
+            .foregroundStyle(.gray)
+            .font(.title3)
+    }
+
+    Spacer()
+}
+```
+
+https://github.com/user-attachments/assets/7c85934a-fc12-4ab2-8049-68783b2a14ef
+
+Example 2:
+
+```swift
+```
 
 ## LoadingIndicator
 
