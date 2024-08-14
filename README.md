@@ -592,6 +592,42 @@ Parameters:
 
 ### 8.2. RingSlider:
 
+A customizable ring-shaped slider view for selecting angular ranges.
+
+`RingSlider` provides a visual and interactive way to select a range of angles using draggable handles that can be customized with images or styled directly via a `ControlConfig`. The appearance of the slider, including line width, colors, and handle customization, is adjustable.
+
+Example:
+
+```swift
+@State var startAngle: Angle = .degrees(50)
+@State var endAngle: Angle = .degrees(90)
+
+VStack(spacing: 50) {
+    RingSlider(
+        startAngle: $startAngle,
+        toAngle: $endAngle,
+        lineWidth: 40,
+        tint: .purple,
+        controlConfig: .init(width: 40, startSliderImage: Image(systemName: "moon.fill"),
+                             endSliderImage: Image(systemName: "alarm"))
+    )
+    .frame(width: 300, height: 300)
+    
+    Text("Start Angle: \(Int(startAngle.degrees)) - End Angle: \(Int(endAngle.degrees))")
+}
+```
+
+This configuration leverages the `ControlConfig` to apply custom images for the handles and additional styling options, enhancing the user interaction experience.
+
+https://github.com/user-attachments/assets/e87cc06d-2877-4b49-88e8-b45165117e48
+
+Parameters:
+- `startAngle`: The starting angle of the slider, modifiable via a binding.
+- `toAngle`: The ending angle of the slider, modifiable via a binding.
+- `lineWidth`: The thickness of the ring's line.
+- `tint`: The primary color of the slider's line and handle if not using images.
+- `backgroundColor`: The color behind the slider's line for contrast.
+- `controlConfig`: Configuration for the slider's handles, including color, width, images, and shadow.
 
 ## Text
 
