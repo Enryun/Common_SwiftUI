@@ -327,6 +327,33 @@ VStack {
 
 https://github.com/user-attachments/assets/bba43eb8-1d4f-4d22-98d3-2c950dd0000c
 
+Example 3:
+
+```swift
+private var options: [String] = ["Option 1", "Option 2", "Option 3", "Option 4"]
+@State private var selectedOption: String = "Option 1"
+
+VStack {
+    DropDown(options: options, selection: $selectedOption) { item, isSelected, isPlaceHolderShow, isExpand in
+        Text(item)
+            .foregroundStyle(isSelected ? .black : .white)
+            .font(.title3)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+            .padding(.horizontal)
+            .background {
+                Rectangle()
+                    .fill(isSelected ? .green : .gray)
+            }
+    }
+
+    Spacer()
+}
+```
+
+https://github.com/user-attachments/assets/286a2aee-e194-405e-abd7-963fe12dbaf6
+
+
+
 ## LoadingIndicator
 
 ### 4.1. SimpleLoadingIndicator:
