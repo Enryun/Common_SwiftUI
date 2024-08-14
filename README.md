@@ -101,9 +101,9 @@ VStack(spacing: 25) {
 }
 ```
 
-This style gives buttons a modern, rounded look suitable for various UI contexts.
-
 <img src="https://github.com/user-attachments/assets/89fcae09-da1b-4470-96b1-b01bd75a692f" width="220">
+
+This style gives buttons a modern, rounded look suitable for various UI contexts.
 
 ### 2.2 ShapeButtonStyle:
 
@@ -143,9 +143,9 @@ VStack(spacing: 25) {
 }
 ```
 
-This style modifies the appearance of buttons to fit within a specified shape, with customizable foreground, background colors and padding. It is highly flexible, accommodating various shapes and color styles.
-
 <img src="https://github.com/user-attachments/assets/bd90bcd0-3510-4796-903e-4f78ac4b12c3" width="220">
+
+This style modifies the appearance of buttons to fit within a specified shape, with customizable foreground, background colors and padding. It is highly flexible, accommodating various shapes and color styles.
 
 ### 2.3 GrowingButtonStyle:
 
@@ -175,9 +175,9 @@ VStack(spacing: 25) {
 }
 ```
 
-This button style provides an interactive feedback effect by increasing the button's scale when pressed. It allows for customization of the button's foreground and background colors, shape, and padding.
-
 https://github.com/user-attachments/assets/9520da94-8b87-4a84-83e9-da7b79dbaeab
+
+This button style provides an interactive feedback effect by increasing the button's scale when pressed. It allows for customization of the button's foreground and background colors, shape, and padding.
 
 ### 2.4 LoadingButtonStyle:
 
@@ -237,9 +237,9 @@ VStack(spacing: 25) {
 }
 ```
 
-This button style offers interactive feedback by displaying a `ProgressView` when in a loading state. It allows for extensive customization of the button's appearance, including text color, background color, shape, padding, and the position of the loading indicator. When loading, the button can optionally gray out the background and disable user interactions.
-
 https://github.com/user-attachments/assets/b6fa0b46-53dc-4f81-bc84-fd467c74e407
+
+This button style offers interactive feedback by displaying a `ProgressView` when in a loading state. It allows for extensive customization of the button's appearance, including text color, background color, shape, padding, and the position of the loading indicator. When loading, the button can optionally gray out the background and disable user interactions.
 
 ## Dropdown
 
@@ -266,7 +266,7 @@ enum DropDownOptions: String, CaseIterable {
 @State private var selectedOption: DropDownOptions = .east
 
 VStack {
-    DropDown(options: DropDownOptions.allCases, selection: $selectedOption, rowHeight: 60) { item, isSelected, isPlaceHolderShow in
+    DropDown(options: DropDownOptions.allCases, selection: $selectedOption, rowHeight: 60) { item, isSelected, isPlaceHolderShow, isExpand in
         Text(item.rawValue)
             .foregroundStyle(isSelected && !isPlaceHolderShow ? .blue : .gray)
             .font(.title3)
@@ -346,9 +346,9 @@ SimpleLoadingIndicator(color: .green, backgroundColor: .clear, lineWidth: 12, lo
     .frame(width: 200, height: 200)
 ```
 
-The loading indicator will rotate continuously to signify an ongoing loading process.
-
 https://github.com/user-attachments/assets/d3031c2d-6f4c-4f94-bfa7-ae2c3dd3e0ac
+
+The loading indicator will rotate continuously to signify an ongoing loading process.
 
 Visibility and Size:
 - Frame Size: Adjust the indicator's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
@@ -367,9 +367,9 @@ Example:
 FancyLoading()
 ```
 
-Each circle in the animation is individually timed to create a smooth, rhythmic effect that visually indicates an ongoing process.
-
 https://github.com/user-attachments/assets/ceefa337-ac2d-4001-ae81-c5ee111a033c
+
+Each circle in the animation is individually timed to create a smooth, rhythmic effect that visually indicates an ongoing process.
 
 Visibility: 
 - Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
@@ -386,9 +386,9 @@ Example:
 ShimmerView()
 ```
 
-No additional configuration is needed. The shimmer effect starts automatically, simulating content loading in your UI.
-
 https://github.com/user-attachments/assets/8f921028-2d13-4ed6-9281-998a883fe53e
+
+No additional configuration is needed. The shimmer effect starts automatically, simulating content loading in your UI.
 
 Visibility: 
 - Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
@@ -431,9 +431,9 @@ VStack(spacing: 30) {
 .padding()
 ```
 
-This view displays a rectangular progress indicator that fills up based on the current `progress`. The rectangle can be customized with different `colors` and a `backgroundColor`. If a gradient is desired, provide multiple colors.
-
 <img src="https://github.com/user-attachments/assets/60cfef78-3aaa-4567-ae3e-b01a099d6aeb" width="220">
+
+This view displays a rectangular progress indicator that fills up based on the current `progress`. The rectangle can be customized with different `colors` and a `backgroundColor`. If a gradient is desired, provide multiple colors.
 
 Size:
 - Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
@@ -476,9 +476,9 @@ VStack(spacing: 50) {
 }
 ```
 
-This view displays a circular progress indicator that fills up based on the current `progress`. The progress circle can be customized with different `lineWidth`, `startAngle`, `colors`, and a `backgroundColor`.
-
 <img src="https://github.com/user-attachments/assets/34af9314-f8e4-4695-ab76-a433d116b9f7" width="220">
+
+This view displays a circular progress indicator that fills up based on the current `progress`. The progress circle can be customized with different `lineWidth`, `startAngle`, `colors`, and a `backgroundColor`.
 
 Size:
 - Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
@@ -521,15 +521,14 @@ VStack(spacing: 50) {
 }
 ```
 
+<img src="https://github.com/user-attachments/assets/aa098c14-1738-4c18-b706-50d8754b920c" width="220">
+
 This view displays a circular progress indicator that fills up based on the current `progress`, but unlike traditional full-circle progress bars, this one fills up to 75% of the circle. The progress circle can be customized with different `lineWidth`, `colors`, and a `backgroundColor`.
 
 The progress bar uniquely fills up to 75% of the circle and starts at a 135-degree angle.
 
-<img src="https://github.com/user-attachments/assets/aa098c14-1738-4c18-b706-50d8754b920c" width="220">
-
 Size:
 - Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
-
 
 ## QRScanner
 
@@ -608,9 +607,9 @@ var body: some View {
 }
 ```
 
-This example demonstrates a `SegmentControl` with custom tab items, including icons and text, showcasing how to integrate it into a SwiftUI view.
-
 https://github.com/user-attachments/assets/6ac4766d-f27f-4885-9b95-927cf67d30cf
+
+This example demonstrates a `SegmentControl` with custom tab items, including icons and text, showcasing how to integrate it into a SwiftUI view.
 
 ## Slider
 
@@ -666,9 +665,9 @@ VStack(spacing: 50) {
 }
 ```
 
-This setup demonstrates configuring a `RangeSlider`, displaying the selected value range with customized control appearance.
-
 https://github.com/user-attachments/assets/1da84ea4-53cc-4565-a63e-8fb03e7b1836
+
+This setup demonstrates configuring a `RangeSlider`, displaying the selected value range with customized control appearance.
 
 ### 8.2. RingSlider:
 
@@ -705,9 +704,9 @@ VStack(spacing: 50) {
 }
 ```
 
-This configuration leverages the `ControlConfig` to apply custom images for the handles and additional styling options, enhancing the user interaction experience.
-
 https://github.com/user-attachments/assets/e87cc06d-2877-4b49-88e8-b45165117e48
+
+This configuration leverages the `ControlConfig` to apply custom images for the handles and additional styling options, enhancing the user interaction experience.
 
 ## Text
 
@@ -752,9 +751,10 @@ VStack(spacing: 40) {
     .frame(width: 300, height: 300)
 }
 ```
-This view is perfect for creating visually compelling text effects such as circular labels or decorative text in a SwiftUI application.
 
 <img src="https://github.com/user-attachments/assets/556ebe60-acb5-440a-a69a-7d6b5ebe987e" width="220">
+
+This view is perfect for creating visually compelling text effects such as circular labels or decorative text in a SwiftUI application.
 
 ### 9.2. HackerText:
 
@@ -811,9 +811,9 @@ VStack(alignment: .leading, spacing: 30) {
 .frame(maxWidth: .infinity, alignment: .leading)
 ```
 
-This view is particularly effective for creating engaging and eye-catching textual displays in apps that require a dramatic presentation.
-
 https://github.com/user-attachments/assets/5c0f3ebb-e8e5-41f4-8a30-20ad7bceab9c
+
+This view is particularly effective for creating engaging and eye-catching textual displays in apps that require a dramatic presentation.
 
 ### 9.3. TypeWriterText:
 
@@ -841,9 +841,9 @@ VStack(spacing: 16){
 }
 ```
 
-This view is ideal for scenarios where text needs to be presented in a dramatic, engaging manner.
-
 https://github.com/user-attachments/assets/824d41a8-1e3d-4c07-9607-c669073a7ab1
+
+This view is ideal for scenarios where text needs to be presented in a dramatic, engaging manner.
 
 ## TextField
 
