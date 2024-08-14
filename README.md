@@ -243,9 +243,49 @@ Parameters:
 
 ## Dropdown
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet velit dolor, sed porta est ullamcorper in. Nulla at condimentum dolor. Etiam mattis nibh nec sollicitudin facilisis. Nam pretium justo neque, ut tempus arcu tristique ut. Mauris in tortor volutpat, euismod orci id, iaculis quam. Sed vel lacus ex. Integer nibh ex, interdum eu velit vel, fringilla placerat quam. Duis viverra porta nibh, in condimentum purus. Ut in dolor suscipit, maximus purus a, mattis elit. Suspendisse hendrerit feugiat velit a ultricies. Aenean fringilla aliquam odio, non pellentesque odio eleifend in. Suspendisse potenti.
+A flexible and customizable dropdown component for SwiftUI. This view allows for displaying a list of selectable items with customizable appearance and interactivity.
 
-Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lobortis laoreet nunc tempor. Duis at consectetur enim, nec ultrices velit. Suspendisse ac risus enim. Nullam feugiat nisi nulla, a vulputate augue mattis ac. Nunc molestie ligula dui, vitae faucibus nibh iaculis at. Etiam blandit nulla sit amet vestibulum dapibus. Ut feugiat tristique leo a luctus. Sed pharetra est vitae magna suscipit, eu interdum metus elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum faucibus arcu. Quisque feugiat et sapien eget lobortis. Maecenas egestas enim lacinia gravida suscipit. Mauris nunc sem, dictum vel diam ut, rhoncus feugiat magna.
+This component offers flexibility in appearance and behavior, supporting dynamic content adjustments based on user selections. It provides customization options for row height, and allows for an optional placeholder view.
+
+Parameters:
+- `options`: An array of `Item`, representing the content of the dropdown. Conform to `Hashable`.
+- `selection`: A binding to the currently selected item of type `Item`.
+- `rowHeight`: Height of each dropdown row.
+- `displayItem`: A closure that provides a view for each item. It receives three parameters: `item`: The current item to display, `isSelected`: A Boolean that indicates if the item is currently selected, and `isPlaceHolderShow`: A Boolean that indicates if the placeholder is currently shown.
+- `placeHolder`: An optional closure that returns a view used as the dropdown's placeholder. It receives a Boolean parameter indicating if the dropdown is expanded.
+
+Example 1:
+
+```swift
+enum DropDownOptions: String, CaseIterable {
+        case north = "North"
+        case south = "South"
+        case east = "East"
+        case west = "West"
+}
+@State private var selectedOption: DropDownOptions = .east
+
+VStack {
+    DropDown(options: DropDownOptions.allCases, selection: $selectedOption, rowHeight: 60) { item, isSelected, isPlaceHolderShow in
+        Text(item.rawValue)
+            .foregroundStyle(isSelected && !isPlaceHolderShow ? .blue : .gray)
+            .font(.title3)
+    } placeHolder: {_ in
+        Text("Select an option")
+            .foregroundStyle(.gray)
+            .font(.title3)
+    }
+
+    Spacer()
+}
+```
+
+https://github.com/user-attachments/assets/7c85934a-fc12-4ab2-8049-68783b2a14ef
+
+Example 2:
+
+```swift
+```
 
 ## LoadingIndicator
 
@@ -592,6 +632,42 @@ Parameters:
 
 ### 8.2. RingSlider:
 
+A customizable ring-shaped slider view for selecting angular ranges.
+
+`RingSlider` provides a visual and interactive way to select a range of angles using draggable handles that can be customized with images or styled directly via a `ControlConfig`. The appearance of the slider, including line width, colors, and handle customization, is adjustable.
+
+Example:
+
+```swift
+@State var startAngle: Angle = .degrees(50)
+@State var endAngle: Angle = .degrees(90)
+
+VStack(spacing: 50) {
+    RingSlider(
+        startAngle: $startAngle,
+        toAngle: $endAngle,
+        lineWidth: 40,
+        tint: .purple,
+        controlConfig: .init(width: 40, startSliderImage: Image(systemName: "moon.fill"),
+                             endSliderImage: Image(systemName: "alarm"))
+    )
+    .frame(width: 300, height: 300)
+    
+    Text("Start Angle: \(Int(startAngle.degrees)) - End Angle: \(Int(endAngle.degrees))")
+}
+```
+
+This configuration leverages the `ControlConfig` to apply custom images for the handles and additional styling options, enhancing the user interaction experience.
+
+https://github.com/user-attachments/assets/e87cc06d-2877-4b49-88e8-b45165117e48
+
+Parameters:
+- `startAngle`: The starting angle of the slider, modifiable via a binding.
+- `toAngle`: The ending angle of the slider, modifiable via a binding.
+- `lineWidth`: The thickness of the ring's line.
+- `tint`: The primary color of the slider's line and handle if not using images.
+- `backgroundColor`: The color behind the slider's line for contrast.
+- `controlConfig`: Configuration for the slider's handles, including color, width, images, and shadow.
 
 ## Text
 
