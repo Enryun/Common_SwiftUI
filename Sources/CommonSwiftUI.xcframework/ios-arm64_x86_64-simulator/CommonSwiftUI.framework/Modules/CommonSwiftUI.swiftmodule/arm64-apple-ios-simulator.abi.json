@@ -6477,7 +6477,7 @@
               {
                 "kind": "TypeFunc",
                 "name": "Function",
-                "printedName": "(τ_0_2, Swift.Bool, Swift.Bool) -> τ_0_0",
+                "printedName": "(τ_0_2, Swift.Bool, Swift.Bool, Swift.Bool) -> τ_0_0",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -6487,12 +6487,18 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Tuple",
-                    "printedName": "(τ_0_2, Swift.Bool, Swift.Bool)",
+                    "printedName": "(τ_0_2, Swift.Bool, Swift.Bool, Swift.Bool)",
                     "children": [
                       {
                         "kind": "TypeNominal",
                         "name": "GenericTypeParam",
                         "printedName": "τ_0_2"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
                       },
                       {
                         "kind": "TypeNominal",
@@ -6531,8 +6537,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:13CommonSwiftUI8DropDownV7options9selection9rowHeight11displayItem11placeHolderACyxq_q0_GSayq0_G_0bC07BindingVyq0_G14CoreFoundation7CGFloatVxq0__S2btcq_Sbctcfc",
-            "mangledName": "$s13CommonSwiftUI8DropDownV7options9selection9rowHeight11displayItem11placeHolderACyxq_q0_GSayq0_G_0bC07BindingVyq0_G12CoreGraphics7CGFloatVxq0__S2btcq_Sbctcfc",
+            "usr": "s:13CommonSwiftUI8DropDownV7options9selection9rowHeight11displayItem11placeHolderACyxq_q0_GSayq0_G_0bC07BindingVyq0_G14CoreFoundation7CGFloatVxq0__S3btcq_Sbctcfc",
+            "mangledName": "$s13CommonSwiftUI8DropDownV7options9selection9rowHeight11displayItem11placeHolderACyxq_q0_GSayq0_G_0bC07BindingVyq0_G12CoreGraphics7CGFloatVxq0__S3btcq_Sbctcfc",
             "moduleName": "CommonSwiftUI",
             "genericSig": "<τ_0_0, τ_0_1, τ_0_2 where τ_0_0 : SwiftUI.View, τ_0_1 : SwiftUI.View, τ_0_2 : Swift.Hashable>",
             "sugared_genericSig": "<Content, PlaceHolder, Item where Content : SwiftUI.View, PlaceHolder : SwiftUI.View, Item : Swift.Hashable>",
@@ -27744,126 +27750,126 @@
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "BooleanLiteral",
-      "offset": 2493,
+      "offset": 2559,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "BooleanLiteral",
-      "offset": 2546,
+      "offset": 2612,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "BooleanLiteral",
-      "offset": 2594,
+      "offset": 2660,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "IntegerLiteral",
-      "offset": 2818,
+      "offset": 2890,
       "length": 2,
       "value": "55"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "BooleanLiteral",
-      "offset": 3201,
+      "offset": 3279,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "IntegerLiteral",
-      "offset": 3388,
+      "offset": 3466,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "IntegerLiteral",
-      "offset": 4034,
+      "offset": 4112,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "IntegerLiteral",
-      "offset": 4289,
+      "offset": 4367,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "FloatLiteral",
-      "offset": 4559,
+      "offset": 4637,
       "length": 3,
       "value": "0.6"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "FloatLiteral",
-      "offset": 4581,
+      "offset": 4659,
       "length": 3,
       "value": "0.7"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "FloatLiteral",
-      "offset": 4601,
+      "offset": 4679,
       "length": 3,
       "value": "0.7"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "BooleanLiteral",
-      "offset": 4674,
+      "offset": 4752,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "FloatLiteral",
-      "offset": 4817,
+      "offset": 4895,
       "length": 4,
       "value": "0.25"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "BooleanLiteral",
-      "offset": 4908,
+      "offset": 4986,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "BooleanLiteral",
-      "offset": 5041,
+      "offset": 5119,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "FloatLiteral",
-      "offset": 5535,
+      "offset": 5625,
       "length": 3,
       "value": "0.6"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "FloatLiteral",
-      "offset": 5557,
+      "offset": 5647,
       "length": 3,
       "value": "0.7"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/DropDown\/DropDown.swift",
       "kind": "FloatLiteral",
-      "offset": 5577,
+      "offset": 5667,
       "length": 3,
       "value": "0.7"
     },
