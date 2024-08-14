@@ -70,6 +70,12 @@ Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lob
 
 A `ButtonStyle` for SwiftUI that applies a Capsule Shape with customizable color styles.
 
+Parameters:
+- `textColor`: The color or style applied to the text inside the button. Defaults to `.white`.
+- `backgroundColor`: The background color or style of the button, conforming to `ShapeStyle`. Defaults to `.blue`.
+- `verticalPadding`: The vertical padding inside the button. Defaults to `10`.
+- `horizontalPadding`: The horizontal padding inside the button. Defaults to `20`.
+
 Example:
 
 ```swift
@@ -99,15 +105,16 @@ This style gives buttons a modern, rounded look suitable for various UI contexts
 
 <img src="https://github.com/user-attachments/assets/89fcae09-da1b-4470-96b1-b01bd75a692f" width="220">
 
-Parameters:
-- `textColor`: The color or style applied to the text inside the button. Defaults to `.white`.
-- `backgroundColor`: The background color or style of the button, conforming to `ShapeStyle`. Defaults to `.blue`.
-- `verticalPadding`: The vertical padding inside the button. Defaults to `10`.
-- `horizontalPadding`: The horizontal padding inside the button. Defaults to `20`.
-
 ### 2.2 ShapeButtonStyle:
 
 A `ButtonStyle` for SwiftUI that allows customization of the button's shape and color.
+
+Parameters:
+- `textColor`: The color or style applied to the text inside the button. Default is `.primary`.
+- `backgroundColor`: The background color or style of the button, conforming to `ShapeStyle`. Default is `.secondary`.
+- `shape`: The custom shape for the button, conforming to `Shape`. The default shape is `Capsule()`.
+- `verticalPadding`: The vertical padding inside the button. Defaults to `10`.
+- `horizontalPadding`: The horizontal padding inside the button. Defaults to `20`.
 
 Example:
 
@@ -140,16 +147,16 @@ This style modifies the appearance of buttons to fit within a specified shape, w
 
 <img src="https://github.com/user-attachments/assets/bd90bcd0-3510-4796-903e-4f78ac4b12c3" width="220">
 
-Parameters:
-- `textColor`: The color or style applied to the text inside the button. Default is `.primary`.
-- `backgroundColor`: The background color or style of the button, conforming to `ShapeStyle`. Default is `.secondary`.
-- `shape`: The custom shape for the button, conforming to `Shape`. The default shape is `Capsule()`.
-- `verticalPadding`: The vertical padding inside the button. Defaults to `10`.
-- `horizontalPadding`: The horizontal padding inside the button. Defaults to `20`.
-
 ### 2.3 GrowingButtonStyle:
 
 A `ButtonStyle` for SwiftUI that scales the button on press, with customizable shape and color styles.
+
+Parameters:
+- `textColor`: The color or style for the text inside the button, defaulting to `.white`.
+- `backgroundColor`: The background color or style of the button, conforming to `ShapeStyle`, with a default of `.blue`.
+- `shape`: The custom shape for the button, conforming to `Shape`. The default shape is `Capsule()`.
+- `verticalPadding`: The vertical padding inside the button. Defaults to `10`.
+- `horizontalPadding`: The horizontal padding inside the button. Defaults to `20`.
 
 Example:
 
@@ -172,16 +179,19 @@ This button style provides an interactive feedback effect by increasing the butt
 
 https://github.com/user-attachments/assets/9520da94-8b87-4a84-83e9-da7b79dbaeab
 
-Parameters:
-- `textColor`: The color or style for the text inside the button, defaulting to `.white`.
-- `backgroundColor`: The background color or style of the button, conforming to `ShapeStyle`, with a default of `.blue`.
-- `shape`: The custom shape for the button, conforming to `Shape`. The default shape is `Capsule()`.
-- `verticalPadding`: The vertical padding inside the button. Defaults to `10`.
-- `horizontalPadding`: The horizontal padding inside the button. Defaults to `20`.
-
 ### 2.4 LoadingButtonStyle:
 
 A `ButtonStyle` for SwiftUI that provides a customizable button with a loading indicator.
+
+Parameters:
+- `isLoading`: A binding to a boolean indicating whether the button is in a loading state.
+- `loadingState`: An enum that determines the button's behavior when loading. Defaults to `.center`.
+- `textColor`: The color or style for the text inside the button, defaulting to `.white`.
+- `backgroundColor`: The background color or style of the button, conforming to `ShapeStyle`, with a default of `.blue`.
+- `disabledLoadingColor`: The background color or style of the button when it is loading, conforming to `ShapeStyle`, with a default of `.gray`.
+- `shape`: The custom shape for the button, conforming to `Shape`. The default shape is `Capsule()`.
+- `verticalPadding`: The vertical padding inside the button. Defaults to `10`.
+- `horizontalPadding`: The horizontal padding inside the button. Defaults to `20`.
 
 Example:
 
@@ -230,16 +240,6 @@ VStack(spacing: 25) {
 This button style offers interactive feedback by displaying a `ProgressView` when in a loading state. It allows for extensive customization of the button's appearance, including text color, background color, shape, padding, and the position of the loading indicator. When loading, the button can optionally gray out the background and disable user interactions.
 
 https://github.com/user-attachments/assets/b6fa0b46-53dc-4f81-bc84-fd467c74e407
-
-Parameters:
-- `isLoading`: A binding to a boolean indicating whether the button is in a loading state.
-- `loadingState`: An enum that determines the button's behavior when loading. Defaults to `.center`.
-- `textColor`: The color or style for the text inside the button, defaulting to `.white`.
-- `backgroundColor`: The background color or style of the button, conforming to `ShapeStyle`, with a default of `.blue`.
-- `disabledLoadingColor`: The background color or style of the button when it is loading, conforming to `ShapeStyle`, with a default of `.gray`.
-- `shape`: The custom shape for the button, conforming to `Shape`. The default shape is `Capsule()`.
-- `verticalPadding`: The vertical padding inside the button. Defaults to `10`.
-- `horizontalPadding`: The horizontal padding inside the button. Defaults to `20`.
 
 ## Dropdown
 
@@ -333,6 +333,12 @@ https://github.com/user-attachments/assets/bba43eb8-1d4f-4d22-98d3-2c950dd0000c
 
 A simple, customizable loading indicator view. This view displays a circular loading indicator that rotates according to the specified loading speed. The appearance of the indicator, including its color, background color, line width, and speed, can be customized.
 
+Parameters:
+- `color`: The color of the loading indicator. Default is `.blue`.
+- `backgroundColor`: The background color of the loading indicator. Default is `.gray`.
+- `lineWidth`: The thickness of the loading indicator's line. Default is 5.
+- `loadingSpeed`: The speed at which the loading indicator rotates. Default is `.medium`.
+
 Example:
 
 ```swift
@@ -344,12 +350,6 @@ The loading indicator will rotate continuously to signify an ongoing loading pro
 
 https://github.com/user-attachments/assets/d3031c2d-6f4c-4f94-bfa7-ae2c3dd3e0ac
 
-Parameters:
-- `color`: The color of the loading indicator. Default is `.blue`.
-- `backgroundColor`: The background color of the loading indicator. Default is `.gray`.
-- `lineWidth`: The thickness of the loading indicator's line. Default is 5.
-- `loadingSpeed`: The speed at which the loading indicator rotates. Default is `.medium`.
-
 Visibility and Size:
 - Frame Size: Adjust the indicator's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 - Dynamic Visibility: Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
@@ -357,6 +357,9 @@ Visibility and Size:
 ### 4.2. FancyLoadingView
 
 A SwiftUI view that displays a series of animated concentric circles, creating a dynamic loading indicator.
+
+Parameters:
+- `color`: The color of the circle strokes. The default is `.primary`.
 
 Example:
 
@@ -367,9 +370,6 @@ FancyLoading()
 Each circle in the animation is individually timed to create a smooth, rhythmic effect that visually indicates an ongoing process.
 
 https://github.com/user-attachments/assets/ceefa337-ac2d-4001-ae81-c5ee111a033c
-
-Parameters:
-- `color`: The color of the circle strokes. The default is `.primary`.
 
 Visibility: 
 - Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
@@ -399,6 +399,14 @@ Visibility:
 
 A rectangular progress bar view for SwiftUI.
 
+Parameters:
+- `progress`: A binding to a `CGFloat` that represents the current progress (from 0.0 to 1.0).
+- `color`: The color of the bar's tint.
+- `colors`: An array of `Color` to create a gradient for the progress bar (used when more than one color is desired).
+- `backgroundColor`: The color of the bar's background.
+
+You can use either a single color or a gradient of colors for the progress bar. The background of the bar can also be customized.
+
 Example:
 
 ```swift
@@ -427,20 +435,22 @@ This view displays a rectangular progress indicator that fills up based on the c
 
 <img src="https://github.com/user-attachments/assets/60cfef78-3aaa-4567-ae3e-b01a099d6aeb" width="220">
 
-Parameters:
-- `progress`: A binding to a `CGFloat` that represents the current progress (from 0.0 to 1.0).
-- `color`: The color of the bar's tint.
-- `colors`: An array of `Color` to create a gradient for the progress bar (used when more than one color is desired).
-- `backgroundColor`: The color of the bar's background.
-
-You can use either a single color or a gradient of colors for the progress bar. The background of the bar can also be customized.
-
 Size:
 - Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 
 ### 5.2 RingProgress:
 
 A circular progress bar view for SwiftUI.
+
+Parameters:
+- `progress`: A binding to a `CGFloat` that represents the current progress (from 0.0 to 1.0).
+- `lineWidth`: The thickness of the progress bar's line.
+- `startAngle`: The angle at which the progress starts, with `.zero` being the default.
+- `color`: The color of the bar's tint.
+- `colors`: An array of `Color` to create a gradient for the progress bar (used when more than one color is desired).
+- `backgroundColor`: The color of the bar's background.
+
+You can use either a single color or a gradient of colors for the progress bar.
 
 Example:
 
@@ -470,22 +480,21 @@ This view displays a circular progress indicator that fills up based on the curr
 
 <img src="https://github.com/user-attachments/assets/34af9314-f8e4-4695-ab76-a433d116b9f7" width="220">
 
-Parameters:
-- `progress`: A binding to a `CGFloat` that represents the current progress (from 0.0 to 1.0).
-- `lineWidth`: The thickness of the progress bar's line.
-- `startAngle`: The angle at which the progress starts, with `.zero` being the default.
-- `color`: The color of the bar's tint.
-- `colors`: An array of `Color` to create a gradient for the progress bar (used when more than one color is desired).
-- `backgroundColor`: The color of the bar's background.
-
-You can use either a single color or a gradient of colors for the progress bar.
-
 Size:
 - Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 
 ### 5.3 ArcProgress:
 
 A customizable circular progress bar for SwiftUI, unique for its adjustable trim and rotation.
+
+Parameters:
+- `progress`: A binding to a `CGFloat` that represents the current progress (from 0.0 to 1.0).
+- `lineWidth`: The thickness of the progress bar's line.
+- `color`: The color of the bar's tint.
+- `colors`: An array of `Color` to create a gradient for the progress bar (used when more than one color is desired).
+- `backgroundColor`: The color of the bar's background.
+
+You can use either a single color or a gradient of colors for the progress bar.
 
 Example:
 
@@ -518,15 +527,6 @@ The progress bar uniquely fills up to 75% of the circle and starts at a 135-degr
 
 <img src="https://github.com/user-attachments/assets/aa098c14-1738-4c18-b706-50d8754b920c" width="220">
 
-Parameters:
-- `progress`: A binding to a `CGFloat` that represents the current progress (from 0.0 to 1.0).
-- `lineWidth`: The thickness of the progress bar's line.
-- `color`: The color of the bar's tint.
-- `colors`: An array of `Color` to create a gradient for the progress bar (used when more than one color is desired).
-- `backgroundColor`: The color of the bar's background.
-
-You can use either a single color or a gradient of colors for the progress bar.
-
 Size:
 - Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 
@@ -542,6 +542,15 @@ Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lob
 A customizable segment control view in SwiftUI.
 
 `SegmentControl` provides a customizable segmented control interface, allowing for the selection among multiple options. It features customizable active/inactive tint colors, an adjustable height, and a dynamic or static indicator for the active tab. Additionally, it offers a configuration for the indicator's appearance and position based on the selected segment.
+
+Parameters:
+- `tabs`: An array of `Item`, representing each segment option. Required to conform to `Hashable`.
+- `activeTab`: A binding to the currently active segment.
+- `height`: The height of the segment control.
+- `activeTint`: Color for the active segment.
+- `inActiveTint`: Color for inactive segments.
+- `indicatorConfiguration`: Configuration for the segment indicator, including color and corner radius.
+- `displayItem`: A closure that provides a view for displaying each segment option.
 
 Example:
 
@@ -603,15 +612,6 @@ This example demonstrates a `SegmentControl` with custom tab items, including ic
 
 https://github.com/user-attachments/assets/6ac4766d-f27f-4885-9b95-927cf67d30cf
 
-Parameters:
-- `tabs`: An array of `Item`, representing each segment option. Required to conform to `Hashable`.
-- `activeTab`: A binding to the currently active segment.
-- `height`: The height of the segment control.
-- `activeTint`: Color for the active segment.
-- `inActiveTint`: Color for inactive segments.
-- `indicatorConfiguration`: Configuration for the segment indicator, including color and corner radius.
-- `displayItem`: A closure that provides a view for displaying each segment option.
-
 ## Slider
 
 ### 8.1. RangeSlider:
@@ -619,6 +619,15 @@ Parameters:
 A customizable range slider view in SwiftUI.
 
 Allows users to select a closed range of values using two draggable thumbs. This component is highly customizable with options for defining the range limits, thumb spacing, and appearance.
+
+Parameters:
+- `selection`: A binding to the selected range of values.
+- `range`: The total range from which values can be selected.
+- `minimumDistance`: The minimum allowable distance between the two thumbs.
+- `lineWidth`: The thickness of the slider's active range.
+- `tint`: The color of the slider's active range and thumbs.
+- `backgroundColor`: The color of the slider's track.
+- `controlConfig`: Configuration for the control's appearance including thumb tint, width, and shadow.
 
 Example:
 
@@ -661,20 +670,19 @@ This setup demonstrates configuring a `RangeSlider`, displaying the selected val
 
 https://github.com/user-attachments/assets/1da84ea4-53cc-4565-a63e-8fb03e7b1836
 
-Parameters:
-- `selection`: A binding to the selected range of values.
-- `range`: The total range from which values can be selected.
-- `minimumDistance`: The minimum allowable distance between the two thumbs.
-- `lineWidth`: The thickness of the slider's active range.
-- `tint`: The color of the slider's active range and thumbs.
-- `backgroundColor`: The color of the slider's track.
-- `controlConfig`: Configuration for the control's appearance including thumb tint, width, and shadow.
-
 ### 8.2. RingSlider:
 
 A customizable ring-shaped slider view for selecting angular ranges.
 
 `RingSlider` provides a visual and interactive way to select a range of angles using draggable handles that can be customized with images or styled directly via a `ControlConfig`. The appearance of the slider, including line width, colors, and handle customization, is adjustable.
+
+Parameters:
+- `startAngle`: The starting angle of the slider, modifiable via a binding.
+- `toAngle`: The ending angle of the slider, modifiable via a binding.
+- `lineWidth`: The thickness of the ring's line.
+- `tint`: The primary color of the slider's line and handle if not using images.
+- `backgroundColor`: The color behind the slider's line for contrast.
+- `controlConfig`: Configuration for the slider's handles, including color, width, images, and shadow.
 
 Example:
 
@@ -701,14 +709,6 @@ This configuration leverages the `ControlConfig` to apply custom images for the 
 
 https://github.com/user-attachments/assets/e87cc06d-2877-4b49-88e8-b45165117e48
 
-Parameters:
-- `startAngle`: The starting angle of the slider, modifiable via a binding.
-- `toAngle`: The ending angle of the slider, modifiable via a binding.
-- `lineWidth`: The thickness of the ring's line.
-- `tint`: The primary color of the slider's line and handle if not using images.
-- `backgroundColor`: The color behind the slider's line for contrast.
-- `controlConfig`: Configuration for the slider's handles, including color, width, images, and shadow.
-
 ## Text
 
 ### 9.1. CircularText:
@@ -716,6 +716,14 @@ Parameters:
 A SwiftUI view that arranges text in a circular path with enhanced customization.
 
 `CircularText` displays text along a specified radius, offering settings for alignment, character spacing, and style reversal. It utilizes a generic view modifier to apply custom styling to each character, making it versatile for various design needs.
+
+Parameters:
+- `text`: The string of text to be displayed circularly.
+- `radius`: The radius of the circle along which the text is arranged.
+- `spacing`: The spacing between characters, defaulting to 4.
+- `alignment`: The position of the text relative to the circle's radius (`inside`, `center`, `outside`).
+- `reverseStyle`: If `true`, reverses the direction and orientation of the text.
+- `textModifier`: A closure that allows for custom styling of the text, applied per character.
 
 Example:
 
@@ -748,17 +756,16 @@ This view is perfect for creating visually compelling text effects such as circu
 
 <img src="https://github.com/user-attachments/assets/556ebe60-acb5-440a-a69a-7d6b5ebe987e" width="220">
 
-Parameters:
-- `text`: The string of text to be displayed circularly.
-- `radius`: The radius of the circle along which the text is arranged.
-- `spacing`: The spacing between characters, defaulting to 4.
-- `alignment`: The position of the text relative to the circle's radius (`inside`, `center`, `outside`).
-- `reverseStyle`: If `true`, reverses the direction and orientation of the text.
-- `textModifier`: A closure that allows for custom styling of the text, applied per character.
-
 ### 9.2. HackerText:
 
 Provides an animated text effect that mimics hacking by changing characters randomly before revealing the final text.
+
+Parameters:
+- `text`: The final text to display after animation.
+- `trigger`: A Boolean that starts the animation when toggled.
+- `transition`:  The style of animation — either `hyper` for all hacker style or `numeric` for wheeling style only.
+- `duration`: Total animation duration.
+- `speed`: Time interval for character changes.
 
 Example:
 
@@ -808,18 +815,19 @@ This view is particularly effective for creating engaging and eye-catching textu
 
 https://github.com/user-attachments/assets/5c0f3ebb-e8e5-41f4-8a30-20ad7bceab9c
 
-Parameters:
-- `text`: The final text to display after animation.
-- `trigger`: A Boolean that starts the animation when toggled.
-- `transition`:  The style of animation — either `hyper` for all hacker style or `numeric` for wheeling style only.
-- `duration`: Total animation duration.
-- `speed`: Time interval for character changes.
-
 ### 9.3. TypeWriterText:
 
 A SwiftUI view that simulates a typewriter effect for displaying text.
 
 This view gradually displays characters of a string, mimicking the typing effect seen in a typewriter. Customization options include font, weight, color, alignment, and the speed of typing. The speed of typing can be one of the predefined speeds or a custom duration specified in seconds.
+
+Parameters:
+- `text`: The text to display using the typewriter effect.
+- `font`: The font style of the text. Default is `.caption`.
+- `fontWeight`: The weight of the font. Default is `.medium`.
+- `color`: The color of the text. Default is `.primary`.
+- `alignment`: The alignment of the text within its container. Default is `.center`.
+- `speed`: The speed at which characters are displayed. Can be `.slow`, `.medium`, `.fast`, `.veryFast`, or `.custom(Double)`. Default is `.medium`.
 
 Example:
 
@@ -836,14 +844,6 @@ VStack(spacing: 16){
 This view is ideal for scenarios where text needs to be presented in a dramatic, engaging manner.
 
 https://github.com/user-attachments/assets/824d41a8-1e3d-4c07-9607-c669073a7ab1
-
-Parameters:
-- `text`: The text to display using the typewriter effect.
-- `font`: The font style of the text. Default is `.caption`.
-- `fontWeight`: The weight of the font. Default is `.medium`.
-- `color`: The color of the text. Default is `.primary`.
-- `alignment`: The alignment of the text within its container. Default is `.center`.
-- `speed`: The speed at which characters are displayed. Can be `.slow`, `.medium`, `.fast`, `.veryFast`, or `.custom(Double)`. Default is `.medium`.
 
 ## TextField
 
