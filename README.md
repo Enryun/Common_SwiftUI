@@ -976,6 +976,26 @@ Configurations:
 - `radius`: Sets the border radius.
 - `width`: Defines the border thickness.
 
+Example:
+
+```swift
+@State private var text: String = ""
+
+LimitedTextField(
+    config: .init(
+        limit: 40,
+        tint: .secondary,
+        autoResizes: true,
+        allowExcessTyping: false
+    ),
+    hint: "Type here",
+    value: $text
+)
+.frame(height: 150)
+```
+
+https://github.com/user-attachments/assets/aa287e0d-11e1-4af8-bb47-ffd2e6ed3bc6
+
 This component is ideal for forms, comments, or any user input that requires length constraints.
 
 ### 10.2. ValidationTextField:
