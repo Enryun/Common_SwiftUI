@@ -1000,6 +1000,160 @@ This component is ideal for forms, comments, or any user input that requires len
 
 ### 10.2. ValidationTextField:
 
+A SwiftUI view that provides a text field with extensive validation capabilities, including secure text entry.
+
+`ValidationTextField` allows visual feedback and validation for user inputs, suitable for both standard and secure text fields. It supports environmental properties to customize behavior and appearance based on validation results.
+
+Parameters:
+- `title`: The label text for the text field.
+- `text`: A binding to the user input text.
+- `isValidBinding`: A binding reflecting the current validation state.
+- `isSecured`: Indicates if the text field should obscure text input.
+- `config`: Configuration for visual properties like border and validation message styles.
+
+Modifiers:
+- `clearButtonHidden`: Controls visibility of the clear button.
+- `secureButtonHidden`: Controls visibility of the secure text toggle button.
+- `isMandatory`: Marks the field as required and provides a custom message if validation fails.
+- `onValidate`: Adds custom validation logic for the text field.
+- `onFormValidate`: Handles form-level validation by providing an array of validation results.
+
+Example 1:
+
+```swift
+enum FocusableField {
+    case firstName, lastName, address, password
+}
+
+@State private var firstName = ""
+@State private var lastName = ""
+@FocusState private var focus: FocusableField?
+@State private var isFormFirstNameValid = false
+@State private var isFormLastNameValid = false
+
+VStack(spacing: 15) {
+    ValidationTextField(title: "First Name", text: $firstName, isValid: $isFormFirstNameValid)
+        .autocorrectionDisabled()
+        .focused($focus, equals: .firstName)
+        .isMandatory(true)
+    
+    
+    ValidationTextField(title: "Last Name", text: $lastName, isValid: $isFormLastNameValid)
+        .focused($focus, equals: .lastName)
+        .isMandatory(true)
+
+    Spacer()
+    Button("Submit") {
+        // Handle submit logic
+    }
+    .buttonStyle(.borderedProminent)
+    .disabled(!(isFormFirstNameValid && isFormLastNameValid))
+}
+```
+
+https://github.com/user-attachments/assets/094f4f2b-79c6-4c5d-bae8-a55e2a8644b3
+
+Example 2:
+
+```swift
+@State private var address = ""
+
+ValidationTextField(title: "Address", text: $address)
+    .clearButtonHidden(false)
+    .autocorrectionDisabled()
+    .padding()
+```
+
+https://github.com/user-attachments/assets/ff78da93-0d69-4908-bc7a-7afebf1b5517
+
+Example 3:
+
+```swift
+enum FocusableField {
+    case firstName, lastName, address, password
+}
+
+
+enum TextFieldError: LocalizedError {
+    case weakPassword
+    var errorDescription: String? {
+        switch self {
+        case .weakPassword:
+            return "Password has to be at least 6 characters"
+        }
+    }
+}
+
+@State private var password = ""
+@FocusState private var focus: FocusableField?
+@State private var isPasswordValid = false
+
+VStack(spacing: 15) {
+    ValidationTextField(title: "Password", text: $password, isValid: $isPasswordValid, isSecured: true)
+        .focused($focus, equals: .password)
+        .isMandatory(true)
+        .onValidate { value in
+            value.count >= 6 ? .success("Good Password") : .failure(TextFieldError.weakPassword)
+        }
+        .secureTextButtonHidden(false)
+        .autocorrectionDisabled()
+    
+    
+    Spacer()
+    Button("Submit") {
+        // Handle submit logic
+    }
+    .disabled(!isPasswordValid)
+}
+```
+
+https://github.com/user-attachments/assets/5665eb71-4dae-40cb-b80a-131e0c24ce85
+
+Example 4:
+
+```swift
+enum FocusableField {
+    case firstName, lastName, address, password
+}
+
+@State private var password = ""
+@FocusState private var focus: FocusableField?
+@State private var isPasswordValid = false
+
+VStack(spacing: 15) {
+    ValidationTextField(title: "Strong Password", text: $password, isValid: $isPasswordValid, isSecured: true)
+        .focused($focus, equals: .password)
+        .isMandatory(true)
+        .secureTextButtonHidden(false)
+        .autocorrectionDisabled()
+        .onFormValidate { text in
+            // Check if text contains any letters (both uppercase and lowercase)
+            let atLeast6Char = text.count >= 6
+            // Check if text contains any numbers (decimal digit)
+            let containNumbers = text.rangeOfCharacter(from: .decimalDigits) != nil
+            // Check if text contains special characters "!@#%^&"
+            let containPunctuation = text.rangeOfCharacter(from: CharacterSet(charactersIn: "!@#%^&")) != nil
+            
+            return [
+                .init(message: atLeast6Char ? "Password is at least 6 characters" : "Password need to be at least 6 characters", isValid: atLeast6Char),
+                .init(message: containNumbers ? "Password contains number" : "Password need to contain number", isValid: containNumbers),
+                .init(message: containNumbers ? "Password contains special character !@#%^&" : "Password need to contain special character !@#%^&", isValid: containPunctuation)
+            ]
+        }
+    
+    
+    Spacer()
+    Button("Submit") {
+        // Handle submit logic
+    }
+    .buttonStyle(.borderedProminent)
+    .disabled(!isPasswordValid)
+}
+```
+
+https://github.com/user-attachments/assets/2186ed83-f8c6-490c-80fb-fb15ad682b69
+
+
 
 ## Toast
 
