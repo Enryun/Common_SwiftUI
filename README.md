@@ -69,8 +69,20 @@ This function creates and displays an `UIAlertController` with a specified title
 Parameters:
 - `title`: The title of the alert.
 - `message`: The message displayed in the alert.
-- `textFields`: An array of ``AlertTextField``, configuring each text field within the alert.
-- `actions`: An array of ``AlertAction``, representing the actions that can be taken from the alert.
+- `textFields`: An array of `AlertTextField`, configuring each text field within the alert.
+- `actions`: An array of `AlertAction`, representing the actions that can be taken from the alert.
+
+#### AlertTextField: 
+
+Represents a configurable text field for use within an alert dialog.
+
+This structure allows for the creation of a text field with customizable properties such as placeholder text, keyboard type, secure text entry for passwords, and text capitalization behavior. It can be used to gather input from users in a variety of contexts, ensuring that the text field is tailored to the specific type of data being requested.
+
+Parameters:
+- `placeholder`: A `String` that appears in the text field when it's empty, hinting at the expected input.
+- `keyboardType`: The type of keyboard to display. Defaults to `.default`.
+- `isSecureTextEntry`: A `Bool` indicating whether the text field is for secure text entry (e.g., passwords). Defaults to `false`.
+- `autocapitalizationType`: The autocapitalization strategy for the text field. Defaults to `.none`.
 
 ## Button
 
