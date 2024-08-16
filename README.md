@@ -36,7 +36,7 @@ For more details on using Swift Package Manager, visit [Apple's Swift Package Ma
 ## Features
 
 1. [Alert](#alert)
-- [AlertWithTextFields](#alertwithtextFields)
+   - [AlertWithTextFields](#alertwithtextFields)
 2. [Button](#button)
    - [CapsuleButtonStyle](#capsulebuttonstyle)
    - [ShapeButtonStyle](#shapebuttonstyle)
@@ -61,8 +61,8 @@ For more details on using Swift Package Manager, visit [Apple's Swift Package Ma
    - [HackerText](#hackertext)
    - [TypeWriterText](#typewritertext)
 10. [TextField](#textfield)
-   - [LimitedTextField](#limitedtextfield)
-   - [ValidationTextField](#validationtextfield)
+    - [LimitedTextField](#limitedtextfield)
+    - [ValidationTextField](#validationtextfield)
 11. [Toast](#toast)
 12. [ViewModifier](#viewmodifier)
 
