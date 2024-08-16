@@ -616,7 +616,51 @@ This example demonstrates a `DropDown` menu utilizing an enumeration for options
 
 ## ArcFloatingButton
 
+A customizable floating action button component that arcs around a main button, revealing multiple action buttons.
+
+Parameters:
+- `buttonSize`: The diameter of each action button.
+- `alignment`: The alignment dictates the starting point and direction in which the action buttons will arc (e.g., topLeading, fullmoon).
+- `spacing`: The spacing between the expanded action buttons.
+- `shape`: The shape of each action button, conforming to the `Shape` protocol.
+- `actions`: An array of [FloatingAction](#floatingaction) objects defining the actions for the expanded buttons.
+- `label`: A view builder that generates the content displayed on the expandable floating button.
+
+`ArcFloatingButton` allows for a radial or semi-circular placement of action buttons that emerge from behind the main button. It supports various alignments and can adapt to custom shapes for each action button.
+
+#### FloatingAction
+
+Represents a customizable floating action button with identifiable properties.
+
+Parameters:
+- `id`: A unique identifier for the button, useful for distinguishing multiple instances.
+- `image`: The SwiftUI `Image` to display on the button.
+- `font`: The font style for any textual content inside the button.
+- `tint`: The color of the button's content, typically the icon or text.
+- `background`: The background color of the button.
+- `action`: The closure that executes when the button is tapped.
+
+`FloatingAction` configures a button that can be prominently displayed over content, commonly used for actions such as creating new items or triggering specific functions. This struct allows customization of the button's icon, font, colors, and action.
+
+Example 1:
+
+
+
 ## ExpandFloatButton
+
+A SwiftUI view component that displays a floating action button with expandable action buttons.
+
+Parameters:
+- `buttonSize`: The size of the floating button and each action button.
+- `alignment`: The direction in which the action buttons will expand from the main button. (e.g., leading, trailing, top, bottom).
+- `spacing`: The space between the expanded action buttons.
+- `shape`: The shape of each action button, conforming to the `Shape` protocol.
+- `actions`: An array of [FloatingAction](#floatingaction) objects defining the actions for the expanded buttons.
+- `label`: A view builder that generates the content displayed on the expandable floating button.
+
+`ExpandFloatButton` offers a dynamic way to present multiple action buttons from a main floating button. It supports expansion in specified directions and can adapt the shape of the action buttons.
+
+Example 1:
 
 ## LoadingIndicator
 
