@@ -826,7 +826,7 @@ Parameters:
 - `lineWidth`: The thickness of the slider's active range.
 - `tint`: The color of the slider's active range and thumbs.
 - `backgroundColor`: The color of the slider's track.
-- `controlConfig`: [ControlConfig](#rangesliderconfiguration) for the control's appearance including thumb tint, width, and shadow.
+- `controlConfig`: [ControlConfig](#rangesliderconfiguration) is the configuration for the control's appearance including thumb tint, width, and shadow of `RangeSlider`.
 
 #### RangeSliderConfiguration:
 
@@ -836,6 +836,8 @@ Parameters:
 - `tint`: The color used for the control. Defaults to `.white`.
 - `width`: The width of the control in points. This could affect the size of the control or its border depending on how it's used.
 - `enableShadow`: Determines whether a shadow is applied to the control. Defaults to `true`.
+
+This structure configures the appearance and behavior of the slider controls in `RangeSlider`, including the color, width, and shadow of the slider handles.
 
 Example:
 
@@ -892,7 +894,20 @@ Parameters:
 - `lineWidth`: The thickness of the ring's line.
 - `tint`: The primary color of the slider's line and handle if not using images.
 - `backgroundColor`: The color behind the slider's line for contrast.
-- `controlConfig`: Configuration for the slider's handles, including color, width, images, and shadow.
+- `controlConfig`: [ControlConfig](#ringsliderconfiguration) is the configuration for the slider's handles, including color, width, images, and shadow of `RingSlider`.
+
+#### RingSliderConfiguration:
+
+`ControlConfig` provides customizable settings for UI controls of `RingSlider`.
+
+Parameters:
+- `tint`: The color used for the slider control's tint, defaulting to `.white`.
+- `width`: The thickness or size of the slider handles in points.
+- `startSliderImage`: An optional image for the slider's starting handle.
+- `endSliderImage`: An optional image for the slider's ending handle.
+- `enableShadow`: A Boolean value that determines whether a shadow is applied to the slider handles, defaulting to `true`.
+
+This structure configures the appearance and behavior of the slider controls in `RingSlider`, including optional images for slider handles and shadow effects.
 
 Example:
 
