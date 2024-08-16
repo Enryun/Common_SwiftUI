@@ -38,7 +38,7 @@ For more details on using Swift Package Manager, visit [Apple's Swift Package Ma
 1. **Alert**
    - 1.1 [AlertWithTextFields](#alertwithtextFields)
 2. **Button**
-   - 2.1 [CapsuleButtonStyle](#capsulebuttonstyle)
+   [CapsuleButtonStyle](#capsulebuttonstyle)
    - [ShapeButtonStyle](#shapebuttonstyle)
    - 2.3 [GrowingButtonStyle](#growingbuttonstyle)
    - 2.3 [LoadingButtonStyle](#loadingbuttonstyle)
