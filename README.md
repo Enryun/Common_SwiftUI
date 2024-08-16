@@ -643,8 +643,109 @@ Parameters:
 
 `FloatingAction` configures a button that can be prominently displayed over content, commonly used for actions such as creating new items or triggering specific functions. This struct allows customization of the button's icon, font, colors, and action.
 
-Example 1:
+Define actions data using [FloatingAction](#floatingaction):
 
+```swift
+private let actions = [
+    FloatingAction(image: Image(systemName: "tray.full.fill"), tint: .red, background: .white) {
+        print("Tray")
+    },
+    FloatingAction(image: Image(systemName: "lasso.badge.sparkles"), tint: .red, background: .white) {
+        print("Spark")
+    },
+    FloatingAction(image: Image(systemName: "square.and.arrow.up.fill"), tint: .red, background: .white) {
+        print("Share")
+    }
+]
+```
+
+Top Leading:
+
+```swift
+ScrollView(.vertical) { ... }
+.overlay(alignment: .topLeading) {
+    ArcFloatingButton(alignment: .topLeading, actions: actions) { isExpanded in
+        Image(systemName: "plus")
+            .font(.title3.bold())
+            .foregroundStyle(.white)
+            .rotationEffect(.init(degrees: isExpanded ? 45 : 0))
+            .scaleEffect(1.02)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.black, in: .circle)
+            // Scaling Effect when expanded
+            .scaleEffect(isExpanded ? 0.9 : 1)
+    }
+    .padding()
+}
+```
+
+https://github.com/user-attachments/assets/c8b47675-14ac-4c84-9354-dfa937919bcc
+
+Top Trailing:
+
+```swift
+ScrollView(.vertical) { ... }
+.overlay(alignment: .topTrailing) {
+    ArcFloatingButton(alignment: .topTrailing, actions: actions) { isExpanded in
+        Image(systemName: "plus")
+            .font(.title3.bold())
+            .foregroundStyle(.white)
+            .rotationEffect(.init(degrees: isExpanded ? 45 : 0))
+            .scaleEffect(1.02)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.black, in: .circle)
+            // Scaling Effect when expanded
+            .scaleEffect(isExpanded ? 0.9 : 1)
+    }
+    .padding()
+}
+```
+
+https://github.com/user-attachments/assets/43e79578-d942-4d12-a34f-962539e648b8
+
+Bottom Leading:
+
+```swift
+ScrollView(.vertical) { ... }
+.overlay(alignment: .bottomLeading) {
+    ArcFloatingButton(alignment: .bottomLeading, actions: actions) { isExpanded in
+        Image(systemName: "plus")
+            .font(.title3.bold())
+            .foregroundStyle(.white)
+            .rotationEffect(.init(degrees: isExpanded ? 45 : 0))
+            .scaleEffect(1.02)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.black, in: .circle)
+            // Scaling Effect when expanded
+            .scaleEffect(isExpanded ? 0.9 : 1)
+    }
+    .padding()
+}
+```
+
+https://github.com/user-attachments/assets/d1fbddf2-007d-452a-bd59-c39bc8208beb
+
+Bottom Trailing:
+
+```swift
+ScrollView(.vertical) { ... }
+.overlay(alignment: .bottomTrailing) {
+    ArcFloatingButton(alignment: .bottomTrailing, actions: actions) { isExpanded in
+        Image(systemName: "plus")
+            .font(.title3.bold())
+            .foregroundStyle(.white)
+            .rotationEffect(.init(degrees: isExpanded ? 45 : 0))
+            .scaleEffect(1.02)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.black, in: .circle)
+            // Scaling Effect when expanded
+            .scaleEffect(isExpanded ? 0.9 : 1)
+    }
+    .padding()
+}
+```
+
+https://github.com/user-attachments/assets/27fe45f8-1bdf-461d-83de-c9abcbc626ca
 
 
 ## ExpandFloatButton
