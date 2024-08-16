@@ -162,7 +162,7 @@ Properties:
 - `subTitle`: An optional secondary text providing additional details or context.
 - `buttons`: A view component representing the actionable items or responses available for the alert.
 
-Define Custom Error conforming to `CommonAlert` protocol:
+Define Custom Error conforming to `CommonAlert` protocol. This standardizes and concentrates the way alerts are created and managed by specifying essential elements that each alert should contain.
 
 ```swift
 enum MyCustomAlert: Error, LocalizedError, CommonAlert {
@@ -233,12 +233,33 @@ Now Alert will show whenever the error is set:
 @State private var error: MyCustomAlert? = nil
 
 var body: some View {
-    Button("SHOW ALERT ERROR") {
-        error = MyCustomAlert.dataNotFound
+    VStack(spacing: 35) {
+        Button("No Internet Connection") {
+            error = MyCustomAlert.noInternetConnection(onPress: {
+                print("On Pressed")
+            })
+        }
+        .buttonStyle(.borderedProminent)
+        
+        Button("Data Not Found") {
+            error = MyCustomAlert.dataNotFound
+        }
+        .buttonStyle(.borderedProminent)
+        
+        Button("URL Error") {
+            error = MyCustomAlert.urlError(error: URLError(.badURL))
+        }
+        .buttonStyle(.borderedProminent)
     }
     .showCustomAlert(alert: $error)
 }
 ```
+
+https://github.com/user-attachments/assets/40021753-997a-40fc-a9a9-3570a5b03492
+
+Adopting the `CommonAlert` component helps projects by standardizing alert presentations across an application, ensuring a consistent user interface. This consistency can reduce development time and errors by providing a unified method for creating and managing alerts. 
+
+By conforming to the `CommonAlert` protocol, developers can customize alert components while maintaining a coherent appearance and functionality. This modularity and consistency in design make the component particularly useful in large projects or those requiring frequent alert updates.
 
 ## Button
 
