@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/e20596d2-bbaa-4efe-86d3-17721dfa7171
 # CommonSwiftUI
 
 ![iOS 15.0+](https://img.shields.io/badge/iOS-15.0%2B-blue.svg)
@@ -659,7 +661,7 @@ private let actions = [
 ]
 ```
 
-Top Leading:
+**Top Leading**:
 
 ```swift
 ScrollView(.vertical) { ... }
@@ -681,7 +683,7 @@ ScrollView(.vertical) { ... }
 
 https://github.com/user-attachments/assets/c8b47675-14ac-4c84-9354-dfa937919bcc
 
-Top Trailing:
+**Top Trailing**:
 
 ```swift
 ScrollView(.vertical) { ... }
@@ -703,7 +705,7 @@ ScrollView(.vertical) { ... }
 
 https://github.com/user-attachments/assets/43e79578-d942-4d12-a34f-962539e648b8
 
-Bottom Leading:
+**Bottom Leading**:
 
 ```swift
 ScrollView(.vertical) { ... }
@@ -725,7 +727,7 @@ ScrollView(.vertical) { ... }
 
 https://github.com/user-attachments/assets/d1fbddf2-007d-452a-bd59-c39bc8208beb
 
-Bottom Trailing:
+**Bottom Trailing**:
 
 ```swift
 ScrollView(.vertical) { ... }
@@ -746,6 +748,53 @@ ScrollView(.vertical) { ... }
 ```
 
 https://github.com/user-attachments/assets/27fe45f8-1bdf-461d-83de-c9abcbc626ca
+
+Alternatively, [FloatingAction](#floatingaction) actions can be listed orderly inside the `action closure`.
+
+**Halfmoon Top**:
+
+```swift
+.overlay(alignment: .center) {
+    VStack {
+        ArcFloatingButton(alignment: .halfmoonTop) {
+            FloatingAction(image: Image(systemName: "tray.full.fill"), tint: .teal) {
+                print("Tray")
+            }
+            
+            FloatingAction(image: Image(systemName: "lasso.badge.sparkles"), tint: .teal) {
+                print("Spark")
+            }
+            
+            FloatingAction(image: Image(systemName: "square.and.arrow.up.fill"), tint: .teal) {
+                print("Share")
+            }
+            
+            FloatingAction(image: Image(systemName: "heart.fill"), tint: .teal) {
+                print("Heart")
+            }
+            
+            FloatingAction(image: Image(systemName: "house.fill"), tint: .teal) {
+                print("Heart")
+            }
+        } label: { isExpanded in
+            Image(systemName: "plus")
+                .font(.title3.bold())
+                .foregroundStyle(.white)
+                .rotationEffect(.init(degrees: isExpanded ? 45 : 0))
+                .scaleEffect(1.02)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(.black, in: .circle)
+            // Scaling Effect when expanded
+                .scaleEffect(isExpanded ? 0.9 : 1)
+        }
+        .padding(30)
+    }
+}
+```
+
+https://github.com/user-attachments/assets/b1397d03-83a0-4c3f-9b74-f4742c156145
+
+
 
 
 ## ExpandFloatButton
