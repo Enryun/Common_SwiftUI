@@ -47,14 +47,24 @@ For more details on using Swift Package Manager, visit [Apple's Swift Package Ma
    - [SimpleLoadingIndicator](#simpleloadingindicator)
    - [FancyLoadingView](#fancyloadingview)
    - [ShimmerView](#shimmerview)
-6. [ProgressView](#progressview)
-7. [QRScanner](#qrscanner)
-8. [SegmentControl](#segmentcontrol)
-9. [Slider](#slider)
-10. [Text](#text)
-11. [TextField](#textfield)
-12. [Toast](#toast)
-13. [ViewModifier](#viewmodifier)
+5. [ProgressView](#progressview)
+   - [ProgressBar](#progressbar)
+   - [RingProgress](#ringprogress)
+   - [ArcProgress](#arcprogress)
+6. [QRScanner](#qrscanner)
+7. [SegmentControl](#segmentcontrol)
+8. [Slider](#slider)
+   - [RangeSlider](#rangeslider)
+   - [RingSlider](#ringslider)
+9. [Text](#text)
+   - [CircularText](#circulartext)
+   - [HackerText](#hackertext)
+   - [TypeWriterText](#typewritertext)
+10. [TextField](#textfield)
+   - [LimitedTextField](#limitedtextfield)
+   - [ValidationTextField](#validationtextfield)
+11. [Toast](#toast)
+12. [ViewModifier](#viewmodifier)
 
 ## Importing the Library
 
@@ -68,7 +78,7 @@ import CommonSwiftUI
 
 ## Alert
 
-### 1.1 AlertWithTextFields:
+### AlertWithTextFields:
 
 Presents an alert with customizable text fields and actions.
 
@@ -539,7 +549,7 @@ Visibility:
 
 ## ProgressView
 
-### 5.1 ProgressBar:
+### ProgressBar:
 
 A rectangular progress bar view for SwiftUI.
 
@@ -583,7 +593,7 @@ This view displays a rectangular progress indicator that fills up based on the c
 Size:
 - Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 
-### 5.2 RingProgress:
+### RingProgress:
 
 A circular progress bar view for SwiftUI.
 
@@ -630,7 +640,7 @@ This view displays a circular progress indicator that fills up based on the curr
 Size:
 - Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 
-### 5.3 ArcProgress:
+### ArcProgress:
 
 A customizable circular progress bar for SwiftUI, unique for its adjustable trim and rotation.
 
@@ -806,7 +816,7 @@ This example demonstrates a `SegmentControl` with custom tab items, including ic
 
 ## Slider
 
-### 8.1. RangeSlider:
+### RangeSlider:
 
 A customizable range slider view in SwiftUI.
 
@@ -864,7 +874,7 @@ https://github.com/user-attachments/assets/1da84ea4-53cc-4565-a63e-8fb03e7b1836
 
 This setup demonstrates configuring a `RangeSlider`, displaying the selected value range with customized control appearance.
 
-### 8.2. RingSlider:
+### RingSlider:
 
 A customizable ring-shaped slider view for selecting angular ranges.
 
@@ -907,7 +917,7 @@ This configuration leverages the `ControlConfig` to apply custom images for the 
 
 ## Text
 
-### 9.1. CircularText:
+### CircularText:
 
 A SwiftUI view that arranges text in a circular path with enhanced customization.
 
@@ -953,7 +963,7 @@ VStack(spacing: 40) {
 
 This view is perfect for creating visually compelling text effects such as circular labels or decorative text in a SwiftUI application.
 
-### 9.2. HackerText:
+### HackerText:
 
 Provides an animated text effect that mimics hacking by changing characters randomly before revealing the final text.
 
@@ -1014,7 +1024,7 @@ https://github.com/user-attachments/assets/5c0f3ebb-e8e5-41f4-8a30-20ad7bceab9c
 
 This view is particularly effective for creating engaging and eye-catching textual displays in apps that require a dramatic presentation.
 
-### 9.3. TypeWriterText:
+### TypeWriterText:
 
 A SwiftUI view that simulates a typewriter effect for displaying text.
 
@@ -1046,7 +1056,7 @@ This view is ideal for scenarios where text needs to be presented in a dramatic,
 
 ## TextField
 
-### 10.1. LimitedTextField:
+### LimitedTextField:
 
 A SwiftUI view that provides a text field with a character limit and visual feedback on input progress.
 
@@ -1101,7 +1111,7 @@ https://github.com/user-attachments/assets/aa287e0d-11e1-4af8-bb47-ffd2e6ed3bc6
 
 This component is ideal for forms, comments, or any user input that requires length constraints.
 
-### 10.2. ValidationTextField:
+### ValidationTextField:
 
 A SwiftUI view that provides a text field with extensive validation capabilities, including secure text entry.
 
