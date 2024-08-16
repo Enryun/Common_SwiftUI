@@ -55,6 +55,7 @@ import CommonSwiftUI
 - [FloatingButton](#floatingbutton)
    - [ArcFloatingButton](#arcfloatingbutton)
    - [ExpandFloatButton](#expandfloatbutton)
+- [HoldDownButton](#holddownbutton)
 - [LoadingIndicator](#loadingindicator)
    - [SimpleLoadingIndicator](#simpleloadingindicator)
    - [FancyLoadingView](#fancyloadingview)
@@ -661,6 +662,61 @@ Parameters:
 `ExpandFloatButton` offers a dynamic way to present multiple action buttons from a main floating button. It supports expansion in specified directions and can adapt the shape of the action buttons.
 
 Example 1:
+
+## HoldDownButton
+
+A SwiftUI view that implements a hold-down button with progress feedback.
+
+Parameters:
+- `text`: The label displayed on the button.
+- `paddingHorizontal`: Horizontal padding around the text.
+- `paddingVertical`: Vertical padding around the text.
+- `duration`: The time in seconds the button needs to be held to activate.
+- `scale`: The scale effect applied to the button when pressed.
+- `color`: The text color.
+- `background`: The button's background color.
+- `loadingTint`: The color of the progress indicator.
+- `shape`: The shape of the button, defined using a generic `Shape`.
+- `action`: The closure to execute when the hold duration is completed.
+
+`HoldDownButton` allows users to interact with a button that requires being held down for a specific duration to activate. It visually indicates the progress of the hold duration using a loading bar and supports customizable text, colors, and shape.
+
+Example:
+
+```swift
+VStack(spacing: 24) {
+    HoldDownButton(text: "Hold Down Button", color: .white, background: .black, loadingTint: .yellow, clipShape: .capsule) {
+        print("Finish")
+    }
+    
+    HoldDownButton(text: "Hold Down Button", loadingTint: .white, clipShape: .rect(cornerRadius: 8)) {
+        print("Finish")
+    }
+    
+    HoldDownButton(text: "Hold Down Button") {
+        print("Finish")
+    }
+    
+    HoldDownButton(
+        text: "Press and Hold",
+        paddingHorizontal: 24,
+        paddingVertical: 12,
+        duration: 2,
+        scale: 0.95,
+        color: .white,
+        background: .blue,
+        loadingTint: .green.opacity(0.5),
+        clipShape: RoundedRectangle(cornerRadius: 10),
+        action: {
+            print("Action triggered!")
+        }
+    )
+}
+```
+
+https://github.com/user-attachments/assets/0270f8a3-5170-41bf-a04e-2e52170b78c7
+
+This component is useful for actions that require confirmation or extended interaction, preventing accidental triggers.
 
 ## LoadingIndicator
 
