@@ -1088,7 +1088,7 @@ Parameters:
 - `hint`: Placeholder text displayed when the text field is empty.
 - `value`: A binding to the text inputted by the user.
 
-#### LimitedTextFieldConfigurations:
+#### LimitedTextFieldConfiguration:
 
 Manages the main settings for the text field.
 
