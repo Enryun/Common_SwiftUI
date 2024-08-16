@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/e20596d2-bbaa-4efe-86d3-17721dfa7171
 # CommonSwiftUI
 
 ![iOS 15.0+](https://img.shields.io/badge/iOS-15.0%2B-blue.svg)
