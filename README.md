@@ -785,15 +785,181 @@ Alternatively, [FloatingAction](#floatingaction) actions can be listed orderly i
             // Scaling Effect when expanded
                 .scaleEffect(isExpanded ? 0.9 : 1)
         }
-        .padding(30)
     }
 }
 ```
 
 https://github.com/user-attachments/assets/b1397d03-83a0-4c3f-9b74-f4742c156145
 
+**Halfmoon Bottom**:
 
+```swift
+.overlay(alignment: .center) {
+    VStack {
+        ArcFloatingButton(alignment: .halfmoonBottom) {
+            FloatingAction(image: Image(systemName: "tray.full.fill"), tint: .orange) {
+                print("Tray")
+            }
+            
+            FloatingAction(image: Image(systemName: "lasso.badge.sparkles"), tint: .orange) {
+                print("Spark")
+            }
+            
+            FloatingAction(image: Image(systemName: "square.and.arrow.up.fill"), tint: .orange) {
+                print("Share")
+            }
+            
+            FloatingAction(image: Image(systemName: "heart.fill"), tint: .orange) {
+                print("Heart")
+            }
+            
+            FloatingAction(image: Image(systemName: "house.fill"), tint: .orange) {
+                print("Heart")
+            }
+        } label: { isExpanded in
+            Image(systemName: "plus")
+                .font(.title3.bold())
+                .foregroundStyle(.white)
+                .rotationEffect(.init(degrees: isExpanded ? 45 : 0))
+                .scaleEffect(1.02)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(.black, in: .circle)
+                // Scaling Effect when expanded
+                .scaleEffect(isExpanded ? 0.9 : 1)
+        }
+    }
+}
+```
 
+https://github.com/user-attachments/assets/89260d78-8e96-47fb-ac52-7dc2ee190ad7
+
+**Halfmoon Leading**:
+
+```swift
+.overlay(alignment: .center) {
+    ArcFloatingButton(alignment: .halfmoonLeading) {
+        FloatingAction(image: Image(systemName: "tray.full.fill"), tint: .yellow) {
+            print("Tray")
+        }
+        
+        FloatingAction(image: Image(systemName: "lasso.badge.sparkles"), tint: .yellow) {
+            print("Spark")
+        }
+        
+        FloatingAction(image: Image(systemName: "square.and.arrow.up.fill"), tint: .yellow) {
+            print("Share")
+        }
+        
+        FloatingAction(image: Image(systemName: "heart.fill"), tint: .yellow) {
+            print("Heart")
+        }
+        
+        FloatingAction(image: Image(systemName: "house.fill"), tint: .yellow) {
+            print("Heart")
+        }
+    } label: { isExpanded in
+        Image(systemName: "plus")
+            .font(.title3.bold())
+            .foregroundStyle(.white)
+            .rotationEffect(.init(degrees: isExpanded ? 45 : 0))
+            .scaleEffect(1.02)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.black, in: .circle)
+            // Scaling Effect when expanded
+            .scaleEffect(isExpanded ? 0.9 : 1)
+    }
+}
+```
+
+https://github.com/user-attachments/assets/64c47986-40a3-466b-9b54-079fc67d0e65
+
+**Halfmoon Trailing**:
+
+```swift
+.overlay(alignment: .center) {
+    ArcFloatingButton(alignment: .halfmoonTrailing) {
+        FloatingAction(image: Image(systemName: "tray.full.fill"), tint: .green) {
+            print("Tray")
+        }
+        
+        FloatingAction(image: Image(systemName: "lasso.badge.sparkles"), tint: .green) {
+            print("Spark")
+        }
+        
+        FloatingAction(image: Image(systemName: "square.and.arrow.up.fill"), tint: .green) {
+            print("Share")
+        }
+        
+        FloatingAction(image: Image(systemName: "heart.fill"), tint: .green) {
+            print("Heart")
+        }
+        
+        FloatingAction(image: Image(systemName: "house.fill"), tint: .green) {
+            print("Heart")
+        }
+    } label: { isExpanded in
+        Image(systemName: "plus")
+            .font(.title3.bold())
+            .foregroundStyle(.white)
+            .rotationEffect(.init(degrees: isExpanded ? 45 : 0))
+            .scaleEffect(1.02)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.black, in: .circle)
+            // Scaling Effect when expanded
+            .scaleEffect(isExpanded ? 0.9 : 1)
+    }
+}
+```
+
+https://github.com/user-attachments/assets/311239dd-8353-48cb-87b1-5b9fe6f17056
+
+**FullMoon**:
+
+```swift
+.overlay(alignment: .center) {
+    ArcFloatingButton(alignment: .fullmoon) {
+        FloatingAction(image: Image(systemName: "tray.full.fill"), tint: .red) {
+            print("Tray")
+        }
+        
+        FloatingAction(image: Image(systemName: "lasso.badge.sparkles"), tint: .orange) {
+            print("Spark")
+        }
+        
+        FloatingAction(image: Image(systemName: "square.and.arrow.up.fill"), tint: .yellow) {
+            print("Share")
+        }
+        
+        FloatingAction(image: Image(systemName: "heart.fill"), tint: .green) {
+            print("Heart")
+        }
+        
+        FloatingAction(image: Image(systemName: "house.fill"), tint: .blue) {
+            print("Heart")
+        }
+        
+        FloatingAction(image: Image(systemName: "paperplane"), tint: .cyan) {
+            print("Heart")
+        }
+    } label: { isExpanded in
+        Image(systemName: "plus")
+            .font(.title3.bold())
+            .foregroundStyle(.white)
+            .rotationEffect(.init(degrees: isExpanded ? 45 : 0))
+            .scaleEffect(1.02)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.black, in: .circle)
+            // Scaling Effect when expanded
+            .scaleEffect(isExpanded ? 0.9 : 1)
+    }
+}
+```
+
+https://github.com/user-attachments/assets/a5c087e0-80f0-4b6e-a382-bcb0adf2919d
+
+This component enhances the user interface by seamlessly integrating multiple actions into a single floating action button, providing both aesthetic appeal and functional space-saving benefits.
+
+This component is ideal for interfaces that require quick access to multiple actions without cluttering the UI.
 
 ## ExpandFloatButton
 
