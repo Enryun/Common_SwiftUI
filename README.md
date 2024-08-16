@@ -44,14 +44,17 @@ For more details on using Swift Package Manager, visit [Apple's Swift Package Ma
    - [LoadingButtonStyle](#loadingbuttonstyle)
 3. [Dropdown](#dropdown)
 4. [LoadingIndicator](#loadingindicator)
-5. [ProgressView](#progressview)
-6. [QRScanner](#qrscanner)
-7. [SegmentControl](#segmentcontrol)
-8. [Slider](#slider)
-9. [Text](#text)
-10. [TextField](#textfield)
-11. [Toast](#toast)
-12. [ViewModifier](#viewmodifier)
+   - [SimpleLoadingIndicator](#simpleloadingindicator)
+   - [FancyLoadingView](#fancyloadingview)
+   - [ShimmerView](#shimmerview)
+6. [ProgressView](#progressview)
+7. [QRScanner](#qrscanner)
+8. [SegmentControl](#segmentcontrol)
+9. [Slider](#slider)
+10. [Text](#text)
+11. [TextField](#textfield)
+12. [Toast](#toast)
+13. [ViewModifier](#viewmodifier)
 
 ## Importing the Library
 
@@ -220,7 +223,7 @@ var body: some View {
 
 This style modifies the appearance of buttons to fit within a specified shape, with customizable foreground, background colors and padding. It is highly flexible, accommodating various shapes and color styles.
 
-### 2.3 GrowingButtonStyle:
+### GrowingButtonStyle:
 
 A `ButtonStyle` for SwiftUI that scales the button on press, with customizable shape and color styles.
 
@@ -254,7 +257,7 @@ https://github.com/user-attachments/assets/9520da94-8b87-4a84-83e9-da7b79dbaeab
 
 This button style provides an interactive feedback effect by increasing the button's scale when pressed. It allows for customization of the button's foreground and background colors, shape, and padding.
 
-### 2.4 LoadingButtonStyle:
+### LoadingButtonStyle:
 
 A `ButtonStyle` for SwiftUI that provides a customizable button with a loading indicator.
 
@@ -470,7 +473,7 @@ https://github.com/user-attachments/assets/7f7b988e-8cc7-41f1-84e1-fe08f9f8ce22
 
 ## LoadingIndicator
 
-### 4.1. SimpleLoadingIndicator:
+### SimpleLoadingIndicator:
 
 A simple, customizable loading indicator view. This view displays a circular loading indicator that rotates according to the specified loading speed. The appearance of the indicator, including its color, background color, line width, and speed, can be customized.
 
@@ -495,7 +498,7 @@ Visibility and Size:
 - Frame Size: Adjust the indicator's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 - Dynamic Visibility: Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
 
-### 4.2. FancyLoadingView
+### FancyLoadingView
 
 A SwiftUI view that displays a series of animated concentric circles, creating a dynamic loading indicator.
 
@@ -515,7 +518,7 @@ Each circle in the animation is individually timed to create a smooth, rhythmic 
 Visibility: 
 - Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
 
-### 4.3. ShimmerView
+### ShimmerView
 
 A view displaying a shimmering loading placeholder.
 
