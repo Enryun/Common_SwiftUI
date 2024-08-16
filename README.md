@@ -38,10 +38,10 @@ For more details on using Swift Package Manager, visit [Apple's Swift Package Ma
 1. **Alert**
    - 1.1 [AlertWithTextFields](#alertwithtextFields)
 2. **Button**
-   [CapsuleButtonStyle](#capsulebuttonstyle)
+   - [CapsuleButtonStyle](#capsulebuttonstyle)
    - [ShapeButtonStyle](#shapebuttonstyle)
-   - 2.3 [GrowingButtonStyle](#growingbuttonstyle)
-   - 2.3 [LoadingButtonStyle](#loadingbuttonstyle)
+   - [GrowingButtonStyle](#growingbuttonstyle)
+   - [LoadingButtonStyle](#loadingbuttonstyle)
 
 1. [Alert](#alert)
 2. [Button](#button)
@@ -138,7 +138,7 @@ This setup presents an alert for login, with text fields for username and passwo
 
 ## Button
 
-### 2.1 CapsuleButtonStyle:
+### CapsuleButtonStyle:
 
 A `ButtonStyle` for SwiftUI that applies a Capsule Shape with customizable color styles.
 
@@ -179,7 +179,7 @@ var body: some View {
 
 This style gives buttons a modern, rounded look suitable for various UI contexts.
 
-### 2.2 ShapeButtonStyle:
+### ShapeButtonStyle:
 
 A `ButtonStyle` for SwiftUI that allows customization of the button's shape and color.
 
