@@ -86,6 +86,48 @@ Parameters:
 
 #### AlertAction: 
 
+Defines an action for an alert dialog.
+
+This structure encapsulates the information needed to present an action within an alert, including the action's title, its visual style, and a completion handler that executes when the action is selected. The completion handler passes back an array of strings, allowing for flexible use cases such as returning input from text fields within the alert.
+
+Parameters:
+- `title`: The text to display on the action button.
+- `style`: The visual style of the action, defined by `UIAlertAction.Style`.
+- `completion`: A closure that is called when the action is selected, passing an array of `String` as its parameter.
+
+Example:
+
+```swift
+var body: some View {
+    Button(action: {
+        AlertWithTextFields(
+            title: "Login",
+            message: "Please enter your password",
+            textFields:
+                [
+                    AlertTextField(placeholder: "username"),
+                    AlertTextField(placeholder: "password", isSecureTextEntry: true)
+                ],
+            actions:
+                [
+                    AlertAction(title: "Cancel", style: .cancel) { result in
+                        print(result)
+                    },
+                    AlertAction(title: "Login", style: .default) { result in
+                        print(result)
+                    }
+                ]
+        )
+    }, label: {
+        Text("Present Alert")
+    })
+}
+```
+
+https://github.com/user-attachments/assets/319d44d0-4d6d-4314-a14e-351c9c8014e7
+
+This setup presents an alert for login, with text fields for username and password and options to cancel or log in.
+
 ## Button
 
 ### 2.1 CapsuleButtonStyle:
