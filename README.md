@@ -145,23 +145,25 @@ Example:
 ```swift
 let gradient = LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing)
 
-VStack(spacing: 25) {
-    Button("Capsule 1") { }
-        .buttonStyle(CapsuleButtonStyle())
-
-    Button("Capsule 2") { }
-        .buttonStyle(CapsuleButtonStyle(textColor: .black, backgroundColor: .green))
-
-    Button("Capsule 3") { }
-        .buttonStyle(CapsuleButtonStyle(textColor: .white, backgroundColor: gradient))
-
-    Button(action: {}, label: {
-        HStack {
-            Image(systemName: "cloud.sun")
-            Text("Capsule 4")
-        }
-    })
-    .buttonStyle(CapsuleButtonStyle(textColor: Color.white, backgroundColor: gradient))
+var body: some View {
+    VStack(spacing: 25) {
+        Button("Capsule 1") { }
+            .buttonStyle(CapsuleButtonStyle())
+    
+        Button("Capsule 2") { }
+            .buttonStyle(CapsuleButtonStyle(textColor: .black, backgroundColor: .green))
+    
+        Button("Capsule 3") { }
+            .buttonStyle(CapsuleButtonStyle(textColor: .white, backgroundColor: gradient))
+    
+        Button(action: {}, label: {
+            HStack {
+                Image(systemName: "cloud.sun")
+                Text("Capsule 4")
+            }
+        })
+        .buttonStyle(CapsuleButtonStyle(textColor: Color.white, backgroundColor: gradient))
+    }
 }
 ```
 
@@ -185,25 +187,27 @@ Example:
 ```swift
 let gradient = LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing)
 
-VStack(spacing: 25) {
-    Button("ShapeButton 1") { }
-        .buttonStyle(ShapeButtonStyle(textColor: .white, backgroundColor: .blue, shape: .rect))
-
-    Button("ShapeButton 2") { }
-        .buttonStyle(ShapeButtonStyle(textColor: .primary, backgroundColor: .green, shape: .rect(cornerRadius: 8)))
-
-    Button("ShapeButton 3") { }
-        .buttonStyle(ShapeButtonStyle(textColor: .white, backgroundColor: .red, shape: .capsule))
-            
-    Button("ShapeButton 4") { }
-        .buttonStyle(ShapeButtonStyle(textColor: .white, backgroundColor: .orange, shape: .ellipse))
-
-    Button(action: {}, label: {
-        Image(systemName: "heart.fill")
-            .font(.title)
-            .padding(5)
-        })
-        .buttonStyle(ShapeButtonStyle(textColor: .white, backgroundColor: gradient, shape: .circle))
+var body: some View {
+    VStack(spacing: 25) {
+        Button("ShapeButton 1") { }
+            .buttonStyle(ShapeButtonStyle(textColor: .white, backgroundColor: .blue, shape: .rect))
+    
+        Button("ShapeButton 2") { }
+            .buttonStyle(ShapeButtonStyle(textColor: .primary, backgroundColor: .green, shape: .rect(cornerRadius: 8)))
+    
+        Button("ShapeButton 3") { }
+            .buttonStyle(ShapeButtonStyle(textColor: .white, backgroundColor: .red, shape: .capsule))
+                
+        Button("ShapeButton 4") { }
+            .buttonStyle(ShapeButtonStyle(textColor: .white, backgroundColor: .orange, shape: .ellipse))
+    
+        Button(action: {}, label: {
+            Image(systemName: "heart.fill")
+                .font(.title)
+                .padding(5)
+            })
+            .buttonStyle(ShapeButtonStyle(textColor: .white, backgroundColor: gradient, shape: .circle))
+    }
 }
 ```
 
@@ -227,15 +231,17 @@ Example:
 ```swift
 let gradient = LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange]), startPoint: .leading, endPoint: .trailing)
 
-VStack(spacing: 25) {
-    Button("Growing 1") { }
-        .buttonStyle(GrowingButtonStyle())
-    
-    Button("Growing 2") { }
-        .buttonStyle(GrowingButtonStyle(textColor: .primary, backgroundColor: .green, shape: .rect(cornerRadius: 4)))
-    
-    Button("Growing 3") { }
-        .buttonStyle(GrowingButtonStyle(textColor: .primary, backgroundColor: gradient, shape: .rect(cornerRadius: 4)))
+var body: some View {
+    VStack(spacing: 25) {
+        Button("Growing 1") { }
+            .buttonStyle(GrowingButtonStyle())
+        
+        Button("Growing 2") { }
+            .buttonStyle(GrowingButtonStyle(textColor: .primary, backgroundColor: .green, shape: .rect(cornerRadius: 4)))
+        
+        Button("Growing 3") { }
+            .buttonStyle(GrowingButtonStyle(textColor: .primary, backgroundColor: gradient, shape: .rect(cornerRadius: 4)))
+    }
 }
 ```
 
@@ -262,42 +268,44 @@ Example:
 ```swift
 @State private var isLoading: Bool = false
 
-VStack(spacing: 25) {
-    Button("Loading Button 1") {
-        isLoading = true
-        // Simulate a network request or some action
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            isLoading = false
-        }
-    }.buttonStyle(LoadingButtonStyle(isLoading: $isLoading))
-    
-    Button("Loading Button 2") {}
-        .buttonStyle(LoadingButtonStyle(isLoading: $isLoading, loadingState: .leading, backgroundColor: .cyan, horizontalPadding: 40))
-    
-    Button(action: {}, label: {
-        Text("Loading Button 3")
+var body: some View {
+    VStack(spacing: 25) {
+        Button("Loading Button 1") {
+            isLoading = true
+            // Simulate a network request or some action
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                isLoading = false
+            }
+        }.buttonStyle(LoadingButtonStyle(isLoading: $isLoading))
+        
+        Button("Loading Button 2") {}
+            .buttonStyle(LoadingButtonStyle(isLoading: $isLoading, loadingState: .leading, backgroundColor: .cyan, horizontalPadding: 40))
+        
+        Button(action: {}, label: {
+            Text("Loading Button 3")
+                .frame(width: 250, height: 40)
+        })
+        .buttonStyle(LoadingButtonStyle(isLoading: $isLoading, loadingState: .resize, backgroundColor: .indigo))
+        
+        Button(action: {}, label: {
+            HStack(spacing: 12) {
+                Image(systemName: "person.crop.circle")
+                    .font(.title2)
+                
+                Text("Loading Button 4")
+                    .font(.title)
+            }
             .frame(width: 250, height: 40)
-    })
-    .buttonStyle(LoadingButtonStyle(isLoading: $isLoading, loadingState: .resize, backgroundColor: .indigo))
-    
-    Button(action: {}, label: {
-        HStack(spacing: 12) {
-            Image(systemName: "person.crop.circle")
-                .font(.title2)
-            
-            Text("Loading Button 4")
+        })
+        .buttonStyle(LoadingButtonStyle(isLoading: $isLoading, loadingState: .leading, backgroundColor: .red, disabledLoadingColor: .red.opacity(0.5)))
+        
+        Button(action: {}, label: {
+            Image(systemName: "heart.fill")
                 .font(.title)
-        }
-        .frame(width: 250, height: 40)
-    })
-    .buttonStyle(LoadingButtonStyle(isLoading: $isLoading, loadingState: .leading, backgroundColor: .red, disabledLoadingColor: .red.opacity(0.5)))
-    
-    Button(action: {}, label: {
-        Image(systemName: "heart.fill")
-            .font(.title)
-            .padding(5)
-    })
-    .buttonStyle(LoadingButtonStyle(isLoading: $isLoading, loadingState: .top, backgroundColor: .green, shape: .circle))
+                .padding(5)
+        })
+        .buttonStyle(LoadingButtonStyle(isLoading: $isLoading, loadingState: .top, backgroundColor: .green, shape: .circle))
+    }
 }
 ```
 
@@ -324,20 +332,22 @@ Example 1:
 private var options: [String] = ["Option 1", "Option 2", "Option 3", "Option 4"]
 @State private var selectedOption: String = "Option 1"
 
-VStack {
-    DropDown(options: options, selection: $selectedOption) { item, isSelected, isPlaceHolderShow, isExpand in
-        Text(item)
-            .foregroundStyle(isSelected ? .black : .white)
-            .font(.title3)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .padding(.horizontal)
-            .background {
-                Rectangle()
-                    .fill(isSelected ? .green : .gray)
-            }
+var body: some View {
+    VStack {
+        DropDown(options: options, selection: $selectedOption) { item, isSelected, isPlaceHolderShow, isExpand in
+            Text(item)
+                .foregroundStyle(isSelected ? .black : .white)
+                .font(.title3)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                .padding(.horizontal)
+                .background {
+                    Rectangle()
+                        .fill(isSelected ? .green : .gray)
+                }
+        }
+    
+        Spacer()
     }
-
-    Spacer()
 }
 ```
 
@@ -349,22 +359,24 @@ Example 2:
 private var options: [String] = ["Option 1", "Option 2", "Option 3", "Option 4"]
 @State private var selectedOption: String = "Option 1"
 
-VStack {
-    DropDown(options: options, selection: $selectedOption4, rowHeight: 68) { item, isSelected, isPlaceHolderShow, isExpand in
-        Text(item)
-            .foregroundStyle(.black)
-            .font(.title3)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .padding(.horizontal)
-            .background {
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke(isSelected ? .green : .gray, lineWidth: 2)
-                    .padding(2)
-            }
-            .padding(.top, 8)
+var body: some View {
+    VStack {
+        DropDown(options: options, selection: $selectedOption4, rowHeight: 68) { item, isSelected, isPlaceHolderShow, isExpand in
+            Text(item)
+                .foregroundStyle(.black)
+                .font(.title3)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                .padding(.horizontal)
+                .background {
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(isSelected ? .green : .gray, lineWidth: 2)
+                        .padding(2)
+                }
+                .padding(.top, 8)
+        }
+    
+        Spacer()
     }
-
-    Spacer()
 }
 ```
 
@@ -381,18 +393,20 @@ enum DropDownOptions: String, CaseIterable {
 }
 @State private var selectedOption: DropDownOptions = .east
 
-VStack {
-    DropDown(options: DropDownOptions.allCases, selection: $selectedOption, rowHeight: 60) { item, isSelected, isPlaceHolderShow, isExpand in
-        Text(item.rawValue)
-            .foregroundStyle(isSelected && !isPlaceHolderShow ? .blue : .gray)
-            .font(.title3)
-    } placeHolder: {_ in
-        Text("Select an option")
-            .foregroundStyle(.gray)
-            .font(.title3)
+var body: some View {
+    VStack {
+        DropDown(options: DropDownOptions.allCases, selection: $selectedOption, rowHeight: 60) { item, isSelected, isPlaceHolderShow, isExpand in
+            Text(item.rawValue)
+                .foregroundStyle(isSelected && !isPlaceHolderShow ? .blue : .gray)
+                .font(.title3)
+        } placeHolder: {_ in
+            Text("Select an option")
+                .foregroundStyle(.gray)
+                .font(.title3)
+        }
+    
+        Spacer()
     }
-
-    Spacer()
 }
 ```
 
@@ -409,35 +423,37 @@ enum DropDownOptions: String, CaseIterable {
 }
 @State private var selectedOption: DropDownOptions = .east
 
-VStack {
-    DropDown(options: DropDownOptions.allCases, selection: $selectedOption) { item, isSelected, isPlaceHolderShow, isExpand in
-        Text(item.rawValue)
-            .foregroundStyle(.black)
-            .font(.title3)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .padding(.horizontal)
-            .background {
-                Rectangle()
-                    .fill(isSelected && !isPlaceHolderShow ? .clear : .gray.opacity(0.5))
-            }
-    } placeHolder: { isExpand in
-        HStack {
-            Text("Select the Direction")
-                .foregroundStyle(.primary)
+var body: some View {
+    VStack {
+        DropDown(options: DropDownOptions.allCases, selection: $selectedOption) { item, isSelected, isPlaceHolderShow, isExpand in
+            Text(item.rawValue)
+                .foregroundStyle(.black)
                 .font(.title3)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            
-            Spacer()
-            
-            Image(systemName: "chevron.down")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 20, height: 20)
-                .rotationEffect(isExpand ? .degrees(90) : .zero)
+                .padding(.horizontal)
+                .background {
+                    Rectangle()
+                        .fill(isSelected && !isPlaceHolderShow ? .clear : .gray.opacity(0.5))
+                }
+        } placeHolder: { isExpand in
+            HStack {
+                Text("Select the Direction")
+                    .foregroundStyle(.primary)
+                    .font(.title3)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                
+                Spacer()
+                
+                Image(systemName: "chevron.down")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 20, height: 20)
+                    .rotationEffect(isExpand ? .degrees(90) : .zero)
+            }
         }
+    
+        Spacer()
     }
-
-    Spacer()
 }
 ```
 
@@ -532,23 +548,24 @@ Example:
 ```swift
 @State private var progress: CGFloat = 0.75
 
-VStack(spacing: 30) {
-    ProgressBar(progress: $progress, color: .green, backgroundColor: .clear)
-        .frame(width: 300, height: 20)
-    
-    ProgressBar(progress: $progress, color: .orange, backgroundColor: .orange.opacity(0.2))
-        .frame(width: 300, height: 20)
-    
-    ProgressBar(progress: $progress, colors: [.red, .blue])
-        .frame(width: 300, height: 16)
-    
-    ProgressBar(progress: $progress, color: .blue)
-        .frame(width: 300, height: 8)
-    
-    ProgressBar(progress: $progress, colors: [.indigo, .teal])
-        .frame(width: 300, height: 8)
+var body: some View {
+    VStack(spacing: 30) {
+        ProgressBar(progress: $progress, color: .green, backgroundColor: .clear)
+            .frame(width: 300, height: 20)
+        
+        ProgressBar(progress: $progress, color: .orange, backgroundColor: .orange.opacity(0.2))
+            .frame(width: 300, height: 20)
+        
+        ProgressBar(progress: $progress, colors: [.red, .blue])
+            .frame(width: 300, height: 16)
+        
+        ProgressBar(progress: $progress, color: .blue)
+            .frame(width: 300, height: 8)
+        
+        ProgressBar(progress: $progress, colors: [.indigo, .teal])
+            .frame(width: 300, height: 8)
+    }
 }
-.padding()
 ```
 
 <img src="https://github.com/user-attachments/assets/60cfef78-3aaa-4567-ae3e-b01a099d6aeb" width="220">
@@ -577,21 +594,23 @@ Example:
 ```swift
 @State private var progress: CGFloat = 0.75
 
-VStack(spacing: 50) {
-    HStack(spacing: 50) {
-        RingProgress(progress: $progress, lineWidth: 16, startAngle: .degrees(90), color: .blue)
-            .frame(width: 150, height: 150)
-        
-        RingProgress(progress: $progress, lineWidth: 12, startAngle: .degrees(90), color: .red)
-            .frame(width: 80, height: 80)
-    }
-
-    HStack(spacing: 50) {
-        RingProgress(progress: $progress, lineWidth: 16, startAngle: .degrees(90), colors: [.blue, .green])
-            .frame(width: 150, height: 150)
-        
-        RingProgress(progress: $progress, lineWidth: 8, startAngle: .degrees(90), colors: [.red, .green])
-            .frame(width: 50, height: 50)
+var body: some View {
+    VStack(spacing: 50) {
+        HStack(spacing: 50) {
+            RingProgress(progress: $progress, lineWidth: 16, startAngle: .degrees(90), color: .blue)
+                .frame(width: 150, height: 150)
+            
+            RingProgress(progress: $progress, lineWidth: 12, startAngle: .degrees(90), color: .red)
+                .frame(width: 80, height: 80)
+        }
+    
+        HStack(spacing: 50) {
+            RingProgress(progress: $progress, lineWidth: 16, startAngle: .degrees(90), colors: [.blue, .green])
+                .frame(width: 150, height: 150)
+            
+            RingProgress(progress: $progress, lineWidth: 8, startAngle: .degrees(90), colors: [.red, .green])
+                .frame(width: 50, height: 50)
+        }
     }
 }
 ```
@@ -621,22 +640,24 @@ Example:
 ```swift
 @State private var progress: CGFloat = 0.75
 
-VStack(spacing: 50) {
-    HStack(spacing: 50) {
-        ArcProgress(progress: $progress, lineWidth: 16, color: .red)
-            .frame(width: 150, height: 150)
-        
-        
-        ArcProgress(progress: $progress, lineWidth: 10, color: .pink)
-            .frame(width: 50, height: 50)
-    }
-
-    HStack(spacing: 50) {
-        ArcProgress(progress: $progress, lineWidth: 16, colors: [.orange, .yellow, .purple])
-            .frame(width: 150, height: 150)
-        
-        ArcProgress(progress: $progress, lineWidth: 10, colors: [.yellow, .blue])
-            .frame(width: 100, height: 100)
+var body: some View {
+    VStack(spacing: 50) {
+        HStack(spacing: 50) {
+            ArcProgress(progress: $progress, lineWidth: 16, color: .red)
+                .frame(width: 150, height: 150)
+            
+            
+            ArcProgress(progress: $progress, lineWidth: 10, color: .pink)
+                .frame(width: 50, height: 50)
+        }
+    
+        HStack(spacing: 50) {
+            ArcProgress(progress: $progress, lineWidth: 16, colors: [.orange, .yellow, .purple])
+                .frame(width: 150, height: 150)
+            
+            ArcProgress(progress: $progress, lineWidth: 10, colors: [.yellow, .blue])
+                .frame(width: 100, height: 100)
+        }
     }
 }
 ```
@@ -666,30 +687,32 @@ Parameters:
 @State var isScanning: Bool = false
 @State var successResult: String = ""
 
-VStack(spacing: 20) {
-    Text(successResult)
-        .font(.title)
-        .fontWeight(.semibold)
-    
-    QRScannerView(isScanning: $isScanning, showScanningAnimation: true, showErrorAlert: false) { result in
-        switch result {
-        case .success(let result):
-            successResult = result
-        case .failure(let error):
-            print("This is Error Cases")
-            print(error)
-            print(error.localizedDescription)
+var body: some View {
+    VStack(spacing: 20) {
+        Text(successResult)
+            .font(.title)
+            .fontWeight(.semibold)
+        
+        QRScannerView(isScanning: $isScanning, showScanningAnimation: true, showErrorAlert: false) { result in
+            switch result {
+            case .success(let result):
+                successResult = result
+            case .failure(let error):
+                print("This is Error Cases")
+                print(error)
+                print(error.localizedDescription)
+            }
         }
-    }
-    
-    Button("Start Scanning") {
-        successResult = ""
-        isScanning = true
-    }
-    
-    Button("Stop Scanning") {
-        successResult = ""
-        isScanning = false
+        
+        Button("Start Scanning") {
+            successResult = ""
+            isScanning = true
+        }
+        
+        Button("Stop Scanning") {
+            successResult = ""
+            isScanning = false
+        }
     }
 }
 ```
@@ -796,34 +819,36 @@ Example:
 @State private var selection: ClosedRange<CGFloat> = 60...90
 @State private var selection2: ClosedRange<CGFloat> = 10...50
 
-VStack(spacing: 50) {
-    RangeSlider(
-        selection: $selection,
-        range: 10...100,
-        minimumDistance: 10,
-        lineWidth: 15,
-        tint: .red,
-        controlConfig: .init(width: 20, enableShadow: true)
-    )
-    .frame(height: 100)
-    
-    Text("\(Int(selection.lowerBound)):\(Int(selection.upperBound))")
-        .font(.largeTitle.bold())
-        .padding(.top, 10)
-    
-    RangeSlider(
-        selection: $selection2,
-        range: 0...100,
-        minimumDistance: 1,
-        lineWidth: 8,
-        tint: .green,
-        controlConfig: .init(width: 12, enableShadow: true)
-    )
-    .frame(height: 100)
-    
-    Text("\(Int(selection2.lowerBound)):\(Int(selection2.upperBound))")
-        .font(.largeTitle.bold())
-        .padding(.top, 10)
+var body: some View {
+    VStack(spacing: 50) {
+        RangeSlider(
+            selection: $selection,
+            range: 10...100,
+            minimumDistance: 10,
+            lineWidth: 15,
+            tint: .red,
+            controlConfig: .init(width: 20, enableShadow: true)
+        )
+        .frame(height: 100)
+        
+        Text("\(Int(selection.lowerBound)):\(Int(selection.upperBound))")
+            .font(.largeTitle.bold())
+            .padding(.top, 10)
+        
+        RangeSlider(
+            selection: $selection2,
+            range: 0...100,
+            minimumDistance: 1,
+            lineWidth: 8,
+            tint: .green,
+            controlConfig: .init(width: 12, enableShadow: true)
+        )
+        .frame(height: 100)
+        
+        Text("\(Int(selection2.lowerBound)):\(Int(selection2.upperBound))")
+            .font(.largeTitle.bold())
+            .padding(.top, 10)
+    }
 }
 ```
 
@@ -851,18 +876,20 @@ Example:
 @State var startAngle: Angle = .degrees(50)
 @State var endAngle: Angle = .degrees(90)
 
-VStack(spacing: 50) {
-    RingSlider(
-        startAngle: $startAngle,
-        toAngle: $endAngle,
-        lineWidth: 40,
-        tint: .purple,
-        controlConfig: .init(width: 40, startSliderImage: Image(systemName: "moon.fill"),
-                             endSliderImage: Image(systemName: "alarm"))
-    )
-    .frame(width: 300, height: 300)
-    
-    Text("Start Angle: \(Int(startAngle.degrees)) - End Angle: \(Int(endAngle.degrees))")
+var body: some View {
+    VStack(spacing: 50) {
+        RingSlider(
+            startAngle: $startAngle,
+            toAngle: $endAngle,
+            lineWidth: 40,
+            tint: .purple,
+            controlConfig: .init(width: 40, startSliderImage: Image(systemName: "moon.fill"),
+                                 endSliderImage: Image(systemName: "alarm"))
+        )
+        .frame(width: 300, height: 300)
+        
+        Text("Start Angle: \(Int(startAngle.degrees)) - End Angle: \(Int(endAngle.degrees))")
+    }
 }
 ```
 
@@ -935,42 +962,44 @@ Example:
 @State private var trigger: Bool = false
 @State private var text = "Common SwiftUI"
 
-VStack(alignment: .leading, spacing: 30) {
-    HackerText(
-        text: text,
-        trigger: trigger,
-        transition: .hyper,
-        speed: 0.06
-    )
-    .font(.largeTitle.bold())
-    .lineLimit(2)
-    
-    HackerText(
-        text: text,
-        trigger: trigger,
-        transition: .numeric,
-        speed: 0.06
-    )
-    .font(.largeTitle.bold())
-    .lineLimit(2)
-    
-    Button(action: {
-        if text == "Common SwiftUI" {
-            text = "Made with SwiftUI\nBy James Thang"
-        } else {
-            text = "Common SwiftUI"
-        }
-        trigger.toggle()
-    }, label: {
-        Text("Trigger")
-            .fontWeight(.semibold)
+var body: some View {
+    VStack(alignment: .leading, spacing: 30) {
+        HackerText(
+            text: text,
+            trigger: trigger,
+            transition: .hyper,
+            speed: 0.06
+        )
+        .font(.largeTitle.bold())
+        .lineLimit(2)
         
-    })
-    .buttonStyle(.borderedProminent)
-    .frame(maxWidth: .infinity)
+        HackerText(
+            text: text,
+            trigger: trigger,
+            transition: .numeric,
+            speed: 0.06
+        )
+        .font(.largeTitle.bold())
+        .lineLimit(2)
+        
+        Button(action: {
+            if text == "Common SwiftUI" {
+                text = "Made with SwiftUI\nBy James Thang"
+            } else {
+                text = "Common SwiftUI"
+            }
+            trigger.toggle()
+        }, label: {
+            Text("Trigger")
+                .fontWeight(.semibold)
+            
+        })
+        .buttonStyle(.borderedProminent)
+        .frame(maxWidth: .infinity)
+    }
+    .padding(15)
+    .frame(maxWidth: .infinity, alignment: .leading)
 }
-.padding(15)
-.frame(maxWidth: .infinity, alignment: .leading)
 ```
 
 https://github.com/user-attachments/assets/5c0f3ebb-e8e5-41f4-8a30-20ad7bceab9c
@@ -1045,17 +1074,19 @@ Example:
 ```swift
 @State private var text: String = ""
 
-LimitedTextField(
-    config: .init(
-        limit: 40,
-        tint: .secondary,
-        autoResizes: true,
-        allowExcessTyping: false
-    ),
-    hint: "Type here",
-    value: $text
-)
-.frame(height: 150)
+var body: some View {
+    LimitedTextField(
+        config: .init(
+            limit: 40,
+            tint: .secondary,
+            autoResizes: true,
+            allowExcessTyping: false
+        ),
+        hint: "Type here",
+        value: $text
+    )
+    .frame(height: 150)
+}
 ```
 
 https://github.com/user-attachments/assets/aa287e0d-11e1-4af8-bb47-ffd2e6ed3bc6
@@ -1095,23 +1126,25 @@ enum FocusableField {
 @State private var isFormFirstNameValid = false
 @State private var isFormLastNameValid = false
 
-VStack(spacing: 15) {
-    ValidationTextField(title: "First Name", text: $firstName, isValid: $isFormFirstNameValid)
-        .autocorrectionDisabled()
-        .focused($focus, equals: .firstName)
-        .isMandatory(true)
+var body: some View {
+    VStack(spacing: 15) {
+        ValidationTextField(title: "First Name", text: $firstName, isValid: $isFormFirstNameValid)
+            .autocorrectionDisabled()
+            .focused($focus, equals: .firstName)
+            .isMandatory(true)
+        
+        
+        ValidationTextField(title: "Last Name", text: $lastName, isValid: $isFormLastNameValid)
+            .focused($focus, equals: .lastName)
+            .isMandatory(true)
     
-    
-    ValidationTextField(title: "Last Name", text: $lastName, isValid: $isFormLastNameValid)
-        .focused($focus, equals: .lastName)
-        .isMandatory(true)
-
-    Spacer()
-    Button("Submit") {
-        // Handle submit logic
+        Spacer()
+        Button("Submit") {
+            // Handle submit logic
+        }
+        .buttonStyle(.borderedProminent)
+        .disabled(!(isFormFirstNameValid && isFormLastNameValid))
     }
-    .buttonStyle(.borderedProminent)
-    .disabled(!(isFormFirstNameValid && isFormLastNameValid))
 }
 ```
 
@@ -1122,10 +1155,12 @@ Example 2:
 ```swift
 @State private var address = ""
 
-ValidationTextField(title: "Address", text: $address)
-    .clearButtonHidden(false)
-    .autocorrectionDisabled()
-    .padding()
+var body: some View {
+    ValidationTextField(title: "Address", text: $address)
+        .clearButtonHidden(false)
+        .autocorrectionDisabled()
+        .padding()
+}
 ```
 
 https://github.com/user-attachments/assets/ff78da93-0d69-4908-bc7a-7afebf1b5517
@@ -1152,22 +1187,24 @@ enum TextFieldError: LocalizedError {
 @FocusState private var focus: FocusableField?
 @State private var isPasswordValid = false
 
-VStack(spacing: 15) {
-    ValidationTextField(title: "Password", text: $password, isValid: $isPasswordValid, isSecured: true)
-        .focused($focus, equals: .password)
-        .isMandatory(true)
-        .onValidate { value in
-            value.count >= 6 ? .success("Good Password") : .failure(TextFieldError.weakPassword)
+var body: some View {
+    VStack(spacing: 15) {
+        ValidationTextField(title: "Password", text: $password, isValid: $isPasswordValid, isSecured: true)
+            .focused($focus, equals: .password)
+            .isMandatory(true)
+            .onValidate { value in
+                value.count >= 6 ? .success("Good Password") : .failure(TextFieldError.weakPassword)
+            }
+            .secureTextButtonHidden(false)
+            .autocorrectionDisabled()
+        
+        
+        Spacer()
+        Button("Submit") {
+            // Handle submit logic
         }
-        .secureTextButtonHidden(false)
-        .autocorrectionDisabled()
-    
-    
-    Spacer()
-    Button("Submit") {
-        // Handle submit logic
+        .disabled(!isPasswordValid)
     }
-    .disabled(!isPasswordValid)
 }
 ```
 
@@ -1184,34 +1221,36 @@ enum FocusableField {
 @FocusState private var focus: FocusableField?
 @State private var isPasswordValid = false
 
-VStack(spacing: 15) {
-    ValidationTextField(title: "Strong Password", text: $password, isValid: $isPasswordValid, isSecured: true)
-        .focused($focus, equals: .password)
-        .isMandatory(true)
-        .secureTextButtonHidden(false)
-        .autocorrectionDisabled()
-        .onFormValidate { text in
-            // Check if text contains any letters (both uppercase and lowercase)
-            let atLeast6Char = text.count >= 6
-            // Check if text contains any numbers (decimal digit)
-            let containNumbers = text.rangeOfCharacter(from: .decimalDigits) != nil
-            // Check if text contains special characters "!@#%^&"
-            let containPunctuation = text.rangeOfCharacter(from: CharacterSet(charactersIn: "!@#%^&")) != nil
-            
-            return [
-                .init(message: atLeast6Char ? "Password is at least 6 characters" : "Password need to be at least 6 characters", isValid: atLeast6Char),
-                .init(message: containNumbers ? "Password contains number" : "Password need to contain number", isValid: containNumbers),
-                .init(message: containNumbers ? "Password contains special character !@#%^&" : "Password need to contain special character !@#%^&", isValid: containPunctuation)
-            ]
+var body: some View {
+    VStack(spacing: 15) {
+        ValidationTextField(title: "Strong Password", text: $password, isValid: $isPasswordValid, isSecured: true)
+            .focused($focus, equals: .password)
+            .isMandatory(true)
+            .secureTextButtonHidden(false)
+            .autocorrectionDisabled()
+            .onFormValidate { text in
+                // Check if text contains any letters (both uppercase and lowercase)
+                let atLeast6Char = text.count >= 6
+                // Check if text contains any numbers (decimal digit)
+                let containNumbers = text.rangeOfCharacter(from: .decimalDigits) != nil
+                // Check if text contains special characters "!@#%^&"
+                let containPunctuation = text.rangeOfCharacter(from: CharacterSet(charactersIn: "!@#%^&")) != nil
+                
+                return [
+                    .init(message: atLeast6Char ? "Password is at least 6 characters" : "Password need to be at least 6 characters", isValid: atLeast6Char),
+                    .init(message: containNumbers ? "Password contains number" : "Password need to contain number", isValid: containNumbers),
+                    .init(message: containNumbers ? "Password contains special character !@#%^&" : "Password need to contain special character !@#%^&", isValid: containPunctuation)
+                ]
+            }
+        
+        
+        Spacer()
+        Button("Submit") {
+            // Handle submit logic
         }
-    
-    
-    Spacer()
-    Button("Submit") {
-        // Handle submit logic
+        .buttonStyle(.borderedProminent)
+        .disabled(!isPasswordValid)
     }
-    .buttonStyle(.borderedProminent)
-    .disabled(!isPasswordValid)
 }
 ```
 
@@ -1252,62 +1291,64 @@ enum TextFieldError: LocalizedError {
 @State private var isPasswordValid = false
 @State private var isConfirmPasswordValid = false
 
-VStack(spacing: 15) {
-    ValidationTextField(title: "First Name", text: $firstName, isValid: $isFormFirstNameValid)
-        .autocorrectionDisabled()
-        .focused($focus, equals: .firstName)
-        .isMandatory(true)
-    
-    ValidationTextField(title: "Last Name", text: $lastName, isValid: $isFormLastNameValid)
-        .focused($focus, equals: .lastName)
-        .isMandatory(true)
-                    
-    ValidationTextField(title: "Address", text: $address)
-        .clearButtonHidden(false)
-        .focused($focus, equals: .address)
-    
-    ValidationTextField(title: "Password", text: $password, isValid: $isPasswordValid, isSecured: true)
-        .focused($focus, equals: .password)
-        .isMandatory(true)
-        .secureTextButtonHidden(false)
-        .autocorrectionDisabled()
-        .onFormValidate { text in
-            // Check if text contains any letters (both uppercase and lowercase)
-            let atLeast6Char = text.count >= 6
-            // Check if text contains any numbers (decimal digit)
-            let containNumbers = text.rangeOfCharacter(from: .decimalDigits) != nil
-            // Check if text contains special characters "!@#%^&"
-            let containPunctuation = text.rangeOfCharacter(from: CharacterSet(charactersIn: "!@#%^&")) != nil
-            
-            return [
-                .init(message: atLeast6Char ? "Password is at least 6 characters" : "Password need to be at least 6 characters", isValid: atLeast6Char),
-                .init(message: containNumbers ? "Password contains number" : "Password need to contain number", isValid: containNumbers),
-                .init(message: containNumbers ? "Password contains special character !@#%^&" : "Password need to contain special character !@#%^&", isValid: containPunctuation)
-            ]
-        }
-    
-    ValidationTextField(title: "Confirm Password", text: $confirmPassword, isValid: $isConfirmPasswordValid, isSecured: true)
-        .focused($focus, equals: .confirmPassword)
-        .isMandatory(true)
-        .onValidate { value in
-            value == password ? .success("Password Match") : .failure(TextFieldError.invalidConfirmPassword)
-        }
-        .onChange(of: password) { newValue in
-            if password != confirmPassword {
-                isConfirmPasswordValid = false
-                confirmPassword = ""
-            }
-        }
-        .secureTextButtonHidden(false)
-        .autocorrectionDisabled()
-    
-    Spacer()
-    
-    Button("Creat New Account") {
+var body: some View {
+    VStack(spacing: 15) {
+        ValidationTextField(title: "First Name", text: $firstName, isValid: $isFormFirstNameValid)
+            .autocorrectionDisabled()
+            .focused($focus, equals: .firstName)
+            .isMandatory(true)
         
+        ValidationTextField(title: "Last Name", text: $lastName, isValid: $isFormLastNameValid)
+            .focused($focus, equals: .lastName)
+            .isMandatory(true)
+                        
+        ValidationTextField(title: "Address", text: $address)
+            .clearButtonHidden(false)
+            .focused($focus, equals: .address)
+        
+        ValidationTextField(title: "Password", text: $password, isValid: $isPasswordValid, isSecured: true)
+            .focused($focus, equals: .password)
+            .isMandatory(true)
+            .secureTextButtonHidden(false)
+            .autocorrectionDisabled()
+            .onFormValidate { text in
+                // Check if text contains any letters (both uppercase and lowercase)
+                let atLeast6Char = text.count >= 6
+                // Check if text contains any numbers (decimal digit)
+                let containNumbers = text.rangeOfCharacter(from: .decimalDigits) != nil
+                // Check if text contains special characters "!@#%^&"
+                let containPunctuation = text.rangeOfCharacter(from: CharacterSet(charactersIn: "!@#%^&")) != nil
+                
+                return [
+                    .init(message: atLeast6Char ? "Password is at least 6 characters" : "Password need to be at least 6 characters", isValid: atLeast6Char),
+                    .init(message: containNumbers ? "Password contains number" : "Password need to contain number", isValid: containNumbers),
+                    .init(message: containNumbers ? "Password contains special character !@#%^&" : "Password need to contain special character !@#%^&", isValid: containPunctuation)
+                ]
+            }
+        
+        ValidationTextField(title: "Confirm Password", text: $confirmPassword, isValid: $isConfirmPasswordValid, isSecured: true)
+            .focused($focus, equals: .confirmPassword)
+            .isMandatory(true)
+            .onValidate { value in
+                value == password ? .success("Password Match") : .failure(TextFieldError.invalidConfirmPassword)
+            }
+            .onChange(of: password) { newValue in
+                if password != confirmPassword {
+                    isConfirmPasswordValid = false
+                    confirmPassword = ""
+                }
+            }
+            .secureTextButtonHidden(false)
+            .autocorrectionDisabled()
+        
+        Spacer()
+        
+        Button("Creat New Account") {
+            
+        }
+        .buttonStyle(.borderedProminent)
+        .disabled(!(isFormFirstNameValid && isFormLastNameValid && isPasswordValid && isPasswordValid && isConfirmPasswordValid))
     }
-    .buttonStyle(.borderedProminent)
-    .disabled(!(isFormFirstNameValid && isFormLastNameValid && isPasswordValid && isPasswordValid && isConfirmPasswordValid))
 }
 ```
 
