@@ -9,9 +9,8 @@
 1. [Overview](#overview)
 2. [Requirements](#requirements)
 3. [Installation](#installation)
-4. [Features](#features)
-5. [Usage](#usage)
-6. [Author](#author)
+4. [Components](#components)
+5. [Author](#author)
 
 ## Overview
 
@@ -33,7 +32,15 @@ This project can be installed using `Swift Package Manager` and `CocoaPod`.
 
 For more details on using Swift Package Manager, visit [Apple's Swift Package Manager documentation](https://swift.org/package-manager/).
 
-## Features
+### Importing the Library
+
+To use any of the components provided by `CommonSwiftUI`, such as `RangeSlider` or `QRScannerView`, you need to import the library at the beginning of your SwiftUI view file. This ensures that all the features and components from the library are accessible in that file. Simply add the following line at the top of your `.swift` file where you plan to use these components:
+
+```swift
+import CommonSwiftUI
+```
+
+## Components
 
 1. [Alert](#alert)
    - [AlertWithTextFields](#alertwithtextFields)
@@ -65,16 +72,6 @@ For more details on using Swift Package Manager, visit [Apple's Swift Package Ma
     - [ValidationTextField](#validationtextfield)
 11. [Toast](#toast)
 12. [ViewModifier](#viewmodifier)
-
-## Importing the Library
-
-To use any of the components provided by `CommonSwiftUI`, such as `RangeSlider` or `QRScannerView`, you need to import the library at the beginning of your SwiftUI view file. This ensures that all the features and components from the library are accessible in that file. Simply add the following line at the top of your `.swift` file where you plan to use these components:
-
-```swift
-import CommonSwiftUI
-```
-
-## Usage
 
 ## Alert
 
