@@ -45,6 +45,7 @@ import CommonSwiftUI
 1. [Alert](#alert)
    - [AlertWithTextFields](#alertwithtextFields)
    - [AlertWithErrorBinding](#alertwitherrorbinding)
+   - [UniversalAlert](#universalalert)
 2. [Button](#button)
    - [CapsuleButtonStyle](#capsulebuttonstyle)
    - [ShapeButtonStyle](#shapebuttonstyle)
@@ -146,12 +147,7 @@ This setup presents an alert for login, with text fields for username and passwo
 
 ## AlertWithErrorBinding:
 
-Presents a customizable alert using the provided [CommonAlert](#commonalert) conforming data.
-
-This function displays an alert based on the properties defined in an instance of `T`, where `T` conforms to the `CommonAlert` protocol. It allows for dynamic alert content including title, subtitle, and custom button actions.
-
-Parameter:
-- `alert`: A binding to an optional `CommonAlert` conforming object that provides the data for the alert.
+This solution presents a customizable alert whenever the `Binding` error data has value. The error must conform to the provided [CommonAlert](#commonalert) protocol.
 
 #### CommonAlert:
 
@@ -161,6 +157,17 @@ Properties:
 - `title`: The primary text displayed in the alert, typically used for summarizing the alert's purpose.
 - `subTitle`: An optional secondary text providing additional details or context.
 - `buttons`: A view component representing the actionable items or responses available for the alert.
+
+This function displays an alert based on the properties defined in an instance of `T`, where `T` conforms to the `CommonAlert` protocol. It allows for dynamic alert content including title, subtitle, and custom button actions.
+
+```swift
+public func showCustomAlert<T>(alert: Binding<T?>) -> some View where T : CommonSwiftUI.CommonAlert
+```
+
+Parameter:
+- `alert`: A binding to an optional `CommonAlert` conforming object that provides the data for the alert.
+
+Example:
 
 Define Custom Error conforming to `CommonAlert` protocol. This standardizes and concentrates the way alerts are created and managed by specifying essential elements that each alert should contain.
 
@@ -260,6 +267,10 @@ https://github.com/user-attachments/assets/40021753-997a-40fc-a9a9-3570a5b03492
 Adopting the `CommonAlert` component helps projects by standardizing alert presentations across an application, ensuring a consistent user interface. This consistency can reduce development time and errors by providing a unified method for creating and managing alerts. 
 
 By conforming to the `CommonAlert` protocol, developers can customize alert components while maintaining a coherent appearance and functionality. This modularity and consistency in design make the component particularly useful in large projects or those requiring frequent alert updates.
+
+## UniversalAlert
+
+
 
 ## Button
 
