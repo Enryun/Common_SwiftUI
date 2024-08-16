@@ -474,7 +474,7 @@ var body: some View {
 
 https://github.com/user-attachments/assets/bba43eb8-1d4f-4d22-98d3-2c950dd0000c
 
-Use multiple DropDowns in 1 Scene for complicated form:
+Use multiple DropDowns for complicated form:
 
 https://github.com/user-attachments/assets/7f7b988e-8cc7-41f1-84e1-fe08f9f8ce22
 
@@ -826,7 +826,16 @@ Parameters:
 - `lineWidth`: The thickness of the slider's active range.
 - `tint`: The color of the slider's active range and thumbs.
 - `backgroundColor`: The color of the slider's track.
-- `controlConfig`: Configuration for the control's appearance including thumb tint, width, and shadow.
+- `controlConfig`: [ControlConfig](#rangeslidercontrolconfig) for the control's appearance including thumb tint, width, and shadow.
+
+#### RangeSliderConfiguration:
+
+`ControlConfig` provides customizable settings for UI controls of `RangeSlider`.
+
+Parameters:
+- `tint`: The color used for the control. Defaults to `.white`.
+- `width`: The width of the control in points. This could affect the size of the control or its border depending on how it's used.
+- `enableShadow`: Determines whether a shadow is applied to the control. Defaults to `true`.
 
 Example:
 
