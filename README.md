@@ -826,7 +826,7 @@ Parameters:
 - `lineWidth`: The thickness of the slider's active range.
 - `tint`: The color of the slider's active range and thumbs.
 - `backgroundColor`: The color of the slider's track.
-- `controlConfig`: [ControlConfig](#rangeslidercontrolconfig) for the control's appearance including thumb tint, width, and shadow.
+- `controlConfig`: [ControlConfig](#rangesliderconfiguration) for the control's appearance including thumb tint, width, and shadow.
 
 #### RangeSliderConfiguration:
 
