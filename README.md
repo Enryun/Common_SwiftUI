@@ -36,15 +36,12 @@ For more details on using Swift Package Manager, visit [Apple's Swift Package Ma
 ## Features
 
 1. **Alert**
-   - 1.1 [AlertWithTextFields](#alertwithtextFields)
+   - [AlertWithTextFields](#alertwithtextFields)
 2. **Button**
    - [CapsuleButtonStyle](#capsulebuttonstyle)
    - [ShapeButtonStyle](#shapebuttonstyle)
    - [GrowingButtonStyle](#growingbuttonstyle)
    - [LoadingButtonStyle](#loadingbuttonstyle)
-
-1. [Alert](#alert)
-2. [Button](#button)
 3. [Dropdown](#dropdown)
 4. [LoadingIndicator](#loadingindicator)
 5. [ProgressView](#progressview)
