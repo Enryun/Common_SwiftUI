@@ -75,7 +75,7 @@ import CommonSwiftUI
 
 ## Alert
 
-### AlertWithTextFields:
+## AlertWithTextFields:
 
 Presents an alert with customizable text fields and actions.
 
