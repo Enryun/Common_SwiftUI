@@ -44,6 +44,7 @@ import CommonSwiftUI
 
 1. [Alert](#alert)
    - [AlertWithTextFields](#alertwithtextFields)
+   - [AlertWithErrorBinding](#alertwitherrorbinding)
 2. [Button](#button)
    - [CapsuleButtonStyle](#capsulebuttonstyle)
    - [ShapeButtonStyle](#shapebuttonstyle)
@@ -142,6 +143,102 @@ var body: some View {
 https://github.com/user-attachments/assets/319d44d0-4d6d-4314-a14e-351c9c8014e7
 
 This setup presents an alert for login, with text fields for username and password and options to cancel or log in.
+
+## AlertWithErrorBinding:
+
+Presents a customizable alert using the provided [CommonAlert](#commonalert) conforming data.
+
+This function displays an alert based on the properties defined in an instance of `T`, where `T` conforms to the `CommonAlert` protocol. It allows for dynamic alert content including title, subtitle, and custom button actions.
+
+Parameter:
+- `alert`: A binding to an optional `CommonAlert` conforming object that provides the data for the alert.
+
+#### CommonAlert:
+
+This `protocol` standardizes the way alerts are created by specifying essential elements that each alert should contain. Conforming to this `protocol` ensures consistency in alert presentation and functionality.
+
+Properties:
+- `title`: The primary text displayed in the alert, typically used for summarizing the alert's purpose.
+- `subTitle`: An optional secondary text providing additional details or context.
+- `buttons`: A view component representing the actionable items or responses available for the alert.
+
+Define Custom Error conforming to `CommonAlert` protocol:
+
+```swift
+enum MyCustomAlert: Error, LocalizedError, CommonAlert {
+    case noInternetConnection(onPress: () -> Void)
+    case dataNotFound
+    case urlError(error: Error)
+    
+    var errorDescription: String? {
+        switch self {
+        case .noInternetConnection:
+            return "Please check your Internet connection and try again"
+        case .dataNotFound:
+            return "There is an error loading data. Please try again!"
+        case .urlError(error: let error):
+            return "Error calling \(error.localizedDescription)"
+        }
+    }
+    
+    var title: String {
+        switch self {
+        case .noInternetConnection:
+            return "No Internet Connection"
+        case .dataNotFound:
+            return "Data not found"
+        case .urlError(let error):
+            return "Error \(error.localizedDescription)"
+        }
+    }
+    
+    var subTitle: String? {
+        switch self {
+        case .noInternetConnection:
+            return "Please check your Internet connection and try again"
+        case .dataNotFound:
+            return "There is an error loading data. Please try again!"
+        case .urlError(error: let error):
+            return "Error calling \(error.localizedDescription)"
+        }
+    }
+    
+    var buttons: AnyView {
+        AnyView(getButtonsForAlert())
+    }
+    
+    @ViewBuilder
+    func getButtonsForAlert() -> some View {
+        switch self {
+        case .noInternetConnection(onPress: let onPress):
+            Button("OK") {
+                onPress()
+            }
+        case .dataNotFound:
+            Button("RETRY") {
+                
+            }
+        case .urlError(let error):
+            Button("DELETE", role: .destructive) {
+                print(error.localizedDescription)
+            }
+        }
+    }
+}
+```
+
+Now Alert will show whenever the error is set:
+
+```swift
+@State private var error: MyCustomAlert? = nil
+
+var body: some View {
+    Button("SHOW ALERT ERROR") {
+        error = MyCustomAlert.dataNotFound
+    }
+    .showCustomAlert(alert: $error)
+}
+```
 
 ## Button
 
