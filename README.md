@@ -52,6 +52,9 @@ import CommonSwiftUI
    - [GrowingButtonStyle](#growingbuttonstyle)
    - [LoadingButtonStyle](#loadingbuttonstyle)
 - [Dropdown](#dropdown)
+- [FloatingButton](#floatingbutton)
+   - [ArcFloatingButton](#arcfloatingbutton)
+   - [ExpandFloatButton](#expandfloatbutton)
 - [LoadingIndicator](#loadingindicator)
    - [SimpleLoadingIndicator](#simpleloadingindicator)
    - [FancyLoadingView](#fancyloadingview)
@@ -606,6 +609,14 @@ https://github.com/user-attachments/assets/bba43eb8-1d4f-4d22-98d3-2c950dd0000c
 Use multiple DropDowns for complicated form:
 
 https://github.com/user-attachments/assets/7f7b988e-8cc7-41f1-84e1-fe08f9f8ce22
+
+This example demonstrates a `DropDown` menu utilizing an enumeration for options, showcasing custom text styling and a placeholder. Be creative with these options for your style.
+
+## FloatingButton
+
+## ArcFloatingButton
+
+## ExpandFloatButton
 
 ## LoadingIndicator
 
