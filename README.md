@@ -1084,26 +1084,36 @@ A SwiftUI view that provides a text field with a character limit and visual feed
 `LimitedTextField` offers a customizable text input field that restricts the number of characters based on a specified limit. It features visual indicators such as a progress ring or text counter and can be styled with custom colors and borders.
 
 Parameters:
-- `config`: Configuration settings including character limit, tint, resizing behavior, and typing overflow control. Details below.
+- `config`: [Config](#limitedtextfieldconfiguration) is the configuration settings including character limit, tint, resizing behavior, and typing overflow control. Details below.
 - `hint`: Placeholder text displayed when the text field is empty.
 - `value`: A binding to the text inputted by the user.
 
-Configurations:
+#### LimitedTextFieldConfigurations:
 
-`Config`: Manages the main settings for the text field:
+Manages the main settings for the text field.
+
+Parameters:
 - `limit`: The maximum number of characters.
 - `tint`: The color of the text and progress indicators.
 - `autoResizes`: Whether the text field should automatically resize to fit content.
 - `allowExcessTyping`: Allows input beyond the limit without saving excess characters.
-- `progressConfig`: Settings for the progress indicators.
-- `borderConfig`: Styling options for the border.
+- `progressConfig`: [ProgressConfig](#progressconfig) is settings for the progress indicators.
+- `borderConfig`: [BorderConfig](#borderconfig) is the styling options for the border.
 
-`ProgressConfig`: Configures visual feedback on typing progress:
+#### ProgressConfig: 
+
+Configures visual feedback on typing progress.
+
+Parameters:
 - `showsRing`: Displays a circular progress ring.
 - `showsText`: Shows current and maximum character counts.
 - `alignment`: Aligns the progress text indicator.
 
-`BorderConfig`: Customizes the border appearance:
+#### BorderConfig: 
+
+Customizes the border appearance.
+
+Parameters:
 - `show`: Enables or disables the border.
 - `radius`: Sets the border radius.
 - `width`: Defines the border thickness.
