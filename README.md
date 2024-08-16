@@ -145,7 +145,7 @@ This setup presents an alert for login, with text fields for username and passwo
 
 ## Button
 
-### CapsuleButtonStyle:
+## CapsuleButtonStyle:
 
 A `ButtonStyle` for SwiftUI that applies a Capsule Shape with customizable color styles.
 
@@ -186,7 +186,7 @@ var body: some View {
 
 This style gives buttons a modern, rounded look suitable for various UI contexts.
 
-### ShapeButtonStyle:
+## ShapeButtonStyle:
 
 A `ButtonStyle` for SwiftUI that allows customization of the button's shape and color.
 
@@ -230,7 +230,7 @@ var body: some View {
 
 This style modifies the appearance of buttons to fit within a specified shape, with customizable foreground, background colors and padding. It is highly flexible, accommodating various shapes and color styles.
 
-### GrowingButtonStyle:
+## GrowingButtonStyle:
 
 A `ButtonStyle` for SwiftUI that scales the button on press, with customizable shape and color styles.
 
@@ -264,7 +264,7 @@ https://github.com/user-attachments/assets/9520da94-8b87-4a84-83e9-da7b79dbaeab
 
 This button style provides an interactive feedback effect by increasing the button's scale when pressed. It allows for customization of the button's foreground and background colors, shape, and padding.
 
-### LoadingButtonStyle:
+## LoadingButtonStyle:
 
 A `ButtonStyle` for SwiftUI that provides a customizable button with a loading indicator.
 
@@ -480,7 +480,7 @@ https://github.com/user-attachments/assets/7f7b988e-8cc7-41f1-84e1-fe08f9f8ce22
 
 ## LoadingIndicator
 
-### SimpleLoadingIndicator:
+## SimpleLoadingIndicator:
 
 A simple, customizable loading indicator view. This view displays a circular loading indicator that rotates according to the specified loading speed. The appearance of the indicator, including its color, background color, line width, and speed, can be customized.
 
@@ -505,7 +505,7 @@ Visibility and Size:
 - Frame Size: Adjust the indicator's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 - Dynamic Visibility: Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
 
-### FancyLoadingView
+## FancyLoadingView
 
 A SwiftUI view that displays a series of animated concentric circles, creating a dynamic loading indicator.
 
@@ -525,7 +525,7 @@ Each circle in the animation is individually timed to create a smooth, rhythmic 
 Visibility: 
 - Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
 
-### ShimmerView
+## ShimmerView
 
 A view displaying a shimmering loading placeholder.
 
@@ -546,7 +546,7 @@ Visibility:
 
 ## ProgressView
 
-### ProgressBar:
+## ProgressBar:
 
 A rectangular progress bar view for SwiftUI.
 
@@ -590,7 +590,7 @@ This view displays a rectangular progress indicator that fills up based on the c
 Size:
 - Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 
-### RingProgress:
+## RingProgress:
 
 A circular progress bar view for SwiftUI.
 
@@ -637,7 +637,7 @@ This view displays a circular progress indicator that fills up based on the curr
 Size:
 - Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 
-### ArcProgress:
+## ArcProgress:
 
 A customizable circular progress bar for SwiftUI, unique for its adjustable trim and rotation.
 
@@ -813,7 +813,7 @@ This example demonstrates a `SegmentControl` with custom tab items, including ic
 
 ## Slider
 
-### RangeSlider:
+## RangeSlider:
 
 A customizable range slider view in SwiftUI.
 
@@ -882,7 +882,7 @@ https://github.com/user-attachments/assets/1da84ea4-53cc-4565-a63e-8fb03e7b1836
 
 This setup demonstrates configuring a `RangeSlider`, displaying the selected value range with customized control appearance.
 
-### RingSlider:
+## RingSlider:
 
 A customizable ring-shaped slider view for selecting angular ranges.
 
@@ -938,7 +938,7 @@ This configuration leverages the `ControlConfig` to apply custom images for the 
 
 ## Text
 
-### CircularText:
+## CircularText:
 
 A SwiftUI view that arranges text in a circular path with enhanced customization.
 
@@ -984,7 +984,7 @@ VStack(spacing: 40) {
 
 This view is perfect for creating visually compelling text effects such as circular labels or decorative text in a SwiftUI application.
 
-### HackerText:
+## HackerText:
 
 Provides an animated text effect that mimics hacking by changing characters randomly before revealing the final text.
 
@@ -1045,7 +1045,7 @@ https://github.com/user-attachments/assets/5c0f3ebb-e8e5-41f4-8a30-20ad7bceab9c
 
 This view is particularly effective for creating engaging and eye-catching textual displays in apps that require a dramatic presentation.
 
-### TypeWriterText:
+## TypeWriterText:
 
 A SwiftUI view that simulates a typewriter effect for displaying text.
 
@@ -1077,7 +1077,7 @@ This view is ideal for scenarios where text needs to be presented in a dramatic,
 
 ## TextField
 
-### LimitedTextField:
+## LimitedTextField:
 
 A SwiftUI view that provides a text field with a character limit and visual feedback on input progress.
 
@@ -1142,7 +1142,7 @@ https://github.com/user-attachments/assets/aa287e0d-11e1-4af8-bb47-ffd2e6ed3bc6
 
 This component is ideal for forms, comments, or any user input that requires length constraints.
 
-### ValidationTextField:
+## ValidationTextField:
 
 A SwiftUI view that provides a text field with extensive validation capabilities, including secure text entry.
 
