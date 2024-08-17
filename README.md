@@ -80,6 +80,7 @@ import CommonSwiftUI
     - [ValidationTextField](#validationtextfield)
 - [Toast](#toast)
 - [ViewModifier](#viewmodifier)
+  - [Shimmer](#shimmer)
   - [ViewDidLoad](#viewdidload)
   - [VersionConditioning](#versionconditioning)
 
@@ -1500,6 +1501,8 @@ No additional configuration is needed. The shimmer effect starts automatically, 
 Visibility: 
 - Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
 
+For more customization, look at [Shimmer](#shimmer) view modifier to apply a shimmer effect to any SwiftUI view.
+
 ## ProgressView
 
 ## ProgressBar:
@@ -2438,6 +2441,57 @@ All of the toast messages will be at the top level of your application.
 The `Toast` component provides a streamlined and non-intrusive way to display brief notifications or messages within an application's interface. 
 
 ## ViewModifier
+
+## Shimmer
+
+Applies a shimmer effect to any SwiftUI view.
+
+```swift
+public func shimmer(tint: Color, highlight: Color, blur: CGFloat = 0, highlightOpacity: CGFloat = 1, speed: CommonSwiftUI.Speed = .medium) -> some View
+```
+
+Parameters:
+- `tint`: The background color of the shimmer.
+- `highlight`: The color of the shimmering highlight.
+- `blur`: The amount of blur applied to the shimmer effect. Default is 0.
+- `highlightOpacity`: The opacity of the shimmer highlight. Default is 1.
+- `speed`: The speed of the shimmer effect. Default is case .medium for 2 second.
+
+This function overlays a shimmer animation on the calling view, commonly used as a placeholder during content loading. The shimmer can be customized with different colors, opacity levels, and speed.
+
+Example:
+
+```swift
+VStack {
+    HStack {
+        Circle()
+            .frame(width: 55, height: 55)
+        
+        VStack(alignment: .leading, spacing: 6) {
+            RoundedRectangle(cornerRadius: 4)
+                .frame(height: 10)
+            
+            RoundedRectangle(cornerRadius: 4)
+                .frame(height: 10)
+                .padding(.trailing, 50)
+            
+            RoundedRectangle(cornerRadius: 4)
+                .frame(height: 10)
+                .padding(.trailing, 100)
+        }
+    }
+    .padding(15)
+    .padding(.horizontal, 30)
+    .shimmer(tint: .gray.opacity(0.3), highlight: .white, blur: 5)
+    
+    Text("Loading...")
+        .shimmer(tint: .gray.opacity(0.3), highlight: .white, blur: 5)
+}
+```
+
+https://github.com/user-attachments/assets/24f8879a-5eca-45af-b456-3ceb0535b1f9
+
+Customize the parameters to fit the style of your app's loading indicators.
 
 ## ViewDidLoad
 
