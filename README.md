@@ -279,6 +279,10 @@ By conforming to the `CommonAlert` protocol, developers can customize alert comp
 
 This solution enables the presentation of a customizable alert over the existing view content, using specified configurations and a custom view builder for the alert's content.
 
+```swift
+public func alert<Content>(alertConfig: Binding<CommonSwiftUI.UniversalAlertConfig>, @ViewBuilder content: @escaping () -> Content) -> some View where Content : View
+```
+
 Parameters:
 - `alertConfig`: A binding to the [UniversalAlertConfig](#universalalertconfig) instance which controls the appearance and behavior of the alert.
 - `content`: A view builder that generates the content to be displayed in the alert. This allows for full customization of the alert's appearance and the interactive elements within it.
@@ -299,6 +303,93 @@ Methods:
 - `dismiss()`: Sets the `show` property to false to dismiss the alert.
 
 This configuration struct allows you to customize alert presentations with various properties such as background blur, disable interactions outside the alert, and choose from different transition animations.
+
+Let's go through some examples. First, you need to define the `alertConfig`:
+
+```swift
+@State private var alert: UniversalAlertConfig = .init(enableBackgroundBlur: false, disableOutsideTap: false)
+```
+
+Next is to create the custom alert view:
+
+```swift
+struct CustomAlertView: View {
+    
+    var title: String
+    var message: String
+    var confirmAction: () -> Void
+    var cancelAction: () -> Void
+    
+    var body: some View {
+        VStack(spacing: 20) {
+            Text(title)
+                .font(.headline)
+                .padding(.top, 20)
+            
+            Text(message)
+                .font(.subheadline)
+                .padding(.horizontal, 20)
+            
+            Divider()
+            
+            HStack {
+                Button(action: cancelAction) {
+                    Text("Cancel")
+                        .foregroundColor(.red)
+                        .frame(maxWidth: .infinity)
+                }
+                .padding(.vertical, 10)
+                
+                Divider()
+                
+                Button(action: confirmAction) {
+                    Text("OK")
+                        .foregroundColor(.blue)
+                        .frame(maxWidth: .infinity)
+                }
+                .padding(.vertical, 10)
+            }
+            .frame(height: 50)
+        }
+        .background(.white)
+        .cornerRadius(15)
+        .shadow(radius: 10)
+        .padding(.horizontal, 40)
+    }
+}
+```
+
+Now using the `alert` to enable the presentation of a customizable alert over the existing view content:
+
+```swift
+var body: some View {
+    VStack {
+        Button("Show Alert") {
+            alert.present()
+        }
+        .buttonStyle(.borderedProminent)
+    }
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .background(.yellow)
+    .alert(alertConfig: $alert) {
+        CustomAlertView(
+            title: "Custom Alert",
+            message: "This is a custom alert message.",
+            confirmAction: {
+                print("OK pressed")
+            },
+            cancelAction: {
+                print("Cancel pressed")
+                alert.dismiss()
+            }
+        )
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+    }
+}
+```
+
+https://github.com/user-attachments/assets/edc4264d-289a-4a80-badc-d485a47d318a
+
 
 #### RootView
 
