@@ -1,4 +1,3 @@
-
 # CommonSwiftUI
 
 ![iOS 15.0+](https://img.shields.io/badge/iOS-15.0%2B-blue.svg)
@@ -14,6 +13,12 @@
 5. [Author](#author)
 
 ## Overview
+
+This SDK provides a comprehensive suite of UI components and utilities that streamline and enhance the development of SwiftUI applications.
+
+From customizable alerts, buttons, and progress indicators to specialized text fields, sliders, and advanced animations like shimmer effects, this SDK offers a wide range of tools to create polished, interactive, and visually appealing user interfaces. 
+
+Each component is designed with flexibility and ease of use in mind, ensuring seamless integration and consistent performance across various app environments. Whether you need simple alerts or complex loading indicators, this SDK equips you with the resources to build high-quality, feature-rich SwiftUI apps.
 
 ## Requirements
 
@@ -32,6 +37,18 @@ This project can be installed using `Swift Package Manager` and `CocoaPod`.
 4. Follow the prompts to add the package to your project.
 
 For more details on using Swift Package Manager, visit [Apple's Swift Package Manager documentation](https://swift.org/package-manager/).
+
+### CocoaPods
+
+[CocoaPods](http://cocoapods.org/) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries in your projects. See the [Get Started](http://cocoapods.org/#get_started) section for more details.
+
+Add the following entry to your Podfile:
+
+```rb
+pod 'CommonSwiftUI', '~> 1.0.6'
+```
+
+Then run `pod install`.
 
 ### Importing the Library
 
