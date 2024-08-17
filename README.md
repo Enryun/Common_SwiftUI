@@ -156,6 +156,8 @@ This setup presents an alert for login, with text fields for username and passwo
 
 This solution presents a customizable alert whenever the `Binding` error data has value. The error must conform to the provided [CommonAlert](#commonalert) protocol.
 
+Adopting the `CommonAlert` component helps projects by standardizing alert presentations across an application, ensuring a consistent user interface. This consistency can reduce development time and errors by providing a unified method for creating and managing alerts. 
+
 #### CommonAlert:
 
 This `protocol` standardizes the way alerts are created by specifying essential elements that each alert should contain. Conforming to this `protocol` ensures consistency in alert presentation and functionality.
@@ -271,11 +273,32 @@ var body: some View {
 
 https://github.com/user-attachments/assets/40021753-997a-40fc-a9a9-3570a5b03492
 
-Adopting the `CommonAlert` component helps projects by standardizing alert presentations across an application, ensuring a consistent user interface. This consistency can reduce development time and errors by providing a unified method for creating and managing alerts. 
-
 By conforming to the `CommonAlert` protocol, developers can customize alert components while maintaining a coherent appearance and functionality. This modularity and consistency in design make the component particularly useful in large projects or those requiring frequent alert updates.
 
 ## UniversalAlert
+
+This solution enables the presentation of a customizable alert over the existing view content, using specified configurations and a custom view builder for the alert's content.
+
+Parameters:
+- `alertConfig`: A binding to the [UniversalAlertConfig](#universalalertconfig) instance which controls the appearance and behavior of the alert.
+- `content`: A view builder that generates the content to be displayed in the alert. This allows for full customization of the alert's appearance and the interactive elements within it.
+
+#### UniversalAlertConfig
+
+`UniversalAlertConfig` configures the presentation and behavior of a customizable alert view in a SwiftUI application.
+
+Parameters:
+- `enableBackgroundBlur`: A Boolean value that determines whether the background should be blurred when the alert is presented.
+- `disableOutsideTap`: A Boolean value that if set to true, disables dismissing the alert by tapping outside its bounds.
+- `transitionType`: The type of transition animation used when the alert is presented. Can be either `.slide` or `.opacity`.
+- `slideEdge`: The edge from which the alert should slide in if the transition type is `.slide`.
+- `show`: A Boolean value indicating whether the alert is currently presented.
+
+Methods:
+- `present()`: Sets the `show` property to true to present the alert.
+- `dismiss()`: Sets the `show` property to false to dismiss the alert.
+
+This configuration struct allows you to customize alert presentations with various properties such as background blur, disable interactions outside the alert, and choose from different transition animations.
 
 #### RootView
 
@@ -287,6 +310,10 @@ Parameters:
 - `content`: A closure returning the content of the view.
 
 On appear, `RootView` automatically checks for an existing overlay window and, if none is found, creates and displays a new one, allowing for content like `Toast` or `Alert` to be shown on top of the primary view hierarchy.
+
+Example 1:
+
+Use this solution to seamlessly integrate custom alerts into any SwiftUI view, enhancing user interaction and providing a dynamic and adaptable alerting solution.
 
 ## Button
 
