@@ -1,3 +1,4 @@
+
 # CommonSwiftUI
 
 ![iOS 15.0+](https://img.shields.io/badge/iOS-15.0%2B-blue.svg)
@@ -631,7 +632,7 @@ Parameters:
 
 #### FloatingAction
 
-Represents a customizable floating action button with identifiable properties.
+Represents a customizable floating action button with identifiable properties. Used for `ArcFloatingButton` and `ExpandFloatingButton`.
 
 Parameters:
 - `id`: A unique identifier for the button, useful for distinguishing multiple instances.
@@ -975,7 +976,63 @@ Parameters:
 
 `ExpandFloatButton` offers a dynamic way to present multiple action buttons from a main floating button. It supports expansion in specified directions and can adapt the shape of the action buttons.
 
-Example 1:
+Define actions data using [FloatingAction](#floatingaction):
+
+```swift
+private let actions: [FloatingAction] = [
+    FloatingAction(image: Image(systemName: "tray.full.fill"), tint: .red) {
+        print("Tray")
+    },
+    FloatingAction(image: Image(systemName: "lasso.badge.sparkles"), tint: .orange) {
+        print("Spark")
+    },
+    FloatingAction(image: Image(systemName: "square.and.arrow.up.fill"), tint: .yellow) {
+        print("Share")
+    },
+    FloatingAction(image: Image(systemName: "heart.fill"), tint: .green) {
+        print("Heart")
+    },
+    FloatingAction(image: Image(systemName: "paperplane"), tint: .cyan) {
+        print("Plane")
+    }
+]
+```
+
+**Leading**:
+
+```swift
+ScrollView(.vertical) { ... }
+.overlay(alignment: .bottomLeading) {
+    ExpandFloatButton(alignment: .leading, actions: actions, shape: .rect(cornerRadius: 8)) { isExpanded in
+        Image(systemName: "plus")
+            .font(.title3.bold())
+            .foregroundStyle(.white)
+            .rotationEffect(.init(degrees: isExpanded ? 45 : 0))
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.black, in: .rect(cornerRadius: 8))
+    }
+    .padding()
+}
+```
+
+https://github.com/user-attachments/assets/27aac4f9-f219-4732-bf0b-848ae4ebf562
+
+**Trailing**:
+
+```swift
+```
+
+**Top**:
+
+```swift
+```
+
+**Bottom**:
+
+```swift
+```
+
+
 
 ## HoldDownButton
 
