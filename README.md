@@ -1152,7 +1152,20 @@ Parameters:
 - `color`: The color of the loading indicator. Default is `.blue`.
 - `backgroundColor`: The background color of the loading indicator. Default is `.gray`.
 - `lineWidth`: The thickness of the loading indicator's line. Default is 5.
-- `loadingSpeed`: The speed at which the loading indicator rotates. Default is `.medium`.
+- `loadingSpeed`: The speed at which the loading indicator rotates. This uses the shared type [Speed](#speed). Default is `.medium`.
+
+#### Speed
+
+An enumeration representing the speed of an operation.
+
+This enum provides both predefined and customizable time intervals to represent different speeds at which an operation can occur. Each case of the enum corresponds to a specific speed, with four predefined speeds and one customizable option, allowing for flexible loading behavior tailored to specific needs.
+
+Cases:
+- `flash`: A very fast operation speed, with a time interval of 0.1 second.
+- `fast`: A fast operation speed, with a time interval of 1 second.
+- `medium`: A medium operation speed, with a time interval of 2 seconds.
+- `slow`: A slow operation speed, with a time interval of 3 seconds.
+- `custom(TimeInterval)`: A customizable operation speed, where the time interval can be specified dynamically.
 
 Example:
 
@@ -1657,7 +1670,7 @@ Parameters:
 - `trigger`: A Boolean that starts the animation when toggled.
 - `transition`:  The style of animation — either `hyper` for all hacker style or `numeric` for wheeling style only.
 - `duration`: Total animation duration.
-- `speed`: Time interval for character changes.
+- `speed`: Time interval for character changes. This uses the shared type [Speed](#speed).
 
 Example:
 
@@ -1671,7 +1684,7 @@ var body: some View {
             text: text,
             trigger: trigger,
             transition: .hyper,
-            speed: 0.06
+            speed: .custom(0.06)
         )
         .font(.largeTitle.bold())
         .lineLimit(2)
@@ -1680,7 +1693,7 @@ var body: some View {
             text: text,
             trigger: trigger,
             transition: .numeric,
-            speed: 0.06
+            speed: .custom(0.06)
         )
         .font(.largeTitle.bold())
         .lineLimit(2)
@@ -1721,7 +1734,7 @@ Parameters:
 - `fontWeight`: The weight of the font. Default is `.medium`.
 - `color`: The color of the text. Default is `.primary`.
 - `alignment`: The alignment of the text within its container. Default is `.center`.
-- `speed`: The speed at which characters are displayed. Can be `.slow`, `.medium`, `.fast`, `.veryFast`, or `.custom(Double)`. Default is `.medium`.
+- `speed`: The speed at which characters are displayed. This uses the shared type [Speed](#speed). Default is `.flash`.
 
 Example:
 
@@ -1731,7 +1744,7 @@ VStack(spacing: 16){
 
     TypeWriterText(text: "iOS Developer | Author | Builder | Writer | Dreamer", font: .title2)
 
-    TypeWriterText(text: "My journey through the tech world is a testament to the idea that anyone can follow their passion and acquire new skills. While my educational background lies in Finance and Economics, I felt a compelling drive to explore the dynamic realm of Apps development. The potentials of it that anyone in this modern world now have a smartphone with them and spend most of their daily time on it. With dedication and self-education, I transitioned into a seasoned iOS developer and then a professional one, accumulating over 3 years of valuable industry experience.", speed: .veryFast)
+    TypeWriterText(text: "My journey through the tech world is a testament to the idea that anyone can follow their passion and acquire new skills. While my educational background lies in Finance and Economics, I felt a compelling drive to explore the dynamic realm of Apps development. The potentials of it that anyone in this modern world now have a smartphone with them and spend most of their daily time on it. With dedication and self-education, I transitioned into a seasoned iOS developer and then a professional one, accumulating over 3 years of valuable industry experience.", speed: .flash)
 }
 ```
 
@@ -2086,7 +2099,7 @@ Parameters:
 - `symbol`: An optional symbol to display alongside the text. Defaults to nil.
 - `tint`: The color of the text and symbol. Defaults to `.primary`.
 - `isUserInteractionEnabled`: A Boolean value that determines whether the toast allows user interaction. Defaults to false.
-- `timing`: The duration for which the toast should remain on screen. This use the shared [Speed](#speed) type. Defaults to `.medium`.
+- `timing`: The duration for which the toast should remain on screen. This uses the shared type [Speed](#speed). Defaults to `.medium`.
 
 The first required step is to wrapped your Application inside [RootView](#rootview):
 
