@@ -56,6 +56,7 @@ import CommonSwiftUI
 - [FloatingButton](#floatingbutton)
    - [ArcFloatingButton](#arcfloatingbutton)
    - [ExpandFloatButton](#expandfloatbutton)
+- [GlassMorphism](#glassmorphism)
 - [HoldDownButton](#holddownbutton)
 - [LoadingIndicator](#loadingindicator)
    - [SimpleLoadingIndicator](#simpleloadingindicator)
@@ -1326,6 +1327,44 @@ https://github.com/user-attachments/assets/ddd4a195-e9a6-48e4-aebe-e4b2be86d593
 The `ExpandFloatButton` efficiently enhances the user interface by integrating multiple action options into a single floating button. This design not only saves valuable screen space but also adds a sophisticated aesthetic element to the user interface. 
 
 It is particularly beneficial in applications where quick access to multiple functions is necessary without cluttering the screen, offering an intuitive and streamlined user experience.
+
+## GlassMorphism
+
+A view creating a glassmorphism effect with customizable properties.
+
+Parameters:
+- `cornerRadius`: The radius of the corners for the card. Default is 0.
+- `blurRadius`: The intensity of the blur effect. A value of 0 uses the system default.
+- `saturationAmount`: The saturation effect's intensity. A value of 0 uses the system default.
+- `border`: The thickness of the card's border. Default is 0 (no border).
+
+This view uses blur and saturation effects to achieve a frosted glass look, further enhanced with a customizable border. The effect's intensity and appearance can be tailored through parameters for corner radius, blur, saturation, and border thickness.
+
+Example:
+
+```swift
+ZStack {
+    Circle()
+        .frame(width: 100, height: 100, alignment: .center)
+        .foregroundColor(.red)
+    
+    GlassMorphismView(cornerRadius: 25, blurRadius: 8, saturationAmount: 1.8)
+    
+    Text("CommonSwiftUI made by James Thang")
+        .font(.title3)
+        .fontWeight(.medium)
+        .foregroundStyle(.white)
+        .multilineTextAlignment(.trailing)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+        .padding()
+}
+.frame(height: 250)
+.padding()
+```
+
+<img src="https://github.com/user-attachments/assets/abbb1edd-f559-451f-9a47-0847d506e942" width="220">
+
+This example illustrates the `GlassMorphismView` with a circular red background, a specified border, and overlaid text to demonstrate the glassmorphism effect.
 
 ## HoldDownButton
 
