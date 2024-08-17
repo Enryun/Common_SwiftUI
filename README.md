@@ -304,7 +304,35 @@ Methods:
 
 This configuration struct allows you to customize alert presentations with various properties such as background blur, disable interactions outside the alert, and choose from different transition animations.
 
-Let's go through some examples. First, you need to define the `alertConfig`:
+#### RootView
+
+A view container that serves as the root of a view hierarchy and can display an overlay window.
+
+`RootView` is designed to embed any SwiftUI view and has the capability to present additional content in an overlay window on top of the existing UI. This is particularly useful for displaying elements like toasts or alerts that should float above all other content.
+
+Parameters:
+- `content`: A closure returning the content of the view.
+
+On appear, `RootView` automatically checks for an existing overlay window and, if none is found, creates and displays a new one, allowing for content like `Toast` or `Alert` to be shown on top of the primary view hierarchy.
+
+Let's go through some examples. 
+
+The first required step is to wrapped your Application inside [RootView](#rootview):
+
+```swift
+@main
+struct TestCommonUIApp: App {
+    var body: some Scene {
+        WindowGroup {
+            RootView {
+                ContentView()
+            }
+        }
+    }
+}
+``` 
+
+Then you need to define the `alertConfig`:
 
 ```swift
 @State private var alert: UniversalAlertConfig = .init(enableBackgroundBlur: false, disableOutsideTap: false)
@@ -495,23 +523,6 @@ var body: some View {
 ```
 
 https://github.com/user-attachments/assets/364dd2eb-321b-4182-a7da-180a97a5c706
-
-
-```swift
-```
-
-#### RootView
-
-A view container that serves as the root of a view hierarchy and can display an overlay window.
-
-`RootView` is designed to embed any SwiftUI view and has the capability to present additional content in an overlay window on top of the existing UI. This is particularly useful for displaying elements like toasts or alerts that should float above all other content.
-
-Parameters:
-- `content`: A closure returning the content of the view.
-
-On appear, `RootView` automatically checks for an existing overlay window and, if none is found, creates and displays a new one, allowing for content like `Toast` or `Alert` to be shown on top of the primary view hierarchy.
-
-Example 1:
 
 Use this solution to seamlessly integrate custom alerts into any SwiftUI view, enhancing user interaction and providing a dynamic and adaptable alerting solution.
 
