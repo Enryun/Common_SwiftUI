@@ -363,6 +363,43 @@
         "children": [
           {
             "kind": "Var",
+            "name": "flash",
+            "printedName": "flash",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CommonSwiftUI.Speed.Type) -> CommonSwiftUI.Speed",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Speed",
+                    "printedName": "CommonSwiftUI.Speed",
+                    "usr": "s:13CommonSwiftUI5SpeedO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CommonSwiftUI.Speed.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Speed",
+                        "printedName": "CommonSwiftUI.Speed",
+                        "usr": "s:13CommonSwiftUI5SpeedO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CommonSwiftUI5SpeedO5flashyA2CmF",
+            "mangledName": "$s13CommonSwiftUI5SpeedO5flashyA2CmF",
+            "moduleName": "CommonSwiftUI"
+          },
+          {
+            "kind": "Var",
             "name": "fast",
             "printedName": "fast",
             "children": [
@@ -806,15 +843,15 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "CGFloat",
-                "printedName": "CoreGraphics.CGFloat",
+                "name": "Speed",
+                "printedName": "CommonSwiftUI.Speed",
                 "hasDefaultArg": true,
-                "usr": "s:14CoreFoundation7CGFloatV"
+                "usr": "s:13CommonSwiftUI5SpeedO"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:13CommonSwiftUI10HackerTextV4text7trigger10transition8duration5speedACSS_SbAC5StyleO14CoreFoundation7CGFloatVAMtcfc",
-            "mangledName": "$s13CommonSwiftUI10HackerTextV4text7trigger10transition8duration5speedACSS_SbAC5StyleO12CoreGraphics7CGFloatVAMtcfc",
+            "usr": "s:13CommonSwiftUI10HackerTextV4text7trigger10transition8duration5speedACSS_SbAC5StyleO14CoreFoundation7CGFloatVAA5SpeedOtcfc",
+            "mangledName": "$s13CommonSwiftUI10HackerTextV4text7trigger10transition8duration5speedACSS_SbAC5StyleO12CoreGraphics7CGFloatVAA5SpeedOtcfc",
             "moduleName": "CommonSwiftUI",
             "declAttributes": [
               "AccessControl"
@@ -2609,218 +2646,6 @@
         "printedName": "TypeWriterText",
         "children": [
           {
-            "kind": "TypeDecl",
-            "name": "Speed",
-            "printedName": "Speed",
-            "children": [
-              {
-                "kind": "Var",
-                "name": "slow",
-                "printedName": "slow",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(CommonSwiftUI.TypeWriterText.Speed.Type) -> CommonSwiftUI.TypeWriterText.Speed",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Speed",
-                        "printedName": "CommonSwiftUI.TypeWriterText.Speed",
-                        "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Metatype",
-                        "printedName": "CommonSwiftUI.TypeWriterText.Speed.Type",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Speed",
-                            "printedName": "CommonSwiftUI.TypeWriterText.Speed",
-                            "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "declKind": "EnumElement",
-                "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO4slowyA2EmF",
-                "mangledName": "$s13CommonSwiftUI14TypeWriterTextV5SpeedO4slowyA2EmF",
-                "moduleName": "CommonSwiftUI"
-              },
-              {
-                "kind": "Var",
-                "name": "medium",
-                "printedName": "medium",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(CommonSwiftUI.TypeWriterText.Speed.Type) -> CommonSwiftUI.TypeWriterText.Speed",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Speed",
-                        "printedName": "CommonSwiftUI.TypeWriterText.Speed",
-                        "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Metatype",
-                        "printedName": "CommonSwiftUI.TypeWriterText.Speed.Type",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Speed",
-                            "printedName": "CommonSwiftUI.TypeWriterText.Speed",
-                            "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "declKind": "EnumElement",
-                "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO6mediumyA2EmF",
-                "mangledName": "$s13CommonSwiftUI14TypeWriterTextV5SpeedO6mediumyA2EmF",
-                "moduleName": "CommonSwiftUI"
-              },
-              {
-                "kind": "Var",
-                "name": "fast",
-                "printedName": "fast",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(CommonSwiftUI.TypeWriterText.Speed.Type) -> CommonSwiftUI.TypeWriterText.Speed",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Speed",
-                        "printedName": "CommonSwiftUI.TypeWriterText.Speed",
-                        "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Metatype",
-                        "printedName": "CommonSwiftUI.TypeWriterText.Speed.Type",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Speed",
-                            "printedName": "CommonSwiftUI.TypeWriterText.Speed",
-                            "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "declKind": "EnumElement",
-                "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO4fastyA2EmF",
-                "mangledName": "$s13CommonSwiftUI14TypeWriterTextV5SpeedO4fastyA2EmF",
-                "moduleName": "CommonSwiftUI"
-              },
-              {
-                "kind": "Var",
-                "name": "veryFast",
-                "printedName": "veryFast",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(CommonSwiftUI.TypeWriterText.Speed.Type) -> CommonSwiftUI.TypeWriterText.Speed",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Speed",
-                        "printedName": "CommonSwiftUI.TypeWriterText.Speed",
-                        "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Metatype",
-                        "printedName": "CommonSwiftUI.TypeWriterText.Speed.Type",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Speed",
-                            "printedName": "CommonSwiftUI.TypeWriterText.Speed",
-                            "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "declKind": "EnumElement",
-                "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO8veryFastyA2EmF",
-                "mangledName": "$s13CommonSwiftUI14TypeWriterTextV5SpeedO8veryFastyA2EmF",
-                "moduleName": "CommonSwiftUI"
-              },
-              {
-                "kind": "Var",
-                "name": "custom",
-                "printedName": "custom",
-                "children": [
-                  {
-                    "kind": "TypeFunc",
-                    "name": "Function",
-                    "printedName": "(CommonSwiftUI.TypeWriterText.Speed.Type) -> (Swift.Double) -> CommonSwiftUI.TypeWriterText.Speed",
-                    "children": [
-                      {
-                        "kind": "TypeFunc",
-                        "name": "Function",
-                        "printedName": "(Swift.Double) -> CommonSwiftUI.TypeWriterText.Speed",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Speed",
-                            "printedName": "CommonSwiftUI.TypeWriterText.Speed",
-                            "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Double",
-                            "printedName": "Swift.Double",
-                            "usr": "s:Sd"
-                          }
-                        ]
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Metatype",
-                        "printedName": "CommonSwiftUI.TypeWriterText.Speed.Type",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Speed",
-                            "printedName": "CommonSwiftUI.TypeWriterText.Speed",
-                            "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "declKind": "EnumElement",
-                "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO6customyAESdcAEmF",
-                "mangledName": "$s13CommonSwiftUI14TypeWriterTextV5SpeedO6customyAESdcAEmF",
-                "moduleName": "CommonSwiftUI"
-              }
-            ],
-            "declKind": "Enum",
-            "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO",
-            "mangledName": "$s13CommonSwiftUI14TypeWriterTextV5SpeedO",
-            "moduleName": "CommonSwiftUI",
-            "declAttributes": [
-              "AccessControl"
-            ]
-          },
-          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(text:font:fontWeight:color:alignment:speed:)",
@@ -2868,14 +2693,14 @@
               {
                 "kind": "TypeNominal",
                 "name": "Speed",
-                "printedName": "CommonSwiftUI.TypeWriterText.Speed",
+                "printedName": "CommonSwiftUI.Speed",
                 "hasDefaultArg": true,
-                "usr": "s:13CommonSwiftUI14TypeWriterTextV5SpeedO"
+                "usr": "s:13CommonSwiftUI5SpeedO"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:13CommonSwiftUI14TypeWriterTextV4text4font0H6Weight5color9alignment5speedACSS_0bC04FontVAL0I0VAJ5ColorVAJ0F9AlignmentOAC5SpeedOtcfc",
-            "mangledName": "$s13CommonSwiftUI14TypeWriterTextV4text4font0H6Weight5color9alignment5speedACSS_0bC04FontVAL0I0VAJ5ColorVAJ0F9AlignmentOAC5SpeedOtcfc",
+            "usr": "s:13CommonSwiftUI14TypeWriterTextV4text4font0H6Weight5color9alignment5speedACSS_0bC04FontVAL0I0VAJ5ColorVAJ0F9AlignmentOAA5SpeedOtcfc",
+            "mangledName": "$s13CommonSwiftUI14TypeWriterTextV4text4font0H6Weight5color9alignment5speedACSS_0bC04FontVAL0I0VAJ5ColorVAJ0F9AlignmentOAA5SpeedOtcfc",
             "moduleName": "CommonSwiftUI",
             "declAttributes": [
               "AccessControl"
@@ -8395,7 +8220,8 @@
             "mangledName": "$s13CommonSwiftUI10RingSliderV13ControlConfigV",
             "moduleName": "CommonSwiftUI",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ]
           }
         ],
@@ -16884,7 +16710,8 @@
             "mangledName": "$s13CommonSwiftUI11RangeSliderV13ControlConfigV",
             "moduleName": "CommonSwiftUI",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ]
           }
         ],
@@ -26148,15 +25975,15 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "CGFloat",
-                "printedName": "CoreGraphics.CGFloat",
+                "name": "Speed",
+                "printedName": "CommonSwiftUI.Speed",
                 "hasDefaultArg": true,
-                "usr": "s:14CoreFoundation7CGFloatV"
+                "usr": "s:13CommonSwiftUI5SpeedO"
               }
             ],
             "declKind": "Func",
-            "usr": "s:7SwiftUI4ViewP06CommonaB0E7shimmer4tint9highlight4blur0G7Opacity5speedQrAA5ColorV_AL14CoreFoundation7CGFloatVA2OtF",
-            "mangledName": "$s7SwiftUI4ViewP06CommonaB0E7shimmer4tint9highlight4blur0G7Opacity5speedQrAA5ColorV_AL12CoreGraphics7CGFloatVA2OtF",
+            "usr": "s:7SwiftUI4ViewP06CommonaB0E7shimmer4tint9highlight4blur0G7Opacity5speedQrAA5ColorV_AL14CoreFoundation7CGFloatVAoD5SpeedOtF",
+            "mangledName": "$s7SwiftUI4ViewP06CommonaB0E7shimmer4tint9highlight4blur0G7Opacity5speedQrAA5ColorV_AL12CoreGraphics7CGFloatVAoD5SpeedOtF",
             "moduleName": "CommonSwiftUI",
             "genericSig": "<τ_0_0 where τ_0_0 : SwiftUI.View>",
             "sugared_genericSig": "<Self where Self : SwiftUI.View>",
@@ -26595,7 +26422,7 @@
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Alert\/NativeAlertWrapper\/CommonAlert+ViewModifier.swift",
       "kind": "StringLiteral",
-      "offset": 1611,
+      "offset": 2201,
       "length": 7,
       "value": "\"Error\""
     },
@@ -26643,22 +26470,29 @@
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Shared\/Speed.swift",
+      "kind": "FloatLiteral",
+      "offset": 1122,
+      "length": 3,
+      "value": "0.1"
+    },
+    {
+      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Shared\/Speed.swift",
       "kind": "IntegerLiteral",
-      "offset": 1027,
+      "offset": 1165,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Shared\/Speed.swift",
       "kind": "IntegerLiteral",
-      "offset": 1070,
+      "offset": 1208,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Shared\/Speed.swift",
       "kind": "IntegerLiteral",
-      "offset": 1111,
+      "offset": 1249,
       "length": 1,
       "value": "3"
     },
@@ -26679,63 +26513,56 @@
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/Hacker\/HackerText.swift",
       "kind": "StringLiteral",
-      "offset": 1224,
+      "offset": 1263,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/Hacker\/HackerText.swift",
       "kind": "StringLiteral",
-      "offset": 1305,
+      "offset": 1344,
       "length": 84,
       "value": "\"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+[]{}|;:',.<>?\/~`\""
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/Hacker\/HackerText.swift",
       "kind": "FloatLiteral",
-      "offset": 1599,
+      "offset": 1638,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/Hacker\/HackerText.swift",
       "kind": "FloatLiteral",
-      "offset": 1621,
-      "length": 3,
-      "value": "0.1"
-    },
-    {
-      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/Hacker\/HackerText.swift",
-      "kind": "FloatLiteral",
-      "offset": 2699,
+      "offset": 2752,
       "length": 3,
       "value": "0.1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/Hacker\/HackerText.swift",
       "kind": "IntegerLiteral",
-      "offset": 3373,
+      "offset": 3426,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/Hacker\/HackerText.swift",
       "kind": "IntegerLiteral",
-      "offset": 3428,
+      "offset": 3481,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/Hacker\/HackerText.swift",
       "kind": "BooleanLiteral",
-      "offset": 3509,
+      "offset": 3562,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/Hacker\/HackerText.swift",
       "kind": "StringLiteral",
-      "offset": 4957,
+      "offset": 5010,
       "length": 2,
       "value": "\"\""
     },
@@ -27015,63 +26842,35 @@
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/TypeWriter\/TypeWriterText.swift",
       "kind": "StringLiteral",
-      "offset": 1313,
+      "offset": 1256,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/TypeWriter\/TypeWriterText.swift",
-      "kind": "FloatLiteral",
-      "offset": 1711,
-      "length": 3,
-      "value": "0.2"
-    },
-    {
-      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/TypeWriter\/TypeWriterText.swift",
-      "kind": "FloatLiteral",
-      "offset": 1764,
-      "length": 3,
-      "value": "0.1"
-    },
-    {
-      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/TypeWriter\/TypeWriterText.swift",
-      "kind": "FloatLiteral",
-      "offset": 1815,
-      "length": 4,
-      "value": "0.02"
-    },
-    {
-      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/TypeWriter\/TypeWriterText.swift",
-      "kind": "FloatLiteral",
-      "offset": 1871,
-      "length": 4,
-      "value": "0.01"
-    },
-    {
-      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/TypeWriter\/TypeWriterText.swift",
       "kind": "IntegerLiteral",
-      "offset": 2731,
+      "offset": 2137,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/TypeWriter\/TypeWriterText.swift",
       "kind": "IntegerLiteral",
-      "offset": 2759,
+      "offset": 2165,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/TypeWriter\/TypeWriterText.swift",
       "kind": "StringLiteral",
-      "offset": 2789,
+      "offset": 2195,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Text\/TypeWriter\/TypeWriterText.swift",
       "kind": "IntegerLiteral",
-      "offset": 3018,
+      "offset": 2428,
       "length": 1,
       "value": "1"
     },
@@ -28338,7 +28137,7 @@
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RingSlider.swift",
       "kind": "BooleanLiteral",
-      "offset": 9706,
+      "offset": 10876,
       "length": 4,
       "value": "true"
     },
@@ -29570,14 +29369,14 @@
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RangeSlider.swift",
       "kind": "IntegerLiteral",
-      "offset": 8213,
+      "offset": 9124,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Slider\/RangeSlider.swift",
       "kind": "BooleanLiteral",
-      "offset": 8238,
+      "offset": 9149,
       "length": 4,
       "value": "true"
     },
@@ -30116,23 +29915,16 @@
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView+ViewModifier.swift",
       "kind": "IntegerLiteral",
-      "offset": 1115,
+      "offset": 1139,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView+ViewModifier.swift",
       "kind": "IntegerLiteral",
-      "offset": 1146,
+      "offset": 1170,
       "length": 1,
       "value": "1"
-    },
-    {
-      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView+ViewModifier.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1166,
-      "length": 1,
-      "value": "2"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Extension+Helper\/Internal\/UIVisualEffectView+Extension.swift",
@@ -30305,238 +30097,238 @@
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "BooleanLiteral",
-      "offset": 3194,
+      "offset": 3649,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "BooleanLiteral",
-      "offset": 3240,
+      "offset": 3695,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 3526,
+      "offset": 3981,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 3732,
+      "offset": 4187,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 3980,
+      "offset": 4435,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 4042,
+      "offset": 4497,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 4196,
+      "offset": 4651,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 4260,
+      "offset": 4715,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "FloatLiteral",
-      "offset": 4367,
+      "offset": 4822,
       "length": 3,
       "value": "0.1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "FloatLiteral",
-      "offset": 4394,
+      "offset": 4849,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "FloatLiteral",
-      "offset": 4408,
+      "offset": 4863,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 4461,
+      "offset": 4916,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 4535,
+      "offset": 4990,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 4923,
+      "offset": 5378,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 4997,
+      "offset": 5452,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 5667,
+      "offset": 6122,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 6097,
+      "offset": 6552,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "FloatLiteral",
-      "offset": 6539,
+      "offset": 6994,
       "length": 3,
       "value": "0.1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 6927,
+      "offset": 7382,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 6956,
+      "offset": 7411,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 7074,
+      "offset": 7529,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "FloatLiteral",
-      "offset": 7200,
+      "offset": 7655,
       "length": 3,
       "value": "0.4"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "FloatLiteral",
-      "offset": 7222,
+      "offset": 7677,
       "length": 3,
       "value": "0.6"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "BooleanLiteral",
-      "offset": 7534,
+      "offset": 7989,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "FloatLiteral",
-      "offset": 7641,
+      "offset": 8096,
       "length": 3,
       "value": "0.1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "BooleanLiteral",
-      "offset": 7692,
+      "offset": 8147,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 8040,
+      "offset": 8495,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 8044,
+      "offset": 8499,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "FloatLiteral",
-      "offset": 8305,
+      "offset": 8760,
       "length": 3,
       "value": "0.1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 8342,
+      "offset": 8797,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "FloatLiteral",
-      "offset": 8347,
+      "offset": 8802,
       "length": 3,
       "value": "0.1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 8447,
+      "offset": 8902,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "FloatLiteral",
-      "offset": 8452,
+      "offset": 8907,
       "length": 3,
       "value": "0.1"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Button\/Buttons\/FloatButton\/ExpandFloatButton.swift",
       "kind": "FloatLiteral",
-      "offset": 8474,
+      "offset": 8929,
       "length": 3,
       "value": "0.1"
     },

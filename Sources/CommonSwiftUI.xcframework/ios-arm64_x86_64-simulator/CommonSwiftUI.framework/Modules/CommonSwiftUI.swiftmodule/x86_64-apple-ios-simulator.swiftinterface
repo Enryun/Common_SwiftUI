@@ -39,6 +39,7 @@ extension UIKit.UIApplication {
   }
 }
 public enum Speed {
+  case flash
   case fast
   case medium
   case slow
@@ -53,7 +54,7 @@ public struct HackerText : SwiftUI.View {
       get
     }
   }
-  public init(text: Swift.String, trigger: Swift.Bool, transition: CommonSwiftUI.HackerText.Style = .hyper, duration: CoreFoundation.CGFloat = 1.0, speed: CoreFoundation.CGFloat = 0.1)
+  public init(text: Swift.String, trigger: Swift.Bool, transition: CommonSwiftUI.HackerText.Style = .hyper, duration: CoreFoundation.CGFloat = 1.0, speed: CommonSwiftUI.Speed = .flash)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
@@ -76,14 +77,7 @@ public struct ArcFloatingButton<CustomShape, Label> : SwiftUI.View where CustomS
   public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI17ArcFloatingButtonV4bodyQrvp", 0) __<CustomShape, Label>
 }
 public struct TypeWriterText : SwiftUI.View {
-  public enum Speed {
-    case slow
-    case medium
-    case fast
-    case veryFast
-    case custom(Swift.Double)
-  }
-  public init(text: Swift.String, font: SwiftUI.Font = .caption, fontWeight: SwiftUI.Font.Weight = .medium, color: SwiftUI.Color = .primary, alignment: SwiftUI.TextAlignment = .center, speed: CommonSwiftUI.TypeWriterText.Speed = .medium)
+  public init(text: Swift.String, font: SwiftUI.Font = .caption, fontWeight: SwiftUI.Font.Weight = .medium, color: SwiftUI.Color = .primary, alignment: SwiftUI.TextAlignment = .center, speed: CommonSwiftUI.Speed = .flash)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
@@ -343,7 +337,7 @@ public struct LimitedTextField : SwiftUI.View {
   public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI16LimitedTextFieldV4bodyQrvp", 0) __
 }
 extension SwiftUI.View {
-  public func shimmer(tint: SwiftUI.Color, highlight: SwiftUI.Color, blur: CoreFoundation.CGFloat = 0, highlightOpacity: CoreFoundation.CGFloat = 1, speed: CoreFoundation.CGFloat = 2) -> some SwiftUI.View
+  public func shimmer(tint: SwiftUI.Color, highlight: SwiftUI.Color, blur: CoreFoundation.CGFloat = 0, highlightOpacity: CoreFoundation.CGFloat = 1, speed: CommonSwiftUI.Speed = .medium) -> some SwiftUI.View
   
 }
 public struct ProgressBar : SwiftUI.View {
