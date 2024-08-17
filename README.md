@@ -1020,19 +1020,63 @@ https://github.com/user-attachments/assets/27aac4f9-f219-4732-bf0b-848ae4ebf562
 **Trailing**:
 
 ```swift
+ScrollView(.vertical) { ... }
+.overlay(alignment: .bottomTrailing) {
+    ExpandFloatButton(alignment: .trailing, actions: actions) { isExpanded in
+        Image(systemName: "plus")
+            .font(.title3.bold())
+            .foregroundStyle(.white)
+            .rotationEffect(.init(degrees: isExpanded ? 45 : 0))
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.black, in: .circle)
+    }
+    .padding()
+}
 ```
+
+https://github.com/user-attachments/assets/9e723ab3-eeed-4da1-8e2d-6b7f16bb483f
 
 **Top**:
 
 ```swift
+ScrollView(.vertical) { ... }
+.overlay(alignment: .topTrailing) {
+    ExpandFloatButton(alignment: .top, actions: actions) { isExpanded in
+        Image(systemName: "plus")
+            .font(.title3.bold())
+            .foregroundStyle(.white)
+            .rotationEffect(.init(degrees: isExpanded ? 45 : 0))
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.black, in: .circle)
+    }
+    .padding()
+}
 ```
+
+https://github.com/user-attachments/assets/5b53e2e9-5d0a-4f34-b79a-b2e8907dd335
 
 **Bottom**:
 
 ```swift
+ScrollView(.vertical) { ... }
+.overlay(alignment: .bottomTrailing) {
+    ExpandFloatButton(alignment: .bottom, actions: actions) { isExpanded in
+        Image(systemName: "plus")
+            .font(.title3.bold())
+            .foregroundStyle(.white)
+            .rotationEffect(.init(degrees: isExpanded ? 45 : 0))
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.black, in: .circle)
+    }
+    .padding()
+}
 ```
 
+https://github.com/user-attachments/assets/ddd4a195-e9a6-48e4-aebe-e4b2be86d593
 
+The `ExpandFloatButton` efficiently enhances the user interface by integrating multiple action options into a single floating button. This design not only saves valuable screen space but also adds a sophisticated aesthetic element to the user interface. 
+
+It is particularly beneficial in applications where quick access to multiple functions is necessary without cluttering the screen, offering an intuitive and streamlined user experience.
 
 ## HoldDownButton
 
