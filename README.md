@@ -2141,6 +2141,8 @@ VStack(spacing: 25) {
 
 https://github.com/user-attachments/assets/08d17817-882b-4be3-8157-246a214df992
 
+All of the toast messages will be at the top level of your application.
+
 The `Toast` component provides a streamlined and non-intrusive way to display brief notifications or messages within an application's interface. 
 
 ## ViewModifier
