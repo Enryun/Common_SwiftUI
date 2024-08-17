@@ -2062,9 +2062,77 @@ This example effectively demonstrates how to configure and use `ValidationTextFi
 
 ## Toast
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras imperdiet velit dolor, sed porta est ullamcorper in. Nulla at condimentum dolor. Etiam mattis nibh nec sollicitudin facilisis. Nam pretium justo neque, ut tempus arcu tristique ut. Mauris in tortor volutpat, euismod orci id, iaculis quam. Sed vel lacus ex. Integer nibh ex, interdum eu velit vel, fringilla placerat quam. Duis viverra porta nibh, in condimentum purus. Ut in dolor suscipit, maximus purus a, mattis elit. Suspendisse hendrerit feugiat velit a ultricies. Aenean fringilla aliquam odio, non pellentesque odio eleifend in. Suspendisse potenti.
+`Toast` provides functionality to present and remove toast messages.
 
-Integer facilisis id nulla ac pretium. Nam consequat neque non elit posuere, lobortis laoreet nunc tempor. Duis at consectetur enim, nec ultrices velit. Suspendisse ac risus enim. Nullam feugiat nisi nulla, a vulputate augue mattis ac. Nunc molestie ligula dui, vitae faucibus nibh iaculis at. Etiam blandit nulla sit amet vestibulum dapibus. Ut feugiat tristique leo a luctus. Sed pharetra est vitae magna suscipit, eu interdum metus elementum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum faucibus arcu. Quisque feugiat et sapien eget lobortis. Maecenas egestas enim lacinia gravida suscipit. Mauris nunc sem, dictum vel diam ut, rhoncus feugiat magna.
+Access the shared singleton instance with `Toast.shared`. It uses an observable object pattern to update UI components when toasts are added or removed.
+
+Use this function `present` to display a toast message with customizable options.
+
+```swift
+public func present(title: String, symbol: String?, tint: Color = .primary, isUserInteractionEnabled: Bool = false, timing: Speed = .medium)
+```
+
+Parameters:
+- `title`: The text to display in the toast.
+- `symbol`: An optional symbol to display alongside the text. Defaults to nil.
+- `tint`: The color of the text and symbol. Defaults to `.primary`.
+- `isUserInteractionEnabled`: A Boolean value that determines whether the toast allows user interaction. Defaults to false.
+- `timing`: The duration for which the toast should remain on screen. Defaults to `.medium`.
+
+The first required step is to wrapped your Application inside [RootView](#rootview):
+
+```swift
+@main
+struct TestCommonUIApp: App {
+    var body: some Scene {
+        WindowGroup {
+            RootView {
+                ContentView()
+            }
+        }
+    }
+}
+```
+
+Now for every scene, use the `present` method from the singleton `Toast.shared` to present your toast message:
+
+```swift
+VStack(spacing: 25) {
+    Button("Toast 1") {
+        Toast.shared.present(
+            title: "Hello World",
+            symbol: "hand.wave",
+            tint: .blue,
+            isUserInteractionEnabled: true,
+            timing: .slow
+        )
+    }
+    
+    Button("Toast 2") {
+        Toast.shared.present(
+            title: "I am James Thang",
+            symbol: "book.fill",
+            tint: .black,
+            isUserInteractionEnabled: true,
+            timing: .slow
+        )
+    }
+    
+    Button("Toast 3") {
+        Toast.shared.present(
+            title: "This is CommonSwiftUI",
+            symbol: "lightbulb.circle.fill",
+            tint: .purple,
+            isUserInteractionEnabled: true,
+            timing: .slow
+        )
+    }
+}
+```
+
+https://github.com/user-attachments/assets/08d17817-882b-4be3-8157-246a214df992
+
+The `Toast` component provides a streamlined and non-intrusive way to display brief notifications or messages within an application's interface. 
 
 ## ViewModifier
 
