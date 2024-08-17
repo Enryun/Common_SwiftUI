@@ -275,7 +275,16 @@ By conforming to the `CommonAlert` protocol, developers can customize alert comp
 
 ## UniversalAlert
 
+#### RootView
 
+A view container that serves as the root of a view hierarchy and can display an overlay window.
+
+`RootView` is designed to embed any SwiftUI view and has the capability to present additional content in an overlay window on top of the existing UI. This is particularly useful for displaying elements like toasts or alerts that should float above all other content.
+
+Parameters:
+- `content`: A closure returning the content of the view.
+
+On appear, `RootView` automatically checks for an existing overlay window and, if none is found, creates and displays a new one, allowing for content like `Toast` or `Alert` to be shown on top of the primary view hierarchy.
 
 ## Button
 
@@ -2077,7 +2086,7 @@ Parameters:
 - `symbol`: An optional symbol to display alongside the text. Defaults to nil.
 - `tint`: The color of the text and symbol. Defaults to `.primary`.
 - `isUserInteractionEnabled`: A Boolean value that determines whether the toast allows user interaction. Defaults to false.
-- `timing`: The duration for which the toast should remain on screen. Defaults to `.medium`.
+- `timing`: The duration for which the toast should remain on screen. This use the shared [Speed](#speed) type. Defaults to `.medium`.
 
 The first required step is to wrapped your Application inside [RootView](#rootview):
 
