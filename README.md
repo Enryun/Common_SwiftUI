@@ -2546,4 +2546,7 @@ Text("Conditional Styling")
 In this usage example, padding is applied universally, but a gray background is only applied if the iOS version is below 16.0.
 
 ## Author
+
 James Thang, find me on [LinkedIn](https://www.linkedin.com/in/jamesthang/)
+
+Learn more about SwiftUI, check out my book :books: on [Amazon](https://www.amazon.com/Ultimate-SwiftUI-Handbook-iOS-Developers-ebook/dp/B0CKBVY7V6/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=1696776124&sr=8-1)
