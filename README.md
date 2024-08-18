@@ -45,7 +45,7 @@ For more details on using Swift Package Manager, visit [Apple's Swift Package Ma
 Add the following entry to your Podfile:
 
 ```rb
-pod 'CommonSwiftUI', '~> 1.0.7'
+pod 'CommonSwiftUI'
 ```
 
 Then run `pod install`.
