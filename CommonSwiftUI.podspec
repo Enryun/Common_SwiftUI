@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "CommonSwiftUI"
-  spec.version      = "1.0.6"
+  spec.version      = "1.0.7"
   spec.summary      = "Commonly used UI components that enhance and enrich the SwiftUI experience."
   spec.description  = <<-DESC
   A collection of essential UI components that enhance and enrich SwiftUI. All designed with modern aesthetics and smooth animations. Perfect for adding a polished touch to any SwiftUI application.
