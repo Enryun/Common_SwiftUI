@@ -296,6 +296,8 @@ https://github.com/user-attachments/assets/40021753-997a-40fc-a9a9-3570a5b03492
 
 By conforming to the `CommonAlert` protocol, developers can customize alert components while maintaining a coherent appearance and functionality. This modularity and consistency in design make the component particularly useful in large projects or those requiring frequent alert updates.
 
+[Back to Top](#components)
+
 ## UniversalAlert
 
 This solution enables the presentation of a customizable alert over the existing view content, using specified configurations and a custom view builder for the alert's content.
@@ -547,6 +549,8 @@ https://github.com/user-attachments/assets/364dd2eb-321b-4182-a7da-180a97a5c706
 
 Use this solution to seamlessly integrate custom alerts into any SwiftUI view, enhancing user interaction and providing a dynamic and adaptable alerting solution.
 
+[Back to Top](#components)
+
 ## Button
 
 ## CapsuleButtonStyle:
@@ -589,6 +593,8 @@ var body: some View {
 <img src="https://github.com/user-attachments/assets/89fcae09-da1b-4470-96b1-b01bd75a692f" width="220">
 
 This style gives buttons a modern, rounded look suitable for various UI contexts.
+
+[Back to Top](#components)
 
 ## ShapeButtonStyle:
 
@@ -634,6 +640,8 @@ var body: some View {
 
 This style modifies the appearance of buttons to fit within a specified shape, with customizable foreground, background colors and padding. It is highly flexible, accommodating various shapes and color styles.
 
+[Back to Top](#components)
+
 ## GrowingButtonStyle:
 
 A `ButtonStyle` for SwiftUI that scales the button on press, with customizable shape and color styles.
@@ -667,6 +675,8 @@ var body: some View {
 https://github.com/user-attachments/assets/9520da94-8b87-4a84-83e9-da7b79dbaeab
 
 This button style provides an interactive feedback effect by increasing the button's scale when pressed. It allows for customization of the button's foreground and background colors, shape, and padding.
+
+[Back to Top](#components)
 
 ## LoadingButtonStyle:
 
@@ -731,6 +741,8 @@ var body: some View {
 https://github.com/user-attachments/assets/b6fa0b46-53dc-4f81-bc84-fd467c74e407
 
 This button style offers interactive feedback by displaying a `ProgressView` when in a loading state. It allows for extensive customization of the button's appearance, including text color, background color, shape, padding, and the position of the loading indicator. When loading, the button can optionally gray out the background and disable user interactions.
+
+[Back to Top](#components)
 
 ## Dropdown
 
@@ -883,6 +895,8 @@ Use multiple DropDowns for complicated form:
 https://github.com/user-attachments/assets/7f7b988e-8cc7-41f1-84e1-fe08f9f8ce22
 
 This example demonstrates a `DropDown` menu utilizing an enumeration for options, showcasing custom text styling and a placeholder. Be creative with these options for your style.
+
+[Back to Top](#components)
 
 ## FloatingButton
 
@@ -1232,6 +1246,8 @@ This component enhances the user interface by seamlessly integrating multiple ac
 
 This component is ideal for interfaces that require quick access to multiple actions without cluttering the UI.
 
+[Back to Top](#components)
+
 ## ExpandFloatButton
 
 A SwiftUI view component that displays a floating action button with expandable action buttons.
@@ -1348,6 +1364,8 @@ The `ExpandFloatButton` efficiently enhances the user interface by integrating m
 
 It is particularly beneficial in applications where quick access to multiple functions is necessary without cluttering the screen, offering an intuitive and streamlined user experience.
 
+[Back to Top](#components)
+
 ## GlassMorphism
 
 A view creating a glassmorphism effect with customizable properties.
@@ -1385,6 +1403,8 @@ ZStack {
 <img src="https://github.com/user-attachments/assets/abbb1edd-f559-451f-9a47-0847d506e942" width="220">
 
 This example illustrates the `GlassMorphismView` with a circular red background, a specified border, and overlaid text to demonstrate the glassmorphism effect.
+
+[Back to Top](#components)
 
 ## HoldDownButton
 
@@ -1441,6 +1461,8 @@ https://github.com/user-attachments/assets/0270f8a3-5170-41bf-a04e-2e52170b78c7
 
 This component is useful for actions that require confirmation or extended interaction, preventing accidental triggers.
 
+[Back to Top](#components)
+
 ## LoadingIndicator
 
 ## SimpleLoadingIndicator:
@@ -1481,6 +1503,8 @@ Visibility and Size:
 - Frame Size: Adjust the indicator's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 - Dynamic Visibility: Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
 
+[Back to Top](#components)
+
 ## FancyLoadingView
 
 A SwiftUI view that displays a series of animated concentric circles, creating a dynamic loading indicator.
@@ -1500,6 +1524,8 @@ Each circle in the animation is individually timed to create a smooth, rhythmic 
 
 Visibility: 
 - Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
+
+[Back to Top](#components)
 
 ## ShimmerView
 
@@ -1521,6 +1547,8 @@ Visibility:
 - Manage the visibility using `.opacity()` modifier or `if-else` conditions based on your application's state. This helps integrate the indicator seamlessly into your UI or hide it when not needed.
 
 For more customization, look at [Shimmer](#shimmer) view modifier to apply a shimmer effect to any SwiftUI view.
+
+[Back to Top](#components)
 
 ## ProgressView
 
@@ -1568,6 +1596,8 @@ This view displays a rectangular progress indicator that fills up based on the c
 Size:
 - Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 
+[Back to Top](#components)
+
 ## RingProgress:
 
 A circular progress bar view for SwiftUI.
@@ -1614,6 +1644,8 @@ This view displays a circular progress indicator that fills up based on the curr
 
 Size:
 - Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
+
+[Back to Top](#components)
 
 ## ArcProgress:
 
@@ -1664,6 +1696,8 @@ The progress bar uniquely fills up to 75% of the circle and starts at a 135-degr
 Size:
 - Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
 
+[Back to Top](#components)
+
 ## QRScanner
 
 A robust QR code scanner view for SwiftUI, providing interactive scanning capabilities.
@@ -1713,6 +1747,8 @@ var body: some View {
 https://github.com/user-attachments/assets/5d320f81-59a1-4581-99dd-b3efb1566532
 
 This component is designed to provide a seamless integration of QR scanning functionality within your SwiftUI applications, enhancing user interaction and data capture capabilities.
+
+[Back to Top](#components)
 
 ## SegmentControl
 
@@ -1789,6 +1825,8 @@ https://github.com/user-attachments/assets/6ac4766d-f27f-4885-9b95-927cf67d30cf
 
 This example demonstrates a `SegmentControl` with custom tab items, including icons and text, showcasing how to integrate it into a SwiftUI view.
 
+[Back to Top](#components)
+
 ## Slider
 
 ## RangeSlider:
@@ -1860,6 +1898,8 @@ https://github.com/user-attachments/assets/1da84ea4-53cc-4565-a63e-8fb03e7b1836
 
 This setup demonstrates configuring a `RangeSlider`, displaying the selected value range with customized control appearance.
 
+[Back to Top](#components)
+
 ## RingSlider:
 
 A customizable ring-shaped slider view for selecting angular ranges.
@@ -1914,6 +1954,8 @@ https://github.com/user-attachments/assets/e87cc06d-2877-4b49-88e8-b45165117e48
 
 This configuration leverages the `ControlConfig` to apply custom images for the handles and additional styling options, enhancing the user interaction experience.
 
+[Back to Top](#components)
+
 ## Text
 
 ## CircularText:
@@ -1961,6 +2003,8 @@ VStack(spacing: 40) {
 <img src="https://github.com/user-attachments/assets/556ebe60-acb5-440a-a69a-7d6b5ebe987e" width="220">
 
 This view is perfect for creating visually compelling text effects such as circular labels or decorative text in a SwiftUI application.
+
+[Back to Top](#components)
 
 ## HackerText:
 
@@ -2023,6 +2067,8 @@ https://github.com/user-attachments/assets/5c0f3ebb-e8e5-41f4-8a30-20ad7bceab9c
 
 This view is particularly effective for creating engaging and eye-catching textual displays in apps that require a dramatic presentation.
 
+[Back to Top](#components)
+
 ## TypeWriterText:
 
 A SwiftUI view that simulates a typewriter effect for displaying text.
@@ -2052,6 +2098,8 @@ VStack(spacing: 16){
 https://github.com/user-attachments/assets/824d41a8-1e3d-4c07-9607-c669073a7ab1
 
 This view is ideal for scenarios where text needs to be presented in a dramatic, engaging manner.
+
+[Back to Top](#components)
 
 ## TextField
 
@@ -2119,6 +2167,8 @@ var body: some View {
 https://github.com/user-attachments/assets/aa287e0d-11e1-4af8-bb47-ffd2e6ed3bc6
 
 This component is ideal for forms, comments, or any user input that requires length constraints.
+
+[Back to Top](#components)
 
 ## ValidationTextField:
 
@@ -2383,6 +2433,8 @@ https://github.com/user-attachments/assets/f859f4cf-6f87-4dfb-8d80-73446d926f79
 
 This example effectively demonstrates how to configure and use `ValidationTextField` for a form handling multiple fields, ensuring that all entries meet specified validation criteria before enabling form submission.
 
+[Back to Top](#components)
+
 ## Toast
 
 `Toast` provides functionality to present and remove toast messages.
@@ -2459,6 +2511,8 @@ All of the toast messages will be at the top level of your application.
 
 The `Toast` component provides a streamlined and non-intrusive way to display brief notifications or messages within an application's interface. 
 
+[Back to Top](#components)
+
 ## ViewModifier
 
 ## Shimmer
@@ -2512,6 +2566,8 @@ https://github.com/user-attachments/assets/24f8879a-5eca-45af-b456-3ceb0535b1f9
 
 Customize the parameters to fit the style of your app's loading indicators.
 
+[Back to Top](#components)
+
 ## ViewDidLoad
 
 Attaches a callback that performs an action when the view loads.
@@ -2535,6 +2591,8 @@ Text("Welcome")
 ```
 
 This example prints a message to the console when the `Text` view loads.
+
+[Back to Top](#components)
 
 ## VersionConditioning
 
@@ -2563,6 +2621,8 @@ Text("Conditional Styling")
 ```
 
 In this usage example, padding is applied universally, but a gray background is only applied if the iOS version is below 16.0.
+
+[Back to Top](#components)
 
 ## Author
 
