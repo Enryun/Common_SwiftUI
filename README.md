@@ -171,6 +171,8 @@ https://github.com/user-attachments/assets/319d44d0-4d6d-4314-a14e-351c9c8014e7
 
 This setup presents an alert for login, with text fields for username and password and options to cancel or log in.
 
+[Back to Top](#components)
+
 ## AlertWithErrorBinding:
 
 This solution presents a customizable alert whenever the `Binding` error data has value. The error must conform to the provided [CommonAlert](#commonalert) protocol.
