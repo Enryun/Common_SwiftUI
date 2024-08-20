@@ -107,7 +107,9 @@ import CommonSwiftUI
 
 Presents an alert with customizable text fields and actions.
 
-This function creates and displays an `UIAlertController` with a specified title and message, incorporating any number of customizable text fields and actions into `SwiftUI`. Each text field can be tailored with specific attributes like placeholders and keyboard types, while actions can define their title, style, and a completion handler that processes the entered text.
+```swift
+public func AlertWithTextFields(title: String, message: String, textFields: [CommonSwiftUI.AlertTextField], actions: [CommonSwiftUI.AlertAction])
+```
 
 Parameters:
 - `title`: The title of the alert.
@@ -115,11 +117,15 @@ Parameters:
 - `textFields`: An array of [AlertTextField](#alerttextfield), configuring each text field within the alert.
 - `actions`: An array of [AlertAction](#alertaction), representing the actions that can be taken from the alert.
 
+This function creates and displays an `UIAlertController` with a specified title and message, incorporating any number of customizable text fields and actions into `SwiftUI`. Each text field can be tailored with specific attributes like placeholders and keyboard types, while actions can define their title, style, and a completion handler that processes the entered text.
+
 #### AlertTextField: 
 
 Represents a configurable text field for use within an alert dialog.
 
-This structure allows for the creation of a text field with customizable properties such as placeholder text, keyboard type, secure text entry for passwords, and text capitalization behavior. It can be used to gather input from users in a variety of contexts, ensuring that the text field is tailored to the specific type of data being requested.
+```swift
+public init(placeholder: String, keyboardType: UIKeyboardType = .default, isSecureTextEntry: Bool = false, autocapitalizationType: UITextAutocapitalizationType = .none)
+```
 
 Parameters:
 - `placeholder`: A `String` that appears in the text field when it's empty, hinting at the expected input.
@@ -127,16 +133,22 @@ Parameters:
 - `isSecureTextEntry`: A `Bool` indicating whether the text field is for secure text entry (e.g., passwords). Defaults to `false`.
 - `autocapitalizationType`: The autocapitalization strategy for the text field. Defaults to `.none`.
 
+This structure allows for the creation of a text field with customizable properties such as placeholder text, keyboard type, secure text entry for passwords, and text capitalization behavior. It can be used to gather input from users in a variety of contexts, ensuring that the text field is tailored to the specific type of data being requested.
+
 #### AlertAction: 
 
 Defines an action for an alert dialog.
 
-This structure encapsulates the information needed to present an action within an alert, including the action's title, its visual style, and a completion handler that executes when the action is selected. The completion handler passes back an array of strings, allowing for flexible use cases such as returning input from text fields within the alert.
+```swift
+public init(title: String, style: UIAlertAction.Style, completion: @escaping ([String]) -> ())
+```
 
 Parameters:
 - `title`: The text to display on the action button.
 - `style`: The visual style of the action, defined by `UIAlertAction.Style`.
 - `completion`: A closure that is called when the action is selected, passing an array of `String` as its parameter.
+
+This structure encapsulates the information needed to present an action within an alert, including the action's title, its visual style, and a completion handler that executes when the action is selected. The completion handler passes back an array of strings, allowing for flexible use cases such as returning input from text fields within the alert.
 
 Example:
 
