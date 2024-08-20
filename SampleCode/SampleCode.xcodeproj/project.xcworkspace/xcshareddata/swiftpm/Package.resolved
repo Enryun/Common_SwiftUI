@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "common_swiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Enryun/Common_SwiftUI",
+      "state" : {
+        "revision" : "071a827f48c4f83576c18f7518147dbd8dfab47b",
+        "version" : "1.0.7"
+      }
+    }
+  ],
+  "version" : 2
+}
