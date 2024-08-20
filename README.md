@@ -108,7 +108,24 @@ import CommonSwiftUI
 Presents an alert with customizable text fields and actions.
 
 ```swift
-public func AlertWithTextFields(title: String, message: String, textFields: [CommonSwiftUI.AlertTextField], actions: [CommonSwiftUI.AlertAction])
+AlertWithTextFields(
+    title: "Login",
+    message: "Please enter your password",
+    textFields:
+        [
+            AlertTextField(placeholder: "username"),
+            AlertTextField(placeholder: "password", isSecureTextEntry: true)
+        ],
+    actions:
+        [
+            AlertAction(title: "Cancel", style: .cancel) { result in
+                print(result)
+            },
+            AlertAction(title: "Login", style: .default) { result in
+                print(result)
+            }
+        ]
+)
 ```
 
 Parameters:
@@ -209,6 +226,8 @@ Properties:
 - `buttons`: A view component representing the actionable items or responses available for the alert.
 
 This `protocol` standardizes the way alerts are created by specifying essential elements that each alert should contain. Conforming to this `protocol` ensures consistency in alert presentation and functionality.
+
+Pass a binding of your custom alert conforming to `CommonAlert` to this function to display it:
 
 ```swift
 public func showCustomAlert<T>(alert: Binding<T?>) -> some View where T : CommonSwiftUI.CommonAlert
@@ -312,6 +331,10 @@ var body: some View {
     }
     .showCustomAlert(alert: $error)
 }
+```
+
+```swift
+.showCustomAlert(alert: $error)
 ```
 
 https://github.com/user-attachments/assets/40021753-997a-40fc-a9a9-3570a5b03492
