@@ -592,6 +592,10 @@ Use this solution to seamlessly integrate custom alerts into any SwiftUI view, e
 
 A `ButtonStyle` for SwiftUI that applies a Capsule Shape with customizable color styles.
 
+```swift
+CapsuleButtonStyle(textColor: Color.white, backgroundColor: gradient)
+```
+
 Parameters:
 - `textColor`: The color or style applied to the text inside the button. Defaults to `.white`.
 - `backgroundColor`: The background color or style of the button, conforming to `ShapeStyle`. Defaults to `.blue`.
@@ -634,6 +638,10 @@ This style gives buttons a modern, rounded look suitable for various UI contexts
 ## ShapeButtonStyle:
 
 A `ButtonStyle` for SwiftUI that allows customization of the button's shape and color.
+
+```swift
+ShapeButtonStyle(textColor: .white, backgroundColor: gradient, shape: .circle)
+```
 
 Parameters:
 - `textColor`: The color or style applied to the text inside the button. Default is `.primary`.
@@ -681,6 +689,10 @@ This style modifies the appearance of buttons to fit within a specified shape, w
 
 A `ButtonStyle` for SwiftUI that scales the button on press, with customizable shape and color styles.
 
+```swift
+GrowingButtonStyle(textColor: .primary, backgroundColor: .green, shape: .rect(cornerRadius: 4))
+```
+
 Parameters:
 - `textColor`: The color or style for the text inside the button, defaulting to `.white`.
 - `backgroundColor`: The background color or style of the button, conforming to `ShapeStyle`, with a default of `.blue`.
@@ -716,6 +728,10 @@ This button style provides an interactive feedback effect by increasing the butt
 ## LoadingButtonStyle:
 
 A `ButtonStyle` for SwiftUI that provides a customizable button with a loading indicator.
+
+```swift
+LoadingButtonStyle(isLoading: $isLoading, loadingState: .resize, backgroundColor: .indigo)
+```
 
 Parameters:
 - `isLoading`: A binding to a boolean indicating whether the button is in a loading state.
