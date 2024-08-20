@@ -1585,6 +1585,11 @@ This component is useful for actions that require confirmation or extended inter
 
 A simple, customizable loading indicator view. This view displays a circular loading indicator that rotates according to the specified loading speed. The appearance of the indicator, including its color, background color, line width, and speed, can be customized.
 
+```swift
+SimpleLoadingIndicator(color: .green, backgroundColor: .clear, lineWidth: 12, loadingSpeed: .custom(2))
+    .frame(width: 200, height: 200)
+```
+
 Parameters:
 - `color`: The color of the loading indicator. Default is `.blue`.
 - `backgroundColor`: The background color of the loading indicator. Default is `.gray`.
@@ -1604,13 +1609,6 @@ Cases:
 - `slow`: A slow operation speed, with a time interval of 3 seconds.
 - `custom(TimeInterval)`: A customizable operation speed, where the time interval can be specified dynamically.
 
-Example:
-
-```swift
-SimpleLoadingIndicator(color: .green, backgroundColor: .clear, lineWidth: 12, loadingSpeed: .custom(2))
-    .frame(width: 200, height: 200)
-```
-
 https://github.com/user-attachments/assets/d3031c2d-6f4c-4f94-bfa7-ae2c3dd3e0ac
 
 The loading indicator will rotate continuously to signify an ongoing loading process.
@@ -1625,14 +1623,12 @@ Visibility and Size:
 
 A SwiftUI view that displays a series of animated concentric circles, creating a dynamic loading indicator.
 
-Parameters:
-- `color`: The color of the circle strokes. The default is `.primary`.
-
-Example:
-
 ```swift
 FancyLoading()
 ```
+
+Parameters:
+- `color`: The color of the circle strokes. The default is `.primary`.
 
 https://github.com/user-attachments/assets/ceefa337-ac2d-4001-ae81-c5ee111a033c
 
@@ -1647,13 +1643,11 @@ Visibility:
 
 A view displaying a shimmering loading placeholder.
 
-This view simulates a 'shimmer' effect commonly used as a placeholder during content loading. It consists of multiple shimmering elements: a pair of small circular views at the top and bottom, and larger rectangular views in between, all showcasing the shimmer effect.
-
-Example:
-
 ```swift
 ShimmerView()
 ```
+
+This view simulates a 'shimmer' effect commonly used as a placeholder during content loading. It consists of multiple shimmering elements: a pair of small circular views at the top and bottom, and larger rectangular views in between, all showcasing the shimmer effect.
 
 https://github.com/user-attachments/assets/8f921028-2d13-4ed6-9281-998a883fe53e
 
