@@ -195,11 +195,8 @@ Adopting the `CommonAlert` component helps projects by standardizing alert prese
 
 ```swift
 public protocol CommonAlert {
-
     var title: String { get }
-
     var subTitle: String? { get }
-
     var buttons: AnyView { get }
 }
 ```
@@ -337,6 +334,15 @@ Parameters:
 
 `UniversalAlertConfig` configures the presentation and behavior of a customizable alert view in a SwiftUI application.
 
+```swift
+UniversalAlertConfig(
+    enableBackgroundBlur: true,
+    disableOutsideTap: false,
+    transitionType: .slide,
+    slideEdge: .bottom
+)
+```
+
 Parameters:
 - `enableBackgroundBlur`: A Boolean value that determines whether the background should be blurred when the alert is presented.
 - `disableOutsideTap`: A Boolean value that if set to true, disables dismissing the alert by tapping outside its bounds.
@@ -355,6 +361,12 @@ This configuration struct allows you to customize alert presentations with vario
 A view container that serves as the root of a view hierarchy and can display an overlay window.
 
 `RootView` is designed to embed any SwiftUI view and has the capability to present additional content in an overlay window on top of the existing UI. This is particularly useful for displaying elements like toasts or alerts that should float above all other content.
+
+```swift
+RootView {
+    ContentView()
+}
+```
 
 Parameters:
 - `content`: A closure returning the content of the view.
