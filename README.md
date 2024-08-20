@@ -824,7 +824,13 @@ This button style offers interactive feedback by displaying a `ProgressView` whe
 
 A flexible and customizable dropdown component for SwiftUI. This view allows for displaying a list of selectable items with customizable appearance and interactivity.
 
-This component offers flexibility in appearance and behavior, supporting dynamic content adjustments based on user selections. It provides customization options for row height, and allows for an optional placeholder view.
+```swift
+DropDown(options: DropDownOptions.allCases, selection: $selectedOption) { item, isSelected, isPlaceHolderShow, isExpand in
+    
+} placeHolder: { isExpand in
+    
+}
+```
 
 Parameters:
 - `options`: An array of `Item`, representing the content of the dropdown. Conform to `Hashable`.
@@ -832,6 +838,8 @@ Parameters:
 - `rowHeight`: Height of each dropdown row.
 - `displayItem`: A closure that provides a view for each item. It receives four parameters: `item`: The current item to display, `isSelected`: A Boolean that indicates if the item is currently selected, `isPlaceHolderShow`: A Boolean that indicates if the placeholder is currently shown, and `isExpand`: A Boolean that indicates if the dropdown is expanded.
 - `placeHolder`: An optional closure that returns a view used as the dropdown's placeholder. It receives a Boolean parameter indicating if the dropdown is expanded.
+
+This component offers flexibility in appearance and behavior, supporting dynamic content adjustments based on user selections. It provides customization options for row height, and allows for an optional placeholder view.
 
 Example 1:
 
