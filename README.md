@@ -193,14 +193,23 @@ Adopting the `CommonAlert` component helps projects by standardizing alert prese
 
 #### CommonAlert:
 
-This `protocol` standardizes the way alerts are created by specifying essential elements that each alert should contain. Conforming to this `protocol` ensures consistency in alert presentation and functionality.
+```swift
+public protocol CommonAlert {
+
+    var title: String { get }
+
+    var subTitle: String? { get }
+
+    var buttons: AnyView { get }
+}
+```
 
 Properties:
 - `title`: The primary text displayed in the alert, typically used for summarizing the alert's purpose.
 - `subTitle`: An optional secondary text providing additional details or context.
 - `buttons`: A view component representing the actionable items or responses available for the alert.
 
-This function displays an alert based on the properties defined in an instance of `T`, where `T` conforms to the `CommonAlert` protocol. It allows for dynamic alert content including title, subtitle, and custom button actions.
+This `protocol` standardizes the way alerts are created by specifying essential elements that each alert should contain. Conforming to this `protocol` ensures consistency in alert presentation and functionality.
 
 ```swift
 public func showCustomAlert<T>(alert: Binding<T?>) -> some View where T : CommonSwiftUI.CommonAlert
@@ -208,6 +217,8 @@ public func showCustomAlert<T>(alert: Binding<T?>) -> some View where T : Common
 
 Parameter:
 - `alert`: A binding to an optional `CommonAlert` conforming object that provides the data for the alert.
+
+This function displays an alert based on the properties defined in an instance of `T`, where `T` conforms to the `CommonAlert` protocol. It allows for dynamic alert content including title, subtitle, and custom button actions.
 
 Example:
 
