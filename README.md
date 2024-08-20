@@ -988,6 +988,14 @@ This example demonstrates a `DropDown` menu utilizing an enumeration for options
 
 A customizable floating action button component that arcs around a main button, revealing multiple action buttons.
 
+```swift
+ArcFloatingButton(alignment: .halfmoonTop) {
+    
+} label: { isExpanded in
+    
+}
+```
+
 Parameters:
 - `buttonSize`: The diameter of each action button.
 - `alignment`: The alignment dictates the starting point and direction in which the action buttons will arc (e.g., topLeading, fullmoon).
@@ -1001,6 +1009,12 @@ Parameters:
 #### FloatingAction
 
 Represents a customizable floating action button with identifiable properties. Used for `ArcFloatingButton` and `ExpandFloatingButton`.
+
+```swift
+FloatingAction(image: Image(systemName: "house.fill"), tint: .blue) {
+    print("Heart")
+}
+```
 
 Parameters:
 - `id`: A unique identifier for the button, useful for distinguishing multiple instances.
@@ -1335,6 +1349,14 @@ This component is ideal for interfaces that require quick access to multiple act
 ## ExpandFloatButton
 
 A SwiftUI view component that displays a floating action button with expandable action buttons.
+
+```swift
+ExpandFloatButton(alignment: .leading) {
+    
+} label: { isExpanded in
+    
+}
+```
 
 Parameters:
 - `buttonSize`: The size of the floating button and each action button.
