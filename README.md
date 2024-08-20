@@ -124,7 +124,7 @@ This function creates and displays an `UIAlertController` with a specified title
 Represents a configurable text field for use within an alert dialog.
 
 ```swift
-public init(placeholder: String, keyboardType: UIKeyboardType = .default, isSecureTextEntry: Bool = false, autocapitalizationType: UITextAutocapitalizationType = .none)
+AlertTextField(placeholder: "password", isSecureTextEntry: true)
 ```
 
 Parameters:
@@ -140,7 +140,9 @@ This structure allows for the creation of a text field with customizable propert
 Defines an action for an alert dialog.
 
 ```swift
-public init(title: String, style: UIAlertAction.Style, completion: @escaping ([String]) -> ())
+AlertAction(title: "Login", style: .default) { result in
+    print(result)
+}
 ```
 
 Parameters:
