@@ -1476,6 +1476,10 @@ It is particularly beneficial in applications where quick access to multiple fun
 
 A view creating a glassmorphism effect with customizable properties.
 
+```swift
+GlassMorphismView(cornerRadius: 25, blurRadius: 8, saturationAmount: 1.8)
+```
+
 Parameters:
 - `cornerRadius`: The radius of the corners for the card. Default is 0.
 - `blurRadius`: The intensity of the blur effect. A value of 0 uses the system default.
@@ -1515,6 +1519,12 @@ This example illustrates the `GlassMorphismView` with a circular red background,
 ## HoldDownButton
 
 A SwiftUI view that implements a hold-down button with progress feedback.
+
+```swift
+HoldDownButton(text: "Hold Down Button", color: .white, background: .black, loadingTint: .yellow, clipShape: .capsule) {
+    print("Finish")
+}
+```
 
 Parameters:
 - `text`: The label displayed on the button.
