@@ -2630,6 +2630,8 @@ The `Toast` component provides a streamlined and non-intrusive way to display br
 
 Starting with `iOS 17`, the onChange modifier with one parameter is deprecated. To maintain backward compatibility, this view modifier was created.
 
+<img width="527" alt="CommonSwiftUI_CustomChangeViewModifier" src="https://github.com/user-attachments/assets/a1ac66a5-45e7-4270-a47a-d693e4a1df95">
+
 ```swift
 .customChange(value: someObservableValue) { newValue in
     print("Value changed to \(newValue)")
