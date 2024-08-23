@@ -1667,6 +1667,10 @@ For more customization, look at [Shimmer](#shimmer) view modifier to apply a shi
 
 A rectangular progress bar view for SwiftUI.
 
+```swift
+ProgressBar(progress: $progress, color: .blue)
+```
+
 Parameters:
 - `progress`: A binding to a `CGFloat` that represents the current progress (from 0.0 to 1.0).
 - `color`: The color of the bar's tint.
@@ -1712,6 +1716,10 @@ Size:
 ## RingProgress:
 
 A circular progress bar view for SwiftUI.
+
+```swift
+RingProgress(progress: $progress, lineWidth: 16, color: .green)
+```
 
 Parameters:
 - `progress`: A binding to a `CGFloat` that represents the current progress (from 0.0 to 1.0).
@@ -1761,6 +1769,10 @@ Size:
 ## ArcProgress:
 
 A customizable circular progress bar for SwiftUI, unique for its adjustable trim and rotation.
+
+```swift
+ArcProgress(progress: $progress, lineWidth: 16, color: .orange)
+```
 
 Parameters:
 - `progress`: A binding to a `CGFloat` that represents the current progress (from 0.0 to 1.0).
@@ -2643,6 +2655,8 @@ Parameters:
 - `result`: A closure that is executed when the observed value changes.
 
 Use this function to seamlessly handle value changes across different iOS versions with custom logic in the closure.
+
+[Back to Top](#components)
 
 ## Shimmer
 
