@@ -97,6 +97,7 @@ import CommonSwiftUI
     - [ValidationTextField](#validationtextfield)
 - [Toast](#toast)
 - [ViewModifier](#viewmodifier)
+  - [OnChange](#onchange)
   - [Shimmer](#shimmer)
   - [ViewDidLoad](#viewdidload)
   - [VersionConditioning](#versionconditioning)
@@ -2624,6 +2625,22 @@ The `Toast` component provides a streamlined and non-intrusive way to display br
 [Back to Top](#components)
 
 ## ViewModifier
+
+## OnChange
+
+Starting with `iOS 17`, the onChange modifier with one parameter is deprecated. To maintain backward compatibility, this view modifier was created.
+
+```swift
+.customChange(value: someObservableValue) { newValue in
+    print("Value changed to \(newValue)")
+}
+```
+
+Parameters:
+- `value`: The value to observe for changes. Must conform to `Equatable`.
+- `result`: A closure that is executed when the observed value changes.
+
+Use this function to seamlessly handle value changes across different iOS versions with custom logic in the closure.
 
 ## Shimmer
 
