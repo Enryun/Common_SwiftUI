@@ -1825,13 +1825,24 @@ Size:
 
 A robust QR code scanner view for SwiftUI, providing interactive scanning capabilities.
 
-`QRScannerView` integrates camera functionality to scan QR codes and handle the results dynamically through a completion handler. It supports customization of scanning animation and error handling.
+```swift
+QRScannerView(isScanning: $isScanning) { result in
+    switch result {
+    case .success(let code):
+        print("Scanned code: \(code)")
+    case .failure(let error):
+        print("Scanning failed: (error.localizedDescription)")
+    }
+}
+```
 
 Parameters:
 - `isScanning`: A binding to control the scanning process.
 - `showScanningAnimation`: A Boolean value that determines whether to show a scanning animation.
 - `showErrorAlert`: A Boolean value that determines whether to show an alert on scanning errors.
 - `completion`: A closure executed with the scanning result, returning a `String` on success or an `Error` on failure.
+
+`QRScannerView` integrates camera functionality to scan QR codes and handle the results dynamically through a completion handler. It supports customization of scanning animation and error handling.
 
 ```swift
 @State var isScanning: Bool = false
