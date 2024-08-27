@@ -1977,7 +1977,17 @@ This example demonstrates a `SegmentControl` with custom tab items, including ic
 
 A customizable range slider view in SwiftUI.
 
-Allows users to select a closed range of values using two draggable thumbs. This component is highly customizable with options for defining the range limits, thumb spacing, and appearance.
+```swift
+RangeSlider(
+    selection: $selection,
+    range: 10...100,
+    minimumDistance: 10,
+    lineWidth: 15,
+    tint: .red,
+    controlConfig: .init(width: 20, enableShadow: true)
+)
+.frame(height: 100)
+```
 
 Parameters:
 - `selection`: A binding to the selected range of values.
@@ -1987,6 +1997,8 @@ Parameters:
 - `tint`: The color of the slider's active range and thumbs.
 - `backgroundColor`: The color of the slider's track.
 - `controlConfig`: [ControlConfig](#rangesliderconfiguration) is the configuration for the control's appearance including thumb tint, width, and shadow of `RangeSlider`.
+
+Allows users to select a closed range of values using two draggable thumbs. This component is highly customizable with options for defining the range limits, thumb spacing, and appearance.
 
 #### RangeSliderConfiguration:
 
@@ -2048,7 +2060,20 @@ This setup demonstrates configuring a `RangeSlider`, displaying the selected val
 
 A customizable ring-shaped slider view for selecting angular ranges.
 
-`RingSlider` provides a visual and interactive way to select a range of angles using draggable handles that can be customized with images or styled directly via a `ControlConfig`. The appearance of the slider, including line width, colors, and handle customization, is adjustable.
+```swift
+RingSlider(
+    startAngle: $startAngle,
+    toAngle: $endAngle,
+    lineWidth: 40,
+    tint: .purple,
+    controlConfig: .init(
+        width: 40,
+        startSliderImage: Image(systemName: "moon.fill"),
+        endSliderImage: Image(systemName: "alarm")
+    )
+)
+.frame(width: 300, height: 300)
+```
 
 Parameters:
 - `startAngle`: The starting angle of the slider, modifiable via a binding.
@@ -2057,6 +2082,8 @@ Parameters:
 - `tint`: The primary color of the slider's line and handle if not using images.
 - `backgroundColor`: The color behind the slider's line for contrast.
 - `controlConfig`: [ControlConfig](#ringsliderconfiguration) is the configuration for the slider's handles, including color, width, images, and shadow of `RingSlider`.
+
+`RingSlider` provides a visual and interactive way to select a range of angles using draggable handles that can be customized with images or styled directly via a `ControlConfig`. The appearance of the slider, including line width, colors, and handle customization, is adjustable.
 
 #### RingSliderConfiguration:
 
