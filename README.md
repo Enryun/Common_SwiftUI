@@ -2133,7 +2133,11 @@ This configuration leverages the `ControlConfig` to apply custom images for the 
 
 A SwiftUI view that arranges text in a circular path with enhanced customization.
 
-`CircularText` displays text along a specified radius, offering settings for alignment, character spacing, and style reversal. It utilizes a generic view modifier to apply custom styling to each character, making it versatile for various design needs.
+```swift
+CircularText(text: "#OPENTOWORK", radius: 150, spacing: 8, alignment: .outside, reverseStyle: false)
+    .font(.largeTitle.bold())
+    .lineSpacing(5)
+```
 
 Parameters:
 - `text`: The string of text to be displayed circularly.
@@ -2142,6 +2146,8 @@ Parameters:
 - `alignment`: The position of the text relative to the circle's radius (`inside`, `center`, `outside`).
 - `reverseStyle`: If `true`, reverses the direction and orientation of the text.
 - `textModifier`: A closure that allows for custom styling of the text, applied per character.
+
+`CircularText` displays text along a specified radius, offering settings for alignment, character spacing, and style reversal. It utilizes a generic view modifier to apply custom styling to each character, making it versatile for various design needs.
 
 Example:
 
@@ -2180,6 +2186,17 @@ This view is perfect for creating visually compelling text effects such as circu
 ## HackerText:
 
 Provides an animated text effect that mimics hacking by changing characters randomly before revealing the final text.
+
+```swift
+HackerText(
+    text: text,
+    trigger: trigger,
+    transition: .hyper,
+    speed: .custom(0.06)
+)
+.font(.largeTitle.bold())
+.lineLimit(2)
+```
 
 Parameters:
 - `text`: The final text to display after animation.
@@ -2244,7 +2261,9 @@ This view is particularly effective for creating engaging and eye-catching textu
 
 A SwiftUI view that simulates a typewriter effect for displaying text.
 
-This view gradually displays characters of a string, mimicking the typing effect seen in a typewriter. Customization options include font, weight, color, alignment, and the speed of typing. The speed of typing can be one of the predefined speeds or a custom duration specified in seconds.
+```swift
+TypeWriterText(text: "James Thang", font: .title, fontWeight: .regular)
+```
 
 Parameters:
 - `text`: The text to display using the typewriter effect.
@@ -2253,6 +2272,8 @@ Parameters:
 - `color`: The color of the text. Default is `.primary`.
 - `alignment`: The alignment of the text within its container. Default is `.center`.
 - `speed`: The speed at which characters are displayed. This uses the shared type [Speed](#speed). Default is `.flash`.
+
+This view gradually displays characters of a string, mimicking the typing effect seen in a typewriter. Customization options include font, weight, color, alignment, and the speed of typing. The speed of typing can be one of the predefined speeds or a custom duration specified in seconds.
 
 Example:
 
