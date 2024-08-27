@@ -2299,16 +2299,34 @@ This view is ideal for scenarios where text needs to be presented in a dramatic,
 
 A SwiftUI view that provides a text field with a character limit and visual feedback on input progress.
 
-`LimitedTextField` offers a customizable text input field that restricts the number of characters based on a specified limit. It features visual indicators such as a progress ring or text counter and can be styled with custom colors and borders.
+```swift
+LimitedTextField(
+    config: .init(
+        limit: 40,
+        tint: .secondary,
+        autoResizes: true,
+        allowExcessTyping: false
+    ),
+    hint: "Type here",
+    value: $text
+)
+.frame(maxHeight: 150)
+```
 
 Parameters:
 - `config`: [Config](#limitedtextfieldconfiguration) is the configuration settings including character limit, tint, resizing behavior, and typing overflow control. Details below.
 - `hint`: Placeholder text displayed when the text field is empty.
 - `value`: A binding to the text inputted by the user.
 
+`LimitedTextField` offers a customizable text input field that restricts the number of characters based on a specified limit. It features visual indicators such as a progress ring or text counter and can be styled with custom colors and borders.
+
 #### LimitedTextFieldConfiguration:
 
 Manages the main settings for the text field.
+
+```swift
+.init(limit: 40, tint: .secondary, autoResizes: true, allowExcessTyping: false)
+```
 
 Parameters:
 - `limit`: The maximum number of characters.
@@ -2366,7 +2384,12 @@ This component is ideal for forms, comments, or any user input that requires len
 
 A SwiftUI view that provides a text field with extensive validation capabilities, including secure text entry.
 
-`ValidationTextField` allows visual feedback and validation for user inputs, suitable for both standard and secure text fields. It supports environmental properties to customize behavior and appearance based on validation results.
+```swift
+ValidationTextField(title: "First Name", text: $firstName, isValid: $isFormFirstNameValid)
+    .autocorrectionDisabled()
+    .focused($focus, equals: .firstName)
+    .isMandatory(true)
+```
 
 Parameters:
 - `title`: The label text for the text field.
@@ -2381,6 +2404,8 @@ Modifiers:
 - `isMandatory`: Marks the field as required and provides a custom message if validation fails.
 - `onValidate`: Adds custom validation logic for the text field.
 - `onFormValidate`: Handles form-level validation by providing an array of validation results.
+
+`ValidationTextField` allows visual feedback and validation for user inputs, suitable for both standard and secure text fields. It supports environmental properties to customize behavior and appearance based on validation results.
 
 Example 1:
 
