@@ -1888,7 +1888,15 @@ This component is designed to provide a seamless integration of QR scanning func
 
 A customizable segment control view in SwiftUI.
 
-`SegmentControl` provides a customizable segmented control interface, allowing for the selection among multiple options. It features customizable active/inactive tint colors, an adjustable height, and a dynamic or static indicator for the active tab. Additionally, it offers a configuration for the indicator's appearance and position based on the selected segment.
+```swift
+SegmentControl(tabs: SegmentedTab.allCases, activeTab: $activeTab, height: 40, activeTint: .primary, inActiveTint: .gray.opacity(0.5), indicatorConfiguration: .init(tint: .blue, cornerRadius: 0, style: .bottom)) { item in
+    HStack {
+        Image(systemName: item.imageName)
+        Text(item.rawValue)
+    }
+    .font(.title3)
+}
+```
 
 Parameters:
 - `tabs`: An array of `Item`, representing each segment option. Required to conform to `Hashable`.
@@ -1898,6 +1906,8 @@ Parameters:
 - `inActiveTint`: Color for inactive segments.
 - `indicatorConfiguration`: Configuration for the segment indicator, including color and corner radius.
 - `displayItem`: A closure that provides a view for displaying each segment option.
+
+`SegmentControl` provides a customizable segmented control interface, allowing for the selection among multiple options. It features customizable active/inactive tint colors, an adjustable height, and a dynamic or static indicator for the active tab. Additionally, it offers a configuration for the indicator's appearance and position based on the selected segment.
 
 Example:
 
