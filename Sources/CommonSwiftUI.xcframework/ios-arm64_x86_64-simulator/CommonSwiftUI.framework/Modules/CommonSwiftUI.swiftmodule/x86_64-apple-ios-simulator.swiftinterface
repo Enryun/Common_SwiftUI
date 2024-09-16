@@ -2,8 +2,10 @@
 // swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
 // swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CommonSwiftUI
 // swift-module-flags-ignorable: -enable-bare-slash-regex
+import CoreImage.CIFilterBuiltins
 import Combine
 @_exported import CommonSwiftUI
+import CoreImage
 import Foundation
 import Swift
 import SwiftUI
@@ -157,6 +159,11 @@ public struct RingSlider : SwiftUI.View {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI10RingSliderV4bodyQrvp", 0) __
 }
+public struct QRCodeGenerator {
+  public static func generateQRCode(from string: Swift.String) -> UIKit.UIImage?
+  public static func generateQRCode(from url: Foundation.URL) -> UIKit.UIImage?
+  public static func generateQRCode(from data: Foundation.Data) -> UIKit.UIImage?
+}
 public struct FancyLoading : SwiftUI.View {
   public init(color: SwiftUI.Color = .primary)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
@@ -192,6 +199,24 @@ public struct ValidationTextField : SwiftUI.View {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI19ValidationTextFieldV4bodyQrvp", 0) __
 }
+public struct QRGeneratorView : SwiftUI.View {
+  public init(input: CommonSwiftUI.QRCodeInputType)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI15QRGeneratorViewV4bodyQrvp", 0) __
+}
+public struct HTMLTextView : SwiftUI.UIViewRepresentable {
+  public init(content: Swift.String, font: UIKit.UIFont = UIFont.systemFont(ofSize: 14), textColor: UIKit.UIColor = .label)
+  @_Concurrency.MainActor(unsafe) public func makeUIView(context: CommonSwiftUI.HTMLTextView.Context) -> UIKit.UILabel
+  @_Concurrency.MainActor(unsafe) public func updateUIView(_ uiView: UIKit.UILabel, context: CommonSwiftUI.HTMLTextView.Context)
+  @_Concurrency.MainActor(unsafe) public static func dismantleUIView(_ uiView: UIKit.UILabel, coordinator: ())
+  @available(iOS 16.0, *)
+  @_Concurrency.MainActor(unsafe) public func sizeThatFits(_ proposal: SwiftUI.ProposedViewSize, uiView: UIKit.UILabel, context: CommonSwiftUI.HTMLTextView.Context) -> CoreFoundation.CGSize?
+  public typealias Body = Swift.Never
+  public typealias Coordinator = ()
+  public typealias UIViewType = UIKit.UILabel
+}
 public struct AlertAction {
   public init(title: Swift.String, style: UIKit.UIAlertAction.Style, completion: @escaping ([Swift.String]) -> ())
 }
@@ -208,6 +233,10 @@ extension SwiftUI.View {
   public func onValidate(validationHandler: @escaping (Swift.String) -> Swift.Result<Swift.String, any Swift.Error>) -> some SwiftUI.View
   
   public func onFormValidate(formValidationHandler: @escaping (Swift.String) -> [CommonSwiftUI.ValidationTextField.FormValidationElement]) -> some SwiftUI.View
+  
+  public func glow(color: SwiftUI.Color, intensity: CoreFoundation.CGFloat) -> some SwiftUI.View
+  
+  public func glow(gradient: SwiftUI.LinearGradient, intensity: CoreFoundation.CGFloat) -> some SwiftUI.View
   
 }
 public struct CapsuleButtonStyle<TextShapeStyle, BackgroundShapeStyle> : SwiftUI.ButtonStyle where TextShapeStyle : SwiftUI.ShapeStyle, BackgroundShapeStyle : SwiftUI.ShapeStyle {
@@ -313,6 +342,18 @@ extension SwiftUI.View {
   public func onLoad(perform action: (() -> Swift.Void)? = nil) -> some SwiftUI.View
   
 }
+public struct HambugSlideMenu<Content, MenuView, Background, Overlay> : SwiftUI.View where Content : SwiftUI.View, MenuView : SwiftUI.View, Background : SwiftUI.ShapeStyle, Overlay : SwiftUI.ShapeStyle {
+  public init(showMenu: SwiftUI.Binding<Swift.Bool>, rotatesWhenExpand: Swift.Bool = true, enableInteraction: Swift.Bool = true, sideMenuWidth: CoreFoundation.CGFloat = 200, cornerRadius: CoreFoundation.CGFloat = 25, background: Background = .black.opacity(0.85), overlay: Overlay = .black.opacity(0.2), @SwiftUI.ViewBuilder content: @escaping (UIKit.UIEdgeInsets) -> Content, @SwiftUI.ViewBuilder menuView: @escaping (UIKit.UIEdgeInsets) -> MenuView)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI15HambugSlideMenuV4bodyQrvp", 0) __<Content, MenuView, Background, Overlay>
+}
+public enum QRCodeInputType {
+  case string(Swift.String)
+  case url(Foundation.URL)
+  case data(Foundation.Data)
+}
 public struct ShimmerView : SwiftUI.View {
   public init()
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
@@ -336,13 +377,21 @@ public struct LimitedTextField : SwiftUI.View {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI16LimitedTextFieldV4bodyQrvp", 0) __
 }
+public struct BouncyButtonStyle<CustomShape, TextShapeStyle, BackgroundShapeStyle> : SwiftUI.ButtonStyle where CustomShape : SwiftUI.Shape, TextShapeStyle : SwiftUI.ShapeStyle, BackgroundShapeStyle : SwiftUI.ShapeStyle {
+  public init(textColor: TextShapeStyle = .black, pressedTextColor: TextShapeStyle = .white, backgroundColor: BackgroundShapeStyle = .yellow, pressedBackgroundColor: BackgroundShapeStyle = .cyan, shape: CustomShape = Capsule(), verticalPadding: CoreFoundation.CGFloat = 10, horizontalPadding: CoreFoundation.CGFloat = 20)
+  public func makeBody(configuration: CommonSwiftUI.BouncyButtonStyle<CustomShape, TextShapeStyle, BackgroundShapeStyle>.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s13CommonSwiftUI17BouncyButtonStyleV8makeBody13configurationQr0bC00eF13ConfigurationV_tF", 0) __<CustomShape, TextShapeStyle, BackgroundShapeStyle>
+}
 extension SwiftUI.View {
-  public func shimmer(tint: SwiftUI.Color, highlight: SwiftUI.Color, blur: CoreFoundation.CGFloat = 0, highlightOpacity: CoreFoundation.CGFloat = 1, speed: CommonSwiftUI.Speed = .medium) -> some SwiftUI.View
+  public func shimmer(tint: SwiftUI.Color, highlight: SwiftUI.Color, blur: CoreFoundation.CGFloat = 0, highlightOpacity: CoreFoundation.CGFloat = 1, speed: CommonSwiftUI.Speed = .medium, redacted: Swift.Bool = false) -> some SwiftUI.View
+  
+  public func shimmer(isActive: SwiftUI.Binding<Swift.Bool>, tint: SwiftUI.Color, highlight: SwiftUI.Color, blur: CoreFoundation.CGFloat = 0, highlightOpacity: CoreFoundation.CGFloat = 1, speed: CommonSwiftUI.Speed = .medium, redacted: Swift.Bool = false) -> some SwiftUI.View
   
 }
 public struct ProgressBar : SwiftUI.View {
-  public init(progress: SwiftUI.Binding<CoreFoundation.CGFloat>, color: SwiftUI.Color, backgroundColor: SwiftUI.Color = .secondary.opacity(0.3))
-  public init(progress: SwiftUI.Binding<CoreFoundation.CGFloat>, colors: [SwiftUI.Color], backgroundColor: SwiftUI.Color = .secondary.opacity(0.3))
+  public init(progress: SwiftUI.Binding<CoreFoundation.CGFloat>, color: SwiftUI.Color, backgroundColor: SwiftUI.Color = .secondary.opacity(0.3), shimmer: Swift.Bool = false)
+  public init(progress: SwiftUI.Binding<CoreFoundation.CGFloat>, colors: [SwiftUI.Color], backgroundColor: SwiftUI.Color = .secondary.opacity(0.3), shimmer: Swift.Bool = false)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
