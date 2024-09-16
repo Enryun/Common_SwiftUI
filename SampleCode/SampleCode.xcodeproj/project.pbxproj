@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300586022C9842B20041B00F /* HambugMenuTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300586012C9842B20041B00F /* HambugMenuTestView.swift */; };
 		307C2F652C74E8C70063D96D /* SampleCodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307C2F642C74E8C70063D96D /* SampleCodeApp.swift */; };
 		307C2F672C74E8C70063D96D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307C2F662C74E8C70063D96D /* ContentView.swift */; };
 		307C2F692C74E8C90063D96D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307C2F682C74E8C90063D96D /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		300586012C9842B20041B00F /* HambugMenuTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HambugMenuTestView.swift; sourceTree = "<group>"; };
 		307C2F612C74E8C70063D96D /* SampleCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307C2F642C74E8C70063D96D /* SampleCodeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCodeApp.swift; sourceTree = "<group>"; };
 		307C2F662C74E8C70063D96D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		300586002C9842B20041B00F /* HambugMenu */ = {
+			isa = PBXGroup;
+			children = (
+				300586012C9842B20041B00F /* HambugMenuTestView.swift */,
+			);
+			path = HambugMenu;
+			sourceTree = "<group>";
+		};
 		307C2F582C74E8C70063D96D = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 				307C2F7C2C74EA920063D96D /* Button */,
 				307C2F902C74EA930063D96D /* DropDown */,
 				307C2F792C74EA920063D96D /* Effects */,
+				300586002C9842B20041B00F /* HambugMenu */,
 				307C2F942C74EA930063D96D /* LoadingIndicator */,
 				307C2F8C2C74EA930063D96D /* ProgressBar */,
 				307C2F842C74EA930063D96D /* QRScanner */,
@@ -343,6 +354,7 @@
 				307C2F672C74E8C70063D96D /* ContentView.swift in Sources */,
 				307C2FA92C74EA930063D96D /* FloatActionViewTest.swift in Sources */,
 				307C2FBB2C74EA930063D96D /* ShimmerModifierTestView.swift in Sources */,
+				300586022C9842B20041B00F /* HambugMenuTestView.swift in Sources */,
 				307C2FA82C74EA930063D96D /* GrowingButtonTest.swift in Sources */,
 				307C2FA62C74EA930063D96D /* NeumorphismTestView.swift in Sources */,
 				307C2FB32C74EA930063D96D /* ToastTestView.swift in Sources */,
