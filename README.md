@@ -66,6 +66,7 @@ import CommonSwiftUI
    - [UniversalAlert](#universalalert)
 - [Button](#button)
    - [CapsuleButtonStyle](#capsulebuttonstyle)
+   - [BouncyButtonStyle](#bouncybuttonstyle)
    - [ShapeButtonStyle](#shapebuttonstyle)
    - [GrowingButtonStyle](#growingbuttonstyle)
    - [LoadingButtonStyle](#loadingbuttonstyle)
@@ -74,7 +75,10 @@ import CommonSwiftUI
    - [ArcFloatingButton](#arcfloatingbutton)
    - [ExpandFloatButton](#expandfloatbutton)
 - [GlassMorphism](#glassmorphism)
+- [Glow](#glow)
+- [HambugMenu](#hambugmenu)
 - [HoldDownButton](#holddownbutton)
+- [HTMLTextView](#htmltextview)
 - [LoadingIndicator](#loadingindicator)
    - [SimpleLoadingIndicator](#simpleloadingindicator)
    - [FancyLoadingView](#fancyloadingview)
@@ -83,7 +87,9 @@ import CommonSwiftUI
    - [ProgressBar](#progressbar)
    - [RingProgress](#ringprogress)
    - [ArcProgress](#arcprogress)
-- [QRScanner](#qrscanner)
+- [QRCode](#qrcode)
+   - [QRGenerator](#qrgenerator)
+   - [QRScanner](#qrscanner)
 - [SegmentControl](#segmentcontrol)
 - [Slider](#slider)
    - [RangeSlider](#rangeslider)
@@ -658,6 +664,54 @@ var body: some View {
 <img src="https://github.com/user-attachments/assets/89fcae09-da1b-4470-96b1-b01bd75a692f" width="220">
 
 This style gives buttons a modern, rounded look suitable for various UI contexts.
+
+[Back to Top](#components)
+
+## BouncyButtonStyle
+
+A customizable `ButtonStyle` for SwiftUI that simulates a bouncy 3D press effect.
+
+```swift
+BouncyButtonStyle()
+```
+
+Parameters:
+- `textColor`: The color of the text when the button is not pressed.
+- `pressedTextColor`: The color of the text when the button is pressed.
+- `backgroundColor`: The background color of the button when it's not pressed.
+- `pressedBackgroundColor`: The background color of the button when pressed.
+- `shape`: The shape of the button, conforming to the `Shape` protocol.
+- `verticalPadding`: The vertical padding inside the button.
+- `horizontalPadding`: The horizontal padding inside the button.
+
+Example:
+
+```swift
+Button("Cartoon Button") { }
+    .buttonStyle(BouncyButtonStyle())
+
+Button("Cartoon Button") { }
+    .buttonStyle(BouncyButtonStyle(shape: .rect(cornerRadius: 4)))
+
+Button(action: { }, label: {
+    Image(systemName: "heart.fill")
+        .font(.title)
+        .padding(5)
+})
+.buttonStyle(BouncyButtonStyle(shape: .circle))
+
+Button("Cartoon Button") { }
+    .buttonStyle(BouncyButtonStyle(textColor: .black,
+                                   pressedTextColor: .black,
+                                   backgroundColor: .green,
+                                   pressedBackgroundColor: .orange))
+```
+
+`BouncyButtonStyle` applies a dynamic and interactive visual effect to button presses, enhancing user experience with a noticeable 'pop'. It's ideal for adding a playful and engaging touch to UI components:
+
+https://github.com/user-attachments/assets/f4d5dd43-3781-4311-a53d-5a5304d86779
+
+This style configures the button to exhibit a bouncy animation upon interaction, with adjustable visual properties.
 
 [Back to Top](#components)
 
@@ -1517,6 +1571,201 @@ This example illustrates the `GlassMorphismView` with a circular red background,
 
 [Back to Top](#components)
 
+## Glow
+
+Applies a glowing effect to any SwiftUI view using a specified color or gradient and intensity.
+
+```swift
+Text("CommonSwiftUI")
+   .glow(color: .blue, intensity: 0.5)
+```
+
+Parameters:
+- `color`: The `Color` to use for the glow effect.
+- `intensity`: The `CGFloat` that determines the strength of the glow effect.
+
+```swift
+Text("James Thang")
+   .glow(gradient: gradient, intensity: 5)
+```
+
+Parameters:
+- `gradient`: A `LinearGradient` defining the colors of the glow.
+- `intensity`: The `CGFloat` that determines the strength of the glow effect.
+
+Example:
+
+```swift
+let gradient: LinearGradient = .linearGradient(.init(colors: [.blue, .purple, .orange]), startPoint: .leading, endPoint: .trailing)
+
+var body: some View {
+    VStack {
+        Image(systemName: "apple.logo")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 200, height: 200)
+            .glow(gradient: gradient, intensity: 5)
+        
+        Text("It's Glowtime")
+            .font(.system(size: 54))
+            .fontWeight(.semibold)
+            .glow(gradient: gradient, intensity: 5)
+        
+        Text("September 9, 2024")
+    }
+}
+```
+
+<img src="https://github.com/user-attachments/assets/aa883b6d-cbec-4a34-93e3-11f2f4a30981" width="220">
+
+This method is useful for adding attention-grabbing highlights to elements of your UI.
+
+[Back to Top](#components)
+
+## HambugMenu
+
+A customizable slide menu in SwiftUI that can be expanded from the side of the screen.
+
+```swift
+HambugSlideMenu()
+```
+
+Parameters:
+- `showMenu`: A binding to a Boolean that controls the visibility of the menu.
+- `rotatesWhenExpand`: A Boolean value that determines if the content view should rotate when the menu expands.
+- `enableInteraction`: A Boolean that enables interaction with the background content when the menu is expanded.
+- `sideMenuWidth`: The width of the side menu.
+- `cornerRadius`: The corner radius applied to the content view when the menu is expanded.
+- `background`: The background style of the menu.
+- `overlay`: The overlay style applied over the content when the menu is visible.
+- `content`: A closure returning the content view, taking the current safe area insets as a parameter.
+- `menuView`: A closure returning the menu view, taking the current safe area insets as a parameter.
+
+Example:
+
+Define Tab Enum case:
+
+```swift
+enum Tab: String, CaseIterable {
+    case home = "house.fill"
+    case bookmark = "book.fill"
+    case favorites = "heart.fill"
+    case profile = "person.crop.circle"
+    case logout = "rectangle.portrait.and.arrow.forward.fill"
+    
+    var title: String {
+        switch self {
+        case .home:
+            return "Home"
+        case .bookmark:
+            return "Bookmark"
+        case .favorites:
+            return "Favorites"
+        case .profile:
+            return "Profile"
+        case .logout:
+            return "Logout"
+        }
+    }
+}
+```
+
+Slide Bar buttons:
+
+```swift
+@ViewBuilder
+func SideBarButton(_ tab: Tab, onTap: @escaping () -> () = {}) -> some View {
+    Button(action: onTap, label: {
+        HStack(spacing: 12) {
+            Image(systemName: tab.rawValue)
+                .font(.title3)
+            
+            Text(tab.title)
+                .font(.callout)
+            
+            Spacer(minLength: 0)
+        }
+        .padding(.vertical, 10)
+        .contentShape(.rect)
+        .foregroundStyle(.white)
+    })
+}
+```
+
+Slide Bar Menu View:
+
+```swift
+@ViewBuilder
+func SideBarMenuView(_ safeArea: UIEdgeInsets) -> some View {
+    VStack(alignment: .leading, spacing: 12) {
+        Text("Side Menu")
+            .font(.largeTitle.bold())
+            .foregroundStyle(.white)
+            .padding(.bottom, 10)
+        
+        SideBarButton(.home)
+        SideBarButton(.bookmark)
+        SideBarButton(.favorites)
+        SideBarButton(.profile)
+        
+        Spacer()
+        
+        SideBarButton(.logout)
+    }
+    .padding(.horizontal, 15)
+    .padding(.vertical, 20)
+    .padding(.top, safeArea.top)
+    .padding(.bottom, safeArea.bottom)
+    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+    .environment(\.colorScheme, .dark)
+}
+```
+
+Main App View:
+
+```swift
+@ViewBuilder
+func MainView() -> some View {
+    NavigationView {
+        List {
+            NavigationLink("Detail View") {
+                Text("Hello world")
+                    .navigationTitle("Detail")
+            }
+        }
+        .navigationTitle("Home")
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button(action: { showMenu.toggle() } , label: {
+                    Image(systemName: showMenu ? "xmark" : "line.3.horizontal")
+                        .foregroundStyle(Color.primary)
+                })
+            }
+        }
+    }
+}
+```
+
+Implement Hambug Menu:
+
+```swift
+@State private var showMenu: Bool = false
+
+var body: some View {
+    HambugSlideMenu(showMenu: $showMenu, rotatesWhenExpand: false, enableInteraction: true, background: .primary.opacity(0.85)) { safeArea in
+        MainView()
+    } menuView: { safeArea in
+        SideBarMenuView(safeArea)
+    }
+}
+```
+
+https://github.com/user-attachments/assets/961787bb-527d-4bac-b5ea-50a96946e0c6
+
+This component provides a flexible and dynamic slide menu implementation that can toggle visibility with an animated transition. It supports customizable interactions, animations, and dimensions for the slide menu and its content.
+
+[Back to Top](#components)
+
 ## HoldDownButton
 
 A SwiftUI view that implements a hold-down button with progress feedback.
@@ -1577,6 +1826,71 @@ VStack(spacing: 24) {
 https://github.com/user-attachments/assets/0270f8a3-5170-41bf-a04e-2e52170b78c7
 
 This component is useful for actions that require confirmation or extended interaction, preventing accidental triggers.
+
+[Back to Top](#components)
+
+## HTMLTextView
+
+`HTMLTextView` allows SwiftUI to integrate HTML formatted text, transforming it into a styled `NSAttributedString` displayed within a UILabel. This view handles dynamic content size and adapts to the environment's constraints.
+
+```swift
+HTMLTextView(content: "<h1>James Thang</h1>")
+```
+
+Parameters:
+- `content`: The HTML string to be rendered.
+- `font`: The base font to apply to the text. HTML styling may override this font partially.
+- `textColor`: The color of the text.
+
+Example HTML:
+
+```swift
+let htmlString = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample HTML</title>
+</head>
+<body>
+    <h1>Welcome to SwiftUI HTML Rendering</h1>
+    <p>This is an example of rendering <strong>HTML content</strong> within a <em>SwiftUI</em> application using a <code>UIViewRepresentable</code>.</p>
+    
+    <h2>Features:</h2>
+    <ul>
+        <li>Rendering of <strong>bold</strong> and <em>italic</em> text.</li>
+        <li>Support for <a href="https://www.linkedin.com/in/jamesthang/">links</a>.</li>
+        <li>Display of <u>underlined</u> and <s>strikethrough</s> text.</li>
+        <li>Embedding of images:</li>
+    </ul>
+    <p><img src="https://picsum.photos/200" alt="Placeholder Image" /></p>
+    <h2>Conclusion</h2>
+    <p>This demonstrates the ability to <strong>customize</strong> the display of complex HTML content within a SwiftUI app.</p>
+</body>
+</html>
+"""
+```
+
+Usage:
+
+```swift
+HTMLTextView(
+    content: htmlString,
+    font: UIFont(name: "HelveticaNeue", size: 16) ?? UIFont.systemFont(ofSize: 16),
+    textColor: .label
+)
+.fixedSize(horizontal: false, vertical: true)
+.frame(maxWidth: .infinity, alignment: .leading)
+.background(Color.gray.opacity(0.2))
+.padding()
+```
+
+Result:
+
+<img src="https://github.com/user-attachments/assets/a5dae2d8-3e71-4406-b826-dc3fc9229bf5" width="220">
+
+This component simplifies the display of HTML content by managing the conversion process internally and adjusting the UILabel to fit the content appropriately.
 
 [Back to Top](#components)
 
@@ -1665,7 +1979,7 @@ For more customization, look at [Shimmer](#shimmer) view modifier to apply a shi
 
 ## ProgressBar:
 
-A rectangular progress bar view for SwiftUI.
+A rectangular progress bar view for SwiftUI that supports a shimmer effect.
 
 ```swift
 ProgressBar(progress: $progress, color: .blue)
@@ -1676,6 +1990,7 @@ Parameters:
 - `color`: The color of the bar's tint.
 - `colors`: An array of `Color` to create a gradient for the progress bar (used when more than one color is desired).
 - `backgroundColor`: The color of the bar's background.
+- `shimmer`: A Boolean value that determines whether a shimmer effect should be applied to the progress bar.
 
 You can use either a single color or a gradient of colors for the progress bar. The background of the bar can also be customized.
 
@@ -1706,7 +2021,22 @@ var body: some View {
 
 <img src="https://github.com/user-attachments/assets/60cfef78-3aaa-4567-ae3e-b01a099d6aeb" width="220">
 
-This view displays a rectangular progress indicator that fills up based on the current `progress`. The rectangle can be customized with different `colors` and a `backgroundColor`. If a gradient is desired, provide multiple colors.
+Shimmering Example:
+
+```swift
+@State private var progress: CGFloat = 0.75
+
+var body: some View {
+    VStack(spacing: 20) {
+        ProgressBar(progress: $progress, color: .orange, backgroundColor: .orange.opacity(0.2), shimmer: true)
+            .frame(width: 300, height: 20)
+    }
+}
+```
+
+https://github.com/user-attachments/assets/650154ec-b345-4586-a30e-01d7f58bba12
+
+This view displays a customizable progress bar that fills up based on the current `progress`. It can be customized with different colors, a background color, and an optional shimmer effect for visual enhancement.
 
 Size:
 - Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
@@ -1818,6 +2148,54 @@ The progress bar uniquely fills up to 75% of the circle and starts at a 135-degr
 
 Size:
 - Frame Size: Adjust the view's frame size with `.frame(width:height:)` modifier to fit various UI spaces.
+
+[Back to Top](#components)
+
+## QRCode
+
+## QRGenerator
+
+`QRGeneratorView` is a SwiftUI view component that generates and displays a QR code from various input types.
+
+```swift
+QRGeneratorView(input: .url(URL(string: "https://www.linkedin.com/in/jamesthang/")!))
+QRGeneratorView(input: .string("CommonSwiftUI"))
+QRGeneratorView(input: .data(Data("James Thang".utf8)))
+```
+
+`QRGeneratorView` creates a QR code image based on the provided input, which can be a` String`, `URL`, or `Data`. It displays the generated QR code image or an error message if the QR code generation fails.
+
+<img src="https://github.com/user-attachments/assets/37a30266-bd24-4b01-99b5-c002a4941d81" width="220">
+
+Parameters:
+- `input`: The data used to generate the QR code, specified by the [QRCodeInputType](#QRCodeInputType) enumeration.
+
+#### QRCodeInputType
+
+Defines the types of inputs that can be used to generate a QR code in `QRGeneratorView`.
+
+Cases:
+- `string`: A simple string to be encoded into a QR code.
+- `url`: A URL object representing a web address.
+- `data`: Arbitrary data, such as binary encoded information.
+
+This enumeration simplifies the process of selecting and processing different kinds of data to generate a QR code.
+
+This component simplifies the process of QR code generation and display within SwiftUI views, handling different input types seamlessly.
+
+Additionally, we provide the utility struct `QRCodeGenerator` for generating QR codes from various types of inputs.
+
+Methods:
+- `generateQRCode(from string: String)`: Generates a QR code image from a string.
+- `generateQRCode(from url: URL)`: Generates a QR code image from a URL.
+- `generateQRCode(from data: Data)`: Generates a QR code image directly from binary data.
+
+The resulting image is an optional `UIImage`, which will be nil if the QR code cannot be generated.
+
+```swift
+let qrImage1 = QRCodeGenerator.generateQRCode(from: "https://github.com/Enryun/Common_SwiftUI")
+let qrImage2 = QRCodeGenerator.generateQRCode(from: URL(string: "https://www.linkedin.com/in/jamesthang/")!)
+```
 
 [Back to Top](#components)
 
@@ -2754,22 +3132,28 @@ Use this function to seamlessly handle value changes across different iOS versio
 
 ## Shimmer
 
-Applies a shimmer effect to any SwiftUI view.
+Applies a shimmer effect to any SwiftUI view, enhancing the UI with a dynamic loading indicator.
 
 ```swift
-public func shimmer(tint: Color, highlight: Color, blur: CGFloat = 0, highlightOpacity: CGFloat = 1, speed: CommonSwiftUI.Speed = .medium) -> some View
+Text("Loading...")
+   .shimmer(isActive: $isShimmer, tint: .gray.opacity(0.3), highlight: .white, blur: 5, redacted: true)
+
+Text("Loading...")
+   .shimmer(tint: .gray.opacity(0.3), highlight: .white, blur: 5, redacted: false)
 ```
 
 Parameters:
+- `isActive`: A `Binding<Bool>` that controls whether the shimmer effect is active.
 - `tint`: The background color of the shimmer.
 - `highlight`: The color of the shimmering highlight.
 - `blur`: The amount of blur applied to the shimmer effect. Default is 0.
 - `highlightOpacity`: The opacity of the shimmer highlight. Default is 1.
 - `speed`: The speed of the shimmer effect. Default is case .medium for 2 second.
+- `redacted`: A Boolean value that indicates whether the view's content should be redacted during the shimmer effect. Default is false.
 
-This function overlays a shimmer animation on the calling view, commonly used as a placeholder during content loading. The shimmer can be customized with different colors, opacity levels, and speed.
+This function overlays a shimmer animation over the view it modifies, typically used as a placeholder during content loading. The effect can be extensively customized to match your app's style.
 
-Example:
+Example loading redacted and non-redacted:
 
 ```swift
 VStack {
@@ -2792,14 +3176,59 @@ VStack {
     }
     .padding(15)
     .padding(.horizontal, 30)
-    .shimmer(tint: .gray.opacity(0.3), highlight: .white, blur: 5)
+    .shimmer(tint: .gray.opacity(0.3), highlight: .white, blur: 5, redacted: true)
     
     Text("Loading...")
-        .shimmer(tint: .gray.opacity(0.3), highlight: .white, blur: 5)
+        .shimmer(tint: .gray.opacity(0.3), highlight: .white, blur: 5, redacted: false)
 }
 ```
 
-https://github.com/user-attachments/assets/24f8879a-5eca-45af-b456-3ceb0535b1f9
+https://github.com/user-attachments/assets/731719e0-7e23-4e56-8a4f-c86c81cc0b13
+
+Example loading with `Binding` isActive to control loading:
+
+```swift
+@State private var isShimmer = true
+
+var body: some View {
+    VStack {
+        HStack {
+            Circle()
+                .frame(width: 55, height: 55)
+            
+            VStack(alignment: .leading, spacing: 6) {
+                RoundedRectangle(cornerRadius: 4)
+                    .frame(height: 10)
+                
+                RoundedRectangle(cornerRadius: 4)
+                    .frame(height: 10)
+                    .padding(.trailing, 50)
+                
+                RoundedRectangle(cornerRadius: 4)
+                    .frame(height: 10)
+                    .padding(.trailing, 100)
+            }
+        }
+        .padding(15)
+        .padding(.horizontal, 30)
+        .shimmer(isActive: $isShimmer, tint: .gray.opacity(0.3), highlight: .white, blur: 5, redacted: true)
+        
+        Text("Loading...")
+            .fontWeight(.semibold)
+            .shimmer(isActive: $isShimmer, tint: .gray.opacity(0.3), highlight: .white, blur: 5, redacted: false)
+    }
+    .onAppear {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            isShimmer = false
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            isShimmer = true
+        }
+    }
+}
+```
+
+https://github.com/user-attachments/assets/fffd83e9-6a8e-4604-b6c7-4ba46308f662
 
 Customize the parameters to fit the style of your app's loading indicators.
 
