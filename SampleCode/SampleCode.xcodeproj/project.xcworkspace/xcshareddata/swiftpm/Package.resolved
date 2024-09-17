@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Enryun/Common_SwiftUI",
       "state" : {
-        "revision" : "8206aa6b18d0c66bb9ec688f14f5c15dccbe806a",
-        "version" : "1.1.1"
+        "revision" : "9141b2f68c62637845797abc9e4bbfb932bc2b94",
+        "version" : "1.1.2"
       }
     }
   ],
