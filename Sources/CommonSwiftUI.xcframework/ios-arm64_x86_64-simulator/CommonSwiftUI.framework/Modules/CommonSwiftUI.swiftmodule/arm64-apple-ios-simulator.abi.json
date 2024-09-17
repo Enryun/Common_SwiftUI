@@ -32643,122 +32643,143 @@
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1056,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1147,
+      "offset": 1163,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1187,
+      "offset": 1203,
       "length": 3,
       "value": "180"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "FloatLiteral",
-      "offset": 1237,
+      "offset": 1253,
       "length": 3,
       "value": "0.3"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1268,
+      "offset": 1284,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1297,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1398,
+      "offset": 1430,
       "length": 2,
       "value": "55"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1410,
+      "offset": 1442,
       "length": 2,
       "value": "55"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1476,
+      "offset": 1508,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1528,
+      "offset": 1560,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1566,
+      "offset": 1598,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1634,
+      "offset": 1666,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1672,
+      "offset": 1704,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1716,
+      "offset": 1748,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1784,
+      "offset": 1816,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1822,
+      "offset": 1854,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1866,
+      "offset": 1898,
       "length": 3,
       "value": "100"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "FloatLiteral",
-      "offset": 1932,
+      "offset": 1964,
       "length": 3,
       "value": "0.3"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1963,
+      "offset": 1995,
       "length": 1,
       "value": "5"
+    },
+    {
+      "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/Shimmer\/Public\/ShimmerView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2008,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/jamesthang\/Downloads\/My_Sdk\/Development\/CommonSwiftUI\/Components\/TextField\/LimitedTextField\/LimitedTextField.swift",
