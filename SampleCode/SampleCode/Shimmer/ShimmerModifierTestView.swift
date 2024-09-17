@@ -9,6 +9,9 @@ import SwiftUI
 import CommonSwiftUI
 
 struct ShimmerModifierTestView: View {
+    
+    @State private var isShimmer = true
+    
     var body: some View {
         VStack {
             HStack {
@@ -30,10 +33,19 @@ struct ShimmerModifierTestView: View {
             }
             .padding(15)
             .padding(.horizontal, 30)
-            .shimmer(tint: .gray.opacity(0.3), highlight: .white, blur: 5)
+            .shimmer(isActive: $isShimmer, tint: .gray.opacity(0.3), highlight: .white, blur: 5, redacted: true)
             
             Text("Loading...")
-                .shimmer(tint: .gray.opacity(0.3), highlight: .white, blur: 5)
+                .fontWeight(.semibold)
+                .shimmer(isActive: $isShimmer, tint: .gray.opacity(0.3), highlight: .white, blur: 5, redacted: false)
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                isShimmer = false
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                isShimmer = true
+            }
         }
     }
 }

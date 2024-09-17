@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		300586022C9842B20041B00F /* HambugMenuTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300586012C9842B20041B00F /* HambugMenuTestView.swift */; };
+		3022DC3A2C995903001C2B5B /* HTMLTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022DC392C995903001C2B5B /* HTMLTestView.swift */; };
+		3022DC3D2C99595C001C2B5B /* QRGeneratorTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022DC3C2C99595C001C2B5B /* QRGeneratorTestView.swift */; };
+		3022DC3F2C995986001C2B5B /* ProgressBarShimmerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022DC3E2C995985001C2B5B /* ProgressBarShimmerTestView.swift */; };
+		3022DC422C9959F0001C2B5B /* GlowTextTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022DC412C9959F0001C2B5B /* GlowTextTestView.swift */; };
+		3022DC452C995E37001C2B5B /* BouncyButtonStyleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3022DC442C995E37001C2B5B /* BouncyButtonStyleTest.swift */; };
 		307C2F652C74E8C70063D96D /* SampleCodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307C2F642C74E8C70063D96D /* SampleCodeApp.swift */; };
 		307C2F672C74E8C70063D96D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307C2F662C74E8C70063D96D /* ContentView.swift */; };
 		307C2F692C74E8C90063D96D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307C2F682C74E8C90063D96D /* Assets.xcassets */; };
@@ -45,6 +50,11 @@
 
 /* Begin PBXFileReference section */
 		300586012C9842B20041B00F /* HambugMenuTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HambugMenuTestView.swift; sourceTree = "<group>"; };
+		3022DC392C995903001C2B5B /* HTMLTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLTestView.swift; sourceTree = "<group>"; };
+		3022DC3C2C99595C001C2B5B /* QRGeneratorTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRGeneratorTestView.swift; sourceTree = "<group>"; };
+		3022DC3E2C995985001C2B5B /* ProgressBarShimmerTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarShimmerTestView.swift; sourceTree = "<group>"; };
+		3022DC412C9959F0001C2B5B /* GlowTextTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlowTextTestView.swift; sourceTree = "<group>"; };
+		3022DC442C995E37001C2B5B /* BouncyButtonStyleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyButtonStyleTest.swift; sourceTree = "<group>"; };
 		307C2F612C74E8C70063D96D /* SampleCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307C2F642C74E8C70063D96D /* SampleCodeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCodeApp.swift; sourceTree = "<group>"; };
 		307C2F662C74E8C70063D96D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +110,39 @@
 			path = HambugMenu;
 			sourceTree = "<group>";
 		};
+		3022DC382C995903001C2B5B /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				3022DC392C995903001C2B5B /* HTMLTestView.swift */,
+			);
+			path = HTML;
+			sourceTree = "<group>";
+		};
+		3022DC3B2C995944001C2B5B /* QRGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				3022DC3C2C99595C001C2B5B /* QRGeneratorTestView.swift */,
+			);
+			path = QRGenerator;
+			sourceTree = "<group>";
+		};
+		3022DC402C9959F0001C2B5B /* Glow */ = {
+			isa = PBXGroup;
+			children = (
+				3022DC412C9959F0001C2B5B /* GlowTextTestView.swift */,
+			);
+			path = Glow;
+			sourceTree = "<group>";
+		};
+		3022DC432C995D93001C2B5B /* Shimmer */ = {
+			isa = PBXGroup;
+			children = (
+				307C2F952C74EA930063D96D /* ShimmerViewTest.swift */,
+				307C2F982C74EA930063D96D /* ShimmerModifierTestView.swift */,
+			);
+			path = Shimmer;
+			sourceTree = "<group>";
+		};
 		307C2F582C74E8C70063D96D = {
 			isa = PBXGroup;
 			children = (
@@ -123,11 +166,15 @@
 				307C2F7C2C74EA920063D96D /* Button */,
 				307C2F902C74EA930063D96D /* DropDown */,
 				307C2F792C74EA920063D96D /* Effects */,
+				3022DC402C9959F0001C2B5B /* Glow */,
 				300586002C9842B20041B00F /* HambugMenu */,
+				3022DC382C995903001C2B5B /* HTML */,
 				307C2F942C74EA930063D96D /* LoadingIndicator */,
 				307C2F8C2C74EA930063D96D /* ProgressBar */,
+				3022DC3B2C995944001C2B5B /* QRGenerator */,
 				307C2F842C74EA930063D96D /* QRScanner */,
 				307C2F8E2C74EA930063D96D /* SegmentControl */,
+				3022DC432C995D93001C2B5B /* Shimmer */,
 				307C2F862C74EA930063D96D /* Slider */,
 				307C2F752C74EA920063D96D /* Text */,
 				307C2F9B2C74EA930063D96D /* TextField */,
@@ -172,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				307C2F7F2C74EA920063D96D /* ButtonStyleTest.swift */,
+				3022DC442C995E37001C2B5B /* BouncyButtonStyleTest.swift */,
 				307C2F7D2C74EA920063D96D /* GrowingButtonTest.swift */,
 				307C2F7E2C74EA920063D96D /* FloatActionViewTest.swift */,
 				307C2F802C74EA920063D96D /* ExpandFloatButtonTest.swift */,
@@ -210,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				307C2F8D2C74EA930063D96D /* ProgressBarTestView.swift */,
+				3022DC3E2C995985001C2B5B /* ProgressBarShimmerTestView.swift */,
 			);
 			path = ProgressBar;
 			sourceTree = "<group>";
@@ -243,8 +292,6 @@
 			children = (
 				307C2F962C74EA930063D96D /* LoadingIndicatorTestView.swift */,
 				307C2F972C74EA930063D96D /* FancyLoadingView.swift */,
-				307C2F952C74EA930063D96D /* ShimmerViewTest.swift */,
-				307C2F982C74EA930063D96D /* ShimmerModifierTestView.swift */,
 			);
 			path = LoadingIndicator;
 			sourceTree = "<group>";
@@ -347,17 +394,20 @@
 				307C2FAC2C74EA930063D96D /* LoadingButtonTest.swift in Sources */,
 				307C2FB72C74EA930063D96D /* ViewModifierTest.swift in Sources */,
 				307C2FC02C74EA930063D96D /* UniversalAlertTestView.swift in Sources */,
+				3022DC452C995E37001C2B5B /* BouncyButtonStyleTest.swift in Sources */,
 				307C2FA32C74EA930063D96D /* TypeWriterTextView.swift in Sources */,
 				307C2FA72C74EA930063D96D /* GlassMorphismTestView.swift in Sources */,
 				307C2FAF2C74EA930063D96D /* QRScannerTest.swift in Sources */,
 				307C2FB62C74EA930063D96D /* DropDownTestView.swift in Sources */,
 				307C2F672C74E8C70063D96D /* ContentView.swift in Sources */,
 				307C2FA92C74EA930063D96D /* FloatActionViewTest.swift in Sources */,
+				3022DC422C9959F0001C2B5B /* GlowTextTestView.swift in Sources */,
 				307C2FBB2C74EA930063D96D /* ShimmerModifierTestView.swift in Sources */,
 				300586022C9842B20041B00F /* HambugMenuTestView.swift in Sources */,
 				307C2FA82C74EA930063D96D /* GrowingButtonTest.swift in Sources */,
 				307C2FA62C74EA930063D96D /* NeumorphismTestView.swift in Sources */,
 				307C2FB32C74EA930063D96D /* ToastTestView.swift in Sources */,
+				3022DC3F2C995986001C2B5B /* ProgressBarShimmerTestView.swift in Sources */,
 				307C2FA52C74EA930063D96D /* HackerTextView.swift in Sources */,
 				307C2FAB2C74EA930063D96D /* ExpandFloatButtonTest.swift in Sources */,
 				307C2FC12C74EA930063D96D /* AlertTextFieldTestView.swift in Sources */,
@@ -366,6 +416,7 @@
 				307C2FBA2C74EA930063D96D /* FancyLoadingView.swift in Sources */,
 				307C2FB92C74EA930063D96D /* LoadingIndicatorTestView.swift in Sources */,
 				307C2FB22C74EA930063D96D /* RingSliderView.swift in Sources */,
+				3022DC3D2C99595C001C2B5B /* QRGeneratorTestView.swift in Sources */,
 				307C2F652C74E8C70063D96D /* SampleCodeApp.swift in Sources */,
 				307C2FBF2C74EA930063D96D /* AlertWithErrorBinding.swift in Sources */,
 				307C2FAA2C74EA930063D96D /* ButtonStyleTest.swift in Sources */,
@@ -373,6 +424,7 @@
 				307C2FAD2C74EA930063D96D /* HoldDownButtonTest.swift in Sources */,
 				307C2FBD2C74EA930063D96D /* LimitedTextFieldTest.swift in Sources */,
 				307C2FB52C74EA930063D96D /* SegmentControlTestView.swift in Sources */,
+				3022DC3A2C995903001C2B5B /* HTMLTestView.swift in Sources */,
 				307C2FBE2C74EA930063D96D /* ValidationTextFieldTest.swift in Sources */,
 				307C2FB02C74EA930063D96D /* RangeSliderTestView.swift in Sources */,
 			);
